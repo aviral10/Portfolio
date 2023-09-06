@@ -2951,16 +2951,11 @@ var _app = require("./view/App");
 var _appDefault = parcelHelpers.interopDefault(_app);
 let rootElement = document.getElementById("root");
 let root = (0, _clientDefault.default).createRoot(rootElement);
-root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.StrictMode), {
-    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _appDefault.default), {}, void 0, false, {
-        fileName: "src/index.tsx",
-        lineNumber: 9,
-        columnNumber: 9
-    }, undefined)
-}, void 0, false, {
+root.render(// <StrictMode>
+/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _appDefault.default), {}, void 0, false, {
     fileName: "src/index.tsx",
-    lineNumber: 8,
-    columnNumber: 5
+    lineNumber: 9,
+    columnNumber: 9
 }, undefined));
 
   $parcel$ReactRefreshHelpers$2a8f.postlude(module);
@@ -27343,8 +27338,18 @@ var _myProfile = require("./components/MyProfile");
 var _myProfileDefault = parcelHelpers.interopDefault(_myProfile);
 var _searchbar = require("./components/Searchbar");
 var _searchbarDefault = parcelHelpers.interopDefault(_searchbar);
+var _tempData = require("./components/TempData");
+var _appContext = require("./components/AppContext");
+var _appContextDefault = parcelHelpers.interopDefault(_appContext);
+var _s = $RefreshSig$();
 function App() {
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+    _s();
+    const [server, setServer] = (0, _react.useState)((0, _tempData.tempServer));
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _appContextDefault.default).Provider, {
+        value: {
+            server,
+            setServer
+        },
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "flex flex-col h-screen bg-gray-900",
             children: [
@@ -27352,7 +27357,7 @@ function App() {
                     className: "w-full bg-gray-900 flex-shrink-0 h-4"
                 }, void 0, false, {
                     fileName: "src/view/App.tsx",
-                    lineNumber: 14,
+                    lineNumber: 16,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27360,23 +27365,25 @@ function App() {
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sidebarDefault.default), {}, void 0, false, {
                             fileName: "src/view/App.tsx",
-                            lineNumber: 16,
+                            lineNumber: 18,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "flex w-screen",
                             children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _channelsDefault.default), {}, void 0, false, {
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _channelsDefault.default), {
+                                    server: server
+                                }, void 0, false, {
                                     fileName: "src/view/App.tsx",
-                                    lineNumber: 18,
+                                    lineNumber: 20,
                                     columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "PPP flex flex-col h-full w-full",
+                                    className: "flex flex-col h-full w-full",
                                     children: [
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _searchbarDefault.default), {}, void 0, false, {
                                             fileName: "src/view/App.tsx",
-                                            lineNumber: 20,
+                                            lineNumber: 22,
                                             columnNumber: 29
                                         }, this),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27384,46 +27391,51 @@ function App() {
                                             children: [
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _messagesDefault.default), {}, void 0, false, {
                                                     fileName: "src/view/App.tsx",
-                                                    lineNumber: 22,
+                                                    lineNumber: 24,
                                                     columnNumber: 33
                                                 }, this),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _myProfileDefault.default), {}, void 0, false, {
                                                     fileName: "src/view/App.tsx",
-                                                    lineNumber: 23,
+                                                    lineNumber: 25,
                                                     columnNumber: 33
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/view/App.tsx",
-                                            lineNumber: 21,
+                                            lineNumber: 23,
                                             columnNumber: 29
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/view/App.tsx",
-                                    lineNumber: 19,
+                                    lineNumber: 21,
                                     columnNumber: 25
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "src/view/App.tsx",
-                            lineNumber: 17,
+                            lineNumber: 19,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/view/App.tsx",
-                    lineNumber: 15,
+                    lineNumber: 17,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/view/App.tsx",
-            lineNumber: 13,
+            lineNumber: 15,
             columnNumber: 13
         }, this)
-    }, void 0, false);
+    }, void 0, false, {
+        fileName: "src/view/App.tsx",
+        lineNumber: 14,
+        columnNumber: 9
+    }, this);
 }
+_s(App, "4Xmfe7Kv+FNkCqTq/8RLsfXYCFY=");
 _c = App;
 exports.default = App;
 var _c;
@@ -27434,7 +27446,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./components/Sidebar":"2t1W6","./components/Channels":"6lq8V","./components/Messages":"lxM0f","./components/MyProfile":"9EZST","./components/Searchbar":"ihZif","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2t1W6":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./components/Sidebar":"2t1W6","./components/Channels":"6lq8V","./components/Messages":"lxM0f","./components/MyProfile":"9EZST","./components/Searchbar":"ihZif","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/TempData":"cTraf","./components/AppContext":"h2OpR"}],"2t1W6":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$51e5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27446,48 +27458,60 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _tempData = require("./TempData");
+var _appContext = require("./AppContext");
+var _appContextDefault = parcelHelpers.interopDefault(_appContext);
+var _s = $RefreshSig$();
 const Sidebar = ()=>{
-    let temp = "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tfGVufDB8fDB8fHww&w=1000&q=80";
     let elements = [];
-    for(let i = 0; i < 5; i++)elements.push(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SideIcon, {
-        image: temp,
-        tooltip: "Sample"
-    }, i, false, {
+    elements.push(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SideIcon, {
+        image: (0, _tempData.tempServer).image,
+        server: (0, _tempData.tempServer),
+        tooltip: (0, _tempData.tempServer).name
+    }, 0, false, {
         fileName: "src/view/components/Sidebar.tsx",
-        lineNumber: 7,
-        columnNumber: 23
+        lineNumber: 10,
+        columnNumber: 19
+    }, undefined));
+    elements.push(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SideIcon, {
+        image: (0, _tempData.tempServer_dup).image,
+        server: (0, _tempData.tempServer_dup),
+        tooltip: (0, _tempData.tempServer_dup).name
+    }, 1, false, {
+        fileName: "src/view/components/Sidebar.tsx",
+        lineNumber: 11,
+        columnNumber: 19
     }, undefined));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "left-0 h-full w-20 bg-gray-900 text-white shadow-lg   flex flex-col flex-shrink-0 space-y-4 p-3",
         children: elements
     }, void 0, false, {
         fileName: "src/view/components/Sidebar.tsx",
-        lineNumber: 10,
+        lineNumber: 14,
         columnNumber: 9
     }, undefined);
 };
 _c = Sidebar;
-function doSom() {
-    console.log("PPPP");
-}
 const SideIcon = (props)=>{
+    _s();
+    const { server, setServer } = (0, _react.useContext)((0, _appContextDefault.default));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "relative flex items-center justify-center group",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                onClick: ()=>doSom(),
+                onClick: ()=>setServer(props.server),
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                     className: "h-12 w-12    rounded-3xl hover:rounded-2xl   transition-all duration-200 ease-linear   cursor-pointer",
                     src: props.image,
                     alt: ""
                 }, void 0, false, {
                     fileName: "src/view/components/Sidebar.tsx",
-                    lineNumber: 32,
+                    lineNumber: 31,
                     columnNumber: 13
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/view/components/Sidebar.tsx",
-                lineNumber: 31,
+                lineNumber: 30,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -27495,16 +27519,17 @@ const SideIcon = (props)=>{
                 children: props.tooltip
             }, void 0, false, {
                 fileName: "src/view/components/Sidebar.tsx",
-                lineNumber: 38,
+                lineNumber: 37,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/view/components/Sidebar.tsx",
-        lineNumber: 30,
+        lineNumber: 29,
         columnNumber: 5
     }, undefined);
 };
+_s(SideIcon, "OIMn/ZZ2bIEztmZtGVU6xZn+v2g=");
 _c1 = SideIcon;
 exports.default = Sidebar;
 var _c, _c1;
@@ -27516,7 +27541,78 @@ $RefreshReg$(_c1, "SideIcon");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6lq8V":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./TempData":"cTraf","./AppContext":"h2OpR"}],"cTraf":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "tempServer", ()=>tempServer);
+parcelHelpers.export(exports, "tempServer_dup", ()=>tempServer_dup);
+const tempServer = {
+    name: "Valhalla",
+    image: "https://images.unsplash.com/photo-1481349518771-20055b2a7b24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmFuZG9tfGVufDB8fDB8fHww&w=1000&q=80",
+    channelGroups: [
+        {
+            name: "General",
+            channelItems: [
+                "element 1",
+                "element 2",
+                "element 3",
+                "element 4",
+                "element 5"
+            ]
+        },
+        {
+            name: "Chamber of Secrets",
+            channelItems: [
+                "element 1",
+                "element 2",
+                "element 3",
+                "element 4",
+                "element 5"
+            ]
+        }
+    ]
+};
+const tempServer_dup = {
+    name: "Other Server",
+    image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAaVBMVEUAAAD////x8fHp6enGxsarq6uPj49cXFxYWFiBgYEQEBDDw8N2dna+vr74+Pifn5/Y2NgoKCiZmZlPT0+0tLSKiorl5eVkZGQVFRU7OztqamrQ0NDa2tpCQkKnp6dubm43NzcgICAvLy+29WF1AAADV0lEQVR4nO3c2XqiQBCGYRt3I2oUTeKSmNz/RY6YZARCA6PFVNn53mMO6n+A3qHTAQAAAAAAAAAAAAAAAAAAAADglzk8alfQpmG/69xAu4r2LGcutdSuoy1L9yXQe7iKvgO6qXYtrZi7i5F2MW3oZQI67WLasMgG7GpX04I4G9Al2uXIW+cCBvgaHvMBI+165G3yCcPrDcf5gAG2pNEvu4UBdhX7fMIX7XrEPYb+jHYGuYCxdjkt6IUeMNeSzrWLaUUm4JN2La2YhP2Enjx/5XsIr5f4lg61ewH2EcE6bMfj6arigtE82e33i7g//vhvRYmZJn87hijZllzwvsytZbj4rpbcDg+uIC7cyvW+eMVJf6JT7j972ZVU77qXpe1RXHbBOaNi2c31feW73frY6QxfI+8Fzs2G2uXXOlbV34T1sdz2xnwnPe0MlYqLMMFFnEoEtNzejGQC2t2NmtSX3pDVm7ioL70Zq+v8Iq3MSWR2ZCMUcKOdw+tVJqDhJWKZgDPtGH7L+uqbqJpNKrt1OPrJ8KB0JRLQ8m5pIpLwTTtGha5EQMPtqNCAba0do4LMpEI7RRWR7n6nnaLKj7W1axjuKoQaGqtTijOJgO5ZO0UVkYTaIaqIdBaGB90/TliQ8LcmNP0evoskDL8tDb8/ND2mEUloeb9CZtRmuqkRGXmbnuL7933/heXp07q+/CYO2jn8DjIJF9o5KsgktPwmbuqrb0Q7h5/Meqlze+0gXkI7+M49aCfxkkpo92ht2Tm161jtFYV211Jdm0cxP+QSWv3QRKq/OOuWnUjVJviYpgzeRrnzQmcWj5yUnpu9lskGVeDg5YXNk20yhxU+aWcpJzRJTL1qZ/GQS6idxEesw7D7m4WZUEK7q99Cb6LdWyjVnGqnqDKUCGhwwJYhsDRs+WRU6vaEhhdNz24eu1nt7C+836U1Y/0ZTd3Wnt7DJ9A3rfDbbke/DeqD+JicFpbo1UcpZ/rASc61W8JH7cKbu661MX0Yo2ByTcQ7+xVIyYO6mD99TotWg7I39Z7u4FlhhBoV/sM6Lqwgb+7wX7vbzJPaK/kI/ZAZ/cwsH9Ov8Bank/4o9pY/TRanKzaJ4c1tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECJPwYTI4UwDxjEAAAAAElFTkSuQmCC",
+    channelGroups: [
+        {
+            name: "General1",
+            channelItems: [
+                "element 11",
+                "element 21",
+                "element 31"
+            ]
+        },
+        {
+            name: "Chamber of Secrets1",
+            channelItems: [
+                "element 11",
+                "element 21"
+            ]
+        }
+    ]
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"h2OpR":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d2cb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d2cb.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+const AppContext = /*#__PURE__*/ (0, _react.createContext)({});
+exports.default = AppContext;
+
+  $parcel$ReactRefreshHelpers$d2cb.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6lq8V":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$f185 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27528,42 +27624,178 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-const Channels = ()=>{
+var _keyGenerator = require("../../model/KeyGenerator");
+var _keyGeneratorDefault = parcelHelpers.interopDefault(_keyGenerator);
+var _s = $RefreshSig$();
+const Channels = (props)=>{
+    //
+    let server = props.server;
+    let channelGroups = [];
+    server.channelGroups.map((ChannelGroup)=>{
+        channelGroups.push(ChannelGroup);
+    });
+    //
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "hidden md:flex flex-col h-full w-1/5 bg-gray-800 text-white   rounded-tl-lg",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ChannelTitle, {}, void 0, false, {
-            fileName: "src/view/components/Channels.tsx",
-            lineNumber: 7,
-            columnNumber: 9
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/view/components/Channels.tsx",
-        lineNumber: 5,
-        columnNumber: 9
-    }, undefined);
-};
-_c = Channels;
-const ChannelTitle = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "z-50 flex-shrink-0 shadow-sm shadow shadow-gray-900 h-14"
-    }, void 0, false, {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ChannelTitle, {
+                name: server.name
+            }, void 0, false, {
+                fileName: "src/view/components/Channels.tsx",
+                lineNumber: 17,
+                columnNumber: 13
+            }, undefined),
+            channelGroups.map((channelGroup, index)=>{
+                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ChannelGroup, {
+                    name: channelGroup.name.toUpperCase(),
+                    items: channelGroup.channelItems
+                }, (0, _keyGeneratorDefault.default).getInstance().getKey(), false, {
+                    fileName: "src/view/components/Channels.tsx",
+                    lineNumber: 20,
+                    columnNumber: 21
+                }, undefined);
+            })
+        ]
+    }, void 0, true, {
         fileName: "src/view/components/Channels.tsx",
         lineNumber: 14,
         columnNumber: 9
     }, undefined);
 };
+_c = Channels;
+const ChannelTitle = (props)=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex items-center justify-center z-50 flex-shrink-0 shadow-sm shadow-gray-900 h-14   text-lg",
+        children: props.name
+    }, void 0, false, {
+        fileName: "src/view/components/Channels.tsx",
+        lineNumber: 33,
+        columnNumber: 9
+    }, undefined);
+};
 _c1 = ChannelTitle;
+const ChannelGroup = (props)=>{
+    _s();
+    const [showFull, setShowFull] = (0, _react.useState)(true);
+    const [isSelected, setIsSelected] = (0, _react.useState)(-1);
+    const toggleShowFull = ()=>{
+        setShowFull(!showFull);
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "w-full p-4 pb-0 font-larry text-gray-500",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex text-xs font-bold cursor-pointer",
+                onClick: ()=>toggleShowFull(),
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: `text-md transform transition-transform duration-150 ${showFull ? "rotate-90" : ""}`,
+                        children: ">"
+                    }, void 0, false, {
+                        fileName: "src/view/components/Channels.tsx",
+                        lineNumber: 55,
+                        columnNumber: 17
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("pre", {
+                        children: " "
+                    }, void 0, false, {
+                        fileName: "src/view/components/Channels.tsx",
+                        lineNumber: 60,
+                        columnNumber: 17
+                    }, undefined),
+                    props.name
+                ]
+            }, void 0, true, {
+                fileName: "src/view/components/Channels.tsx",
+                lineNumber: 52,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ChannelItems, {
+                items: showFull ? props.items : [],
+                isSelectedState: [
+                    isSelected,
+                    setIsSelected
+                ]
+            }, void 0, false, {
+                fileName: "src/view/components/Channels.tsx",
+                lineNumber: 63,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/view/components/Channels.tsx",
+        lineNumber: 51,
+        columnNumber: 9
+    }, undefined);
+};
+_s(ChannelGroup, "rpQd3QuECyKRgfnfl2bQqFl90u0=");
+_c2 = ChannelGroup;
+const ChannelItems = (props)=>{
+    return props.items.map((item, index)=>{
+        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: `p-1 flex space-x-2 hover:bg-gray-700  rounded-md hover:text-gray-200 cursor-pointer
+                            ${props.isSelectedState[0] == index ? "bg-gray-650 text-gray-100" : "text-gray-500"}`,
+            onClick: ()=>{
+                props.isSelectedState[1](index);
+            },
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    className: "text-xl ml-2 text-gray-500 font-bold",
+                    children: "@"
+                }, void 0, false, {
+                    fileName: "src/view/components/Channels.tsx",
+                    lineNumber: 75,
+                    columnNumber: 17
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "text-md pt-[0.5]",
+                    children: item
+                }, void 0, false, {
+                    fileName: "src/view/components/Channels.tsx",
+                    lineNumber: 76,
+                    columnNumber: 17
+                }, undefined)
+            ]
+        }, (0, _keyGeneratorDefault.default).getInstance().getKey(), true, {
+            fileName: "src/view/components/Channels.tsx",
+            lineNumber: 71,
+            columnNumber: 13
+        }, undefined);
+    });
+};
+_c3 = ChannelItems;
 exports.default = Channels;
-var _c, _c1;
+var _c, _c1, _c2, _c3;
 $RefreshReg$(_c, "Channels");
 $RefreshReg$(_c1, "ChannelTitle");
+$RefreshReg$(_c2, "ChannelGroup");
+$RefreshReg$(_c3, "ChannelItems");
 
   $parcel$ReactRefreshHelpers$f185.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lxM0f":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../model/KeyGenerator":"aAIJo"}],"aAIJo":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+class KeyGenerator {
+    constructor(){
+        this.counter = 0;
+    }
+    static getInstance() {
+        if (!KeyGenerator.instance) KeyGenerator.instance = new KeyGenerator();
+        return KeyGenerator.instance;
+    }
+    getKey() {
+        this.counter += 1;
+        console.log(this.counter);
+        return Math.random().toString().substring(2) + this.counter.toString();
+    }
+}
+exports.default = KeyGenerator;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lxM0f":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$87f4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
