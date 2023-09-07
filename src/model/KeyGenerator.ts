@@ -10,7 +10,6 @@ export default class KeyGenerator{
     }
     public getKey(){
         this.counter += 1
-        console.log(this.counter)
         return Math.random().toString().substring(2)+this.counter.toString()
     }
 }

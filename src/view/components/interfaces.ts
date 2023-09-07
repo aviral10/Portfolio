@@ -5,9 +5,11 @@ export interface Server{
 }
 
 export interface SideIconProps{
+    index: number
     server: Server
     image: string
     tooltip: string
+    isSelectedState: [number, (changeState: number) => void]; 
 }
 
 export interface ChannelItemsProps{
