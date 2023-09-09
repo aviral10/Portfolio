@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    html {
+        font-family: Nunito Sans, system-ui, sans-serif;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #2f3136;
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #202225;
+    border-radius: 5px;
+}
+  
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} */

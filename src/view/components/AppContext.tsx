@@ -3,4 +3,4 @@ import { AppContext } from "./interfaces";
 
 const AppContext = createContext<AppContext>({});
 
-export default AppContext
+export default AppContext;

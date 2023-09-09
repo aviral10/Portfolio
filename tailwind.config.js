@@ -3,10 +3,13 @@ module.exports = {
   content: ["./src/**/*.{html,js,ts,tsx}"],
   theme: {
     fontFamily: {
-      'larry': ['"Trebuchet MS Regular"', 'sans-serif'],
+      'barry': ['"Trebuchet MS Regular"', 'sans-serif'],
+      'larry': ['"Nunito Sans"', 'sans-serif'],
+      
     },
     extend: {
       colors: {
+        textColor: "#ebedef",
         gray: {
           900: '#202225',
           800: '#2f3136',
