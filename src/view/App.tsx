@@ -6,7 +6,7 @@ import MyProfile from "./components/MyProfile";
 import Searchbar from "./components/Searchbar";
 import { tempServer, tempServer_dup } from "./components/TempData";
 import AppContext from "./components/AppContext";
-import Hamburger from "./components/HamburgerContext";
+import GlobalStateContext from "./components/GlobalStateContext";
 import useWindowDimensions from "./components/useWindowDimensions";
 import DataModelGithub from "../model/DataModelGithub";
 import DataModel from "../model/DataModel";
@@ -20,7 +20,7 @@ function App() {
     const { height, width } = useWindowDimensions();
     const [hamburgerClicked, setHamburgerClicked] = useState(true);
     const [selectedChannel, setSelectedChannel] = useState("0-0");
-    let [channelGroupId, channelId] = [0,0]
+    
     // const gist = "ab03cbf6009cff87e7fdcd1b309cf438";
     // const fileName = "randomjsontwo.json";
     // const model:DataModel = new DataModelGithub(gist, fileName);
@@ -32,23 +32,17 @@ function App() {
         setServer(serverList.current[0]);
     }, []);
 
-    useEffect(()=>{
-        setSelectedChannel("0-0")
-    }, [server])
 
     if (serverList.current == undefined) {
         return <h1>BT</h1>;
     }
 
-    let [newChannelGroupId,newChannelId] = selectedChannel.split("-").map((val) => +val);
-        channelGroupId = newChannelGroupId;
-        channelId = newChannelId;
-        console.log(channelGroupId, channelId)
+    let [channelGroupId, channelId] = selectedChannel.split("-").map((val) => +val);
 
     return (
         <AppContext.Provider value={{ server, setServer }}>
-            <Hamburger.Provider
-                value={{ hamburgerClicked, setHamburgerClicked }}
+            <GlobalStateContext.Provider
+                value={{ hamburgerClicked, setHamburgerClicked, selectedChannel, setSelectedChannel }}
             >
                 <div className="fixed flex flex-col h-screen bg-gray-900">
                     <div className="w-full bg-gray-900 flex-shrink-0 h-4 text-gray-500 font-[900] text-[12px] pl-2">
@@ -90,7 +84,7 @@ function App() {
                         </div>
                     </div>
                 </div>
-            </Hamburger.Provider>
+            </GlobalStateContext.Provider>
         </AppContext.Provider>
     );
 }

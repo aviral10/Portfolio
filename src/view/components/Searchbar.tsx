@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { SearchBarProps } from "./interfaces";
 import AppContext from "./AppContext";
-import Hamburger from "./HamburgerContext";
+import Hamburger from "./GlobalStateContext";
 
 const Searchbar = () => {
     const { hamburgerClicked, setHamburgerClicked } = useContext(Hamburger);

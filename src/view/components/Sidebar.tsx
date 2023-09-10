@@ -3,6 +3,7 @@ import { tempServer, tempServer_dup } from "./TempData";
 import { SideIconProps, SideBarProps } from "./interfaces";
 import AppContext from "./AppContext";
 import KeyGenerator from "../../model/KeyGenerator";
+import GlobalStateContext from "./GlobalStateContext";
 
 const Sidebar = (props: SideBarProps) => {
     const [isSelected, setIsSelected] = useState(0);
@@ -32,12 +33,14 @@ const Sidebar = (props: SideBarProps) => {
 };
 
 const SideIcon = (props: SideIconProps) => {
-    const { server, setServer } = useContext(AppContext);
+    const { server, setServer} = useContext(AppContext);
+    const globalStateContext = useContext(GlobalStateContext);
     return (
         <div className="relative flex items-center justify-center group">
             <a
                 onClick={() => {
                     setServer(props.server);
+                    globalStateContext.setSelectedChannel("0-0")
                     props.setSelectedState(props.index);
                 }}
             >

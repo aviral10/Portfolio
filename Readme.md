@@ -1,7 +1,6 @@
 - Move hamburger to context 
 - refactor code
 
-FIX PROBLEMS WHILE SWITCHING SERVERS 
 
 to include 
 - LinkedIn, Github, Socials
