@@ -37,7 +37,7 @@ const Messages = () => {
         },
     ];
     return (
-        <div className="flex flex-col flex-shrink-0 h-full w-full md:w-3/4 bg-gray-700 text-white shadow-lg">
+        <div className="flex flex-col flex-shrink-0 h-full w-full md:w-[70%] bg-gray-700 text-white shadow-lg">
             <ScrollableComponent
                 messageGroups={messageGroups}
             ></ScrollableComponent>

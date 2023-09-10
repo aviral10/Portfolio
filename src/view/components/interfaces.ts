@@ -30,6 +30,11 @@ export interface SideBarProps {
     serverList: Server[];
 }
 
+export interface ChannelProps{
+    selectedChannel:string, 
+    setSelectedChannel:(selectedChannel:string)=>void
+}
+
 export interface Message {
     sender: { name: string; icon: string };
     content: string;

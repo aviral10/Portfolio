@@ -10,6 +10,6 @@ export default class KeyGenerator {
     }
     public getNewKey() {
         this.counter += 1;
-        return Math.random().toString().substring(2) + this.counter.toString();
+        return Math.random().toString().substring(5) + this.counter.toString();
     }
 }

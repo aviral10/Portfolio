@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const MyProfile = () => {
     return (
-        <div className="hidden h-full md:flex flex-col md:w-1/4 bg-gray-800 text-white shadow-lg">
+        <div className="hidden h-full md:flex flex-col md:w-[30%] bg-gray-800 text-white shadow-lg">
             {/* <App8/> */}
         </div>
     );

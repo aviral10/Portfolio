@@ -11,7 +11,7 @@ import useWindowDimensions from "./components/useWindowDimensions";
 import DataModelGithub from "../model/DataModelGithub";
 import DataModel from "../model/DataModel";
 import DataModelJson from "../model/DataModelJson";
-import backupConfig from "../model/backupConfig.json";
+import backupConfig from "../model/fallbackConfig.json";
 import { Server } from "./components/interfaces";
 
 function App() {
@@ -19,7 +19,8 @@ function App() {
     const [server, setServer] = useState(tempServer);
     const { height, width } = useWindowDimensions();
     const [hamburgerClicked, setHamburgerClicked] = useState(true);
-
+    const [selectedChannel, setSelectedChannel] = useState("0-0");
+    console.log("Rendering App")
     // const gist = "ab03cbf6009cff87e7fdcd1b309cf438";
     // const fileName = "randomjsontwo.json";
     // const model:DataModel = new DataModelGithub(gist, fileName);
@@ -30,6 +31,10 @@ function App() {
         console.log(serverList.current);
         setServer(serverList.current[0]);
     }, []);
+
+    useEffect(()=>{
+        setSelectedChannel("0-0");
+    }, [server])
 
     if (serverList.current == undefined) {
         return <h1>BT</h1>;
@@ -46,7 +51,7 @@ function App() {
                     </div>
                     <div
                         className={`flex h-full ease-in-out duration-300 ${
-                            width >= 640 || hamburgerClicked
+                            width >= 768 || hamburgerClicked
                                 ? "translate-x-0"
                                 : "-translate-x-3/4"
                         }`}
@@ -55,7 +60,7 @@ function App() {
                         <Sidebar serverList={serverList.current} />
 
                         <div className="flex w-screen">
-                            <Channels />
+                            <Channels selectedChannel={selectedChannel} setSelectedChannel={setSelectedChannel} />
                             <div className="flex flex-col h-full w-full">
                                 <Searchbar />
                                 <div className="flex w-full h-full overflow-hidden">

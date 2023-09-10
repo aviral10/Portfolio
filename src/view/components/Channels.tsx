@@ -1,22 +1,29 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
     ChannelGroupProps,
     ChannelGroup,
     ChannelItemsProps,
+    ChannelProps,
 } from "./interfaces";
 import KeyGenerator from "../../model/KeyGenerator";
 import AppContext from "./AppContext";
 import { TfiAngleDoubleRight } from "react-icons/tfi";
 
-const Channels = () => {
+const Channels = (props: ChannelProps) => {
     //
     let { server, setServer } = useContext(AppContext);
-    let [selectedChannel, setSelectedChannel] = useState("0-0");
+    const selectedChannel = props.selectedChannel
+    const setSelectedChannel = props.setSelectedChannel
     let channelGroups: ChannelGroup[] = [];
     server.channelGroups.map((ChannelGroup) => {
         channelGroups.push(ChannelGroup);
     });
+    console.log("Channel Rendered", selectedChannel)
     //
+    useEffect(()=>{
+        setSelectedChannel("0-0")
+        console.log(selectedChannel)
+    }, [])
     return (
         <div
             className="min-w-[70%] md:min-w-max md:flex flex-col h-full w-1/5 bg-gray-800 text-white
@@ -82,8 +89,8 @@ const ChannelItems = (props: ChannelItemsProps) => {
                 key={KeyGenerator.getInstance().getNewKey()}
                 className={`p-1 flex space-x-2   rounded-md hover:text-gray-200 cursor-pointer
                             ${
-                                props.selectedChannel == itemIndex
-                                    ? "bg-gray-650 text-gray-500"
+                                props.selectedChannel === itemIndex
+                                    ? "bg-gray-650 text-gray-200"
                                     : "text-gray-500 hover:bg-gray-700"
                             }`}
                 onClick={() => {
