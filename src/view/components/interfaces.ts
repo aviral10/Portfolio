@@ -4,6 +4,15 @@ export interface Server {
     channelGroups: ChannelGroup[];
 }
 
+export interface ChannelsProps{
+    selectedChannel: string;
+    setSelectedChannel: (selectedChannel: string) => void;
+}
+
+export interface MessagesProps{
+    messageHeader: string[];
+    messageGroups: MessageGroup[]
+}
 export interface SideIconProps {
     index: number;
     server: Server;
@@ -14,6 +23,7 @@ export interface SideIconProps {
 }
 
 export interface ScrollableComponentProps {
+    messageHeader: string[];
     messageGroups: MessageGroup[];
 }
 
@@ -30,9 +40,10 @@ export interface SideBarProps {
     serverList: Server[];
 }
 
-export interface ChannelProps{
-    selectedChannel:string, 
-    setSelectedChannel:(selectedChannel:string)=>void
+export interface ChannelItem {
+    name: string,
+    messageHeader: string[];
+    messageGroups: MessageGroup[];
 }
 
 export interface Message {
@@ -52,20 +63,20 @@ export interface Hamburger {
 
 export interface ChannelGroup {
     name: string;
-    channelItems: string[];
+    channelItems: ChannelItem[];
     id: number;
 }
 
 export interface ChannelGroupProps {
     name: string;
-    items: string[];
+    items: ChannelItem[];
     id: number;
     selectedChannel: any;
     setSelectedChannel: (selectedChannel: string) => void;
 }
 
 export interface ChannelItemsProps {
-    items: string[];
+    items: ChannelItem[];
     parent: number;
     selectedChannel: string;
     setSelectedChannel: (selectedChannel: string) => void;

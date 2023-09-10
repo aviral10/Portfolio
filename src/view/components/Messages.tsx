@@ -1,8 +1,8 @@
 import React from "react";
 import KeyGenerator from "../../model/KeyGenerator";
-import { Message, MessageGroup, ScrollableComponentProps } from "./interfaces";
+import { Message, MessageGroup, MessagesProps, ScrollableComponentProps } from "./interfaces";
 
-const Messages = () => {
+const Messages = (props: MessagesProps) => {
     const message: Message = {
         sender: { name: "Aviral", icon: "aaa" },
         content: "This is sample content",
@@ -39,7 +39,8 @@ const Messages = () => {
     return (
         <div className="flex flex-col flex-shrink-0 h-full w-full md:w-[70%] bg-gray-700 text-white shadow-lg">
             <ScrollableComponent
-                messageGroups={messageGroups}
+                messageHeader={props.messageHeader}
+                messageGroups={props.messageGroups}
             ></ScrollableComponent>
         </div>
     );
@@ -50,10 +51,10 @@ const ScrollableComponent = (props: ScrollableComponentProps) => {
         <div className="w-full h-[90%] rounded-lg overflow-y-scroll">
             <div className="p-4">
                 <div className="w-[92vw] md:w-full flex flex-col items-center justify-center text-3xl font-semibold mb-4">
-                    <p>Welcome to</p>
-                    <p>Valhalla</p>
+                    <p>{props.messageHeader[0]}</p>
+                    <p>{props.messageHeader[1]}</p>
                     <p className="pt-3 text-sm font-extralight text-gray-500">
-                        This is a Subtitle
+                        {props.messageHeader[2]}
                     </p>
                 </div>
 

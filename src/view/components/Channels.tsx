@@ -3,23 +3,23 @@ import {
     ChannelGroupProps,
     ChannelGroup,
     ChannelItemsProps,
+    ChannelItem,
+    ChannelsProps,
 } from "./interfaces";
 import KeyGenerator from "../../model/KeyGenerator";
 import AppContext from "./AppContext";
 import { TfiAngleDoubleRight } from "react-icons/tfi";
 
-const Channels = () => {
+const Channels = (props: ChannelsProps) => {
     //
     let { server, setServer } = useContext(AppContext);
-    let [selectedChannel, setSelectedChannel] = useState("0-0");
+    let selectedChannel = props.selectedChannel;
+    let setSelectedChannel = props.setSelectedChannel;
     let channelGroups: ChannelGroup[] = [];
     server.channelGroups.map((ChannelGroup) => {
         channelGroups.push(ChannelGroup);
     });
-    //
-    useEffect(()=>{
-        setSelectedChannel("0-0")
-    }, [server])
+
     return (
         <div
             className="min-w-[70%] md:min-w-max md:flex flex-col h-full w-1/5 bg-gray-800 text-white
@@ -78,7 +78,7 @@ const ChannelGroup = (props: ChannelGroupProps) => {
 };
 
 const ChannelItems = (props: ChannelItemsProps) => {
-    return props.items.map((item: string, index: number) => {
+    return props.items.map((item: ChannelItem, index: number) => {
         let itemIndex = props.parent.toString() + "-" + index.toString();
         return (
             <div
@@ -94,7 +94,7 @@ const ChannelItems = (props: ChannelItemsProps) => {
                 }}
             >
                 <span className="text-md ml-2 text-gray-500 font-bold">@</span>
-                <p className="text-md pt-[0.5]">{item}</p>
+                <p className="text-md pt-[0.5]">{item.name}</p>
             </div>
         );
     });

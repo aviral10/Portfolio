@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import Sidebar from "./components/Sidebar";
 import Channels from "./components/Channels";
 import Messages from "./components/Messages";
@@ -16,9 +16,11 @@ import { Server } from "./components/interfaces";
 
 function App() {
     const serverList = useRef<Server[]>();
-    const [server, setServer] = useState(tempServer);
+    const [server, setServer] = useState<Server>(tempServer);
     const { height, width } = useWindowDimensions();
     const [hamburgerClicked, setHamburgerClicked] = useState(true);
+    const [selectedChannel, setSelectedChannel] = useState("0-0");
+    let [channelGroupId, channelId] = [0,0]
     // const gist = "ab03cbf6009cff87e7fdcd1b309cf438";
     // const fileName = "randomjsontwo.json";
     // const model:DataModel = new DataModelGithub(gist, fileName);
@@ -30,9 +32,18 @@ function App() {
         setServer(serverList.current[0]);
     }, []);
 
+    useEffect(()=>{
+        setSelectedChannel("0-0")
+    }, [server])
+
     if (serverList.current == undefined) {
         return <h1>BT</h1>;
     }
+
+    let [newChannelGroupId,newChannelId] = selectedChannel.split("-").map((val) => +val);
+        channelGroupId = newChannelGroupId;
+        channelId = newChannelId;
+        console.log(channelGroupId, channelId)
 
     return (
         <AppContext.Provider value={{ server, setServer }}>
@@ -54,11 +65,24 @@ function App() {
                         <Sidebar serverList={serverList.current} />
 
                         <div className="flex w-screen">
-                            <Channels />
+                            <Channels
+                                selectedChannel={selectedChannel}
+                                setSelectedChannel={setSelectedChannel}
+                            />
                             <div className="flex flex-col h-full w-full">
                                 <Searchbar />
                                 <div className="flex w-full h-full overflow-hidden">
-                                    <Messages />
+                                    <Messages
+                                        messageHeader={
+                                            server.channelGroups[channelGroupId]
+                                                .channelItems[channelId]
+                                                .messageHeader
+                                        }
+                                        messageGroups={
+                                            server.channelGroups[channelGroupId]
+                                                .channelItems[channelId].messageGroups
+                                        }
+                                    />
                                     <div className="bg-gray-700 w-1 h-full"></div>
                                     <MyProfile />
                                 </div>

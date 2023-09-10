@@ -8,24 +8,180 @@
                     "name": "General",
                     "id": 0,
                     "channelItems": [
-                        "About Me",
-                        "Skills",
-                        "Projects"
+                        {
+                            "name": "About Me",
+                            "messageHeader": [
+                                "Welcome to",
+                                "Valhalla",
+                                "This is a SUBTITLE"
+                            ],
+                            "messageGroups": [
+                                {
+                                    "date": "16 Aug, 2023",
+                                    "messages": [
+                                        {
+                                            "sender": {
+                                                "name": "Aviral",
+                                                "icon": "ICON_URL"
+                                            },
+                                            "content": "This is sample content",
+                                            "image": "IMAGE_URL"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Skills",
+                            "messageHeader": [
+                                "Welcome to",
+                                "Skills",
+                                "This is a SUBTITLE"
+                            ],
+                            "messageGroups": [
+                                {
+                                    "date": "16 Aug, 2023",
+                                    "messages": [
+                                        {
+                                            "sender": {
+                                                "name": "Aviral",
+                                                "icon": "ICON_URL"
+                                            },
+                                            "content": "This is sample content",
+                                            "image": "IMAGE_URL"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Projects",
+                            "messageHeader": [
+                                "Welcome to",
+                                "Projects",
+                                "This is a SUBTITLE"
+                            ],
+                            "messageGroups": [
+                                {
+                                    "date": "16 Aug, 2023",
+                                    "messages": [
+                                        {
+                                            "sender": {
+                                                "name": "Aviral",
+                                                "icon": "ICON_URL"
+                                            },
+                                            "content": "This is sample content",
+                                            "image": "IMAGE_URL"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
                     ]
                 },
                 {
-                    "name": "Chamber of Secrets",
+                    "name": "Professional",
                     "id": 1,
                     "channelItems": [
-                        "Academia",
-                        "Work Experience",
-                        "Achievements"
+                        {
+                            "name": "Achievements",
+                            "messageHeader": [
+                                "Welcome to",
+                                "Achievements",
+                                "This is a SUBTITLE"
+                            ],
+                            "messageGroups": [
+                                {
+                                    "date": "16 Aug, 2023",
+                                    "messages": [
+                                        {
+                                            "sender": {
+                                                "name": "Aviral",
+                                                "icon": "ICON_URL"
+                                            },
+                                            "content": "This is sample content",
+                                            "image": "IMAGE_URL"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Work Experience",
+                            "messageHeader": [
+                                "Welcome to",
+                                "Work Experience",
+                                "This is a SUBTITLE"
+                            ],
+                            "messageGroups": [
+                                {
+                                    "date": "16 Aug, 2023",
+                                    "messages": [
+                                        {
+                                            "sender": {
+                                                "name": "Aviral",
+                                                "icon": "ICON_URL"
+                                            },
+                                            "content": "This is sample content",
+                                            "image": "IMAGE_URL"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Achievements",
+                            "messageHeader": [
+                                "Welcome to",
+                                "Achievements",
+                                "This is a SUBTITLE"
+                            ],
+                            "messageGroups": [
+                                {
+                                    "date": "16 Aug, 2023",
+                                    "messages": [
+                                        {
+                                            "sender": {
+                                                "name": "Aviral",
+                                                "icon": "ICON_URL"
+                                            },
+                                            "content": "This is sample content",
+                                            "image": "IMAGE_URL"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
                     ]
                 },
                 {
                     "name": "Documents",
                     "id": 2,
-                    "channelItems": ["Resume"]
+                    "channelItems": [
+                        {
+                            "name": "Resume",
+                            "messageHeader": [
+                                "Welcome to",
+                                "Resume",
+                                "This is a SUBTITLE"
+                            ],
+                            "messageGroups": [
+                                {
+                                    "date": "16 Aug, 2023",
+                                    "messages": [
+                                        {
+                                            "sender": {
+                                                "name": "Aviral",
+                                                "icon": "ICON_URL"
+                                            },
+                                            "content": "This is sample content",
+                                            "image": "IMAGE_URL"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -36,12 +192,115 @@
                 {
                     "name": "Socials",
                     "id": 0,
-                    "channelItems": ["Discord", "Github", "LinkedIn", "Twitter"]
+                    "channelItems": [
+                        {
+                            "name": "Discord",
+                            "messageHeader": [
+                                "Welcome to",
+                                "Discord",
+                                "This is a SUBTITLE"
+                            ],
+                            "messageGroups": [
+                                {
+                                    "date": "16 Aug, 2023",
+                                    "messages": [
+                                        {
+                                            "sender": {
+                                                "name": "Aviral",
+                                                "icon": "ICON_URL"
+                                            },
+                                            "content": "This is sample content",
+                                            "image": "IMAGE_URL"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Github",
+                            "messageHeader": [
+                                "Welcome to",
+                                "Github",
+                                "This is a SUBTITLE"
+                            ],
+                            "messageGroups": [
+                                {
+                                    "date": "16 Aug, 2023",
+                                    "messages": [
+                                        {
+                                            "sender": {
+                                                "name": "Aviral",
+                                                "icon": "ICON_URL"
+                                            },
+                                            "content": "This is sample content",
+                                            "image": "IMAGE_URL"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "LinkedIn",
+                            "messageHeader": [
+                                "Welcome to",
+                                "LinkedIn",
+                                "This is a SUBTITLE"
+                            ],
+                            "messageGroups": [
+                                {
+                                    "date": "16 Aug, 2023",
+                                    "messages": [
+                                        {
+                                            "sender": {
+                                                "name": "Aviral",
+                                                "icon": "ICON_URL"
+                                            },
+                                            "content": "This is sample content",
+                                            "image": "IMAGE_URL"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "X (Twitter)",
+                            "messageHeader": [
+                                "Welcome to",
+                                "X",
+                                "This is a SUBTITLE"
+                            ],
+                            "messageGroups": [
+                                {
+                                    "date": "16 Aug, 2023",
+                                    "messages": [
+                                        {
+                                            "sender": {
+                                                "name": "Aviral",
+                                                "icon": "ICON_URL"
+                                            },
+                                            "content": "This is sample content",
+                                            "image": "IMAGE_URL"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "name": "Contact",
                     "id": 1,
-                    "channelItems": ["Mail-me"]
+                    "channelItems": [
+                        {
+                            "name": "Mail-Me",
+                            "messageHeader": [
+                                "Welcome to",
+                                "Mail-Me",
+                                "This is a SUBTITLE"
+                            ],
+                            "messageGroups": []
+                        }
+                    ]
                 }
             ]
         },
@@ -52,12 +311,41 @@
                 {
                     "name": "Writing",
                     "id": 0,
-                    "channelItems": ["Poetry", "Unfinished Novel"]
+                    "channelItems": [
+                        {
+                            "name": "Poetry",
+                            "messageHeader": [
+                                "Welcome to",
+                                "Poetry",
+                                "This is a SUBTITLE"
+                            ],
+                            "messageGroups": []
+                        },
+                        {
+                            "name": "Unfinished Novel",
+                            "messageHeader": [
+                                "Welcome to",
+                                "UF",
+                                "This is a SUBTITLE"
+                            ],
+                            "messageGroups": []
+                        }
+                    ]
                 },
                 {
                     "name": "Other",
                     "id": 1,
-                    "channelItems": ["Sketching"]
+                    "channelItems": [
+                        {
+                            "name": "Sketching",
+                            "messageHeader": [
+                                "Welcome to",
+                                "Sketching",
+                                "This is a SUBTITLE"
+                            ],
+                            "messageGroups": []
+                        }
+                    ]
                 }
             ]
         }
