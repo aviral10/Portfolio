@@ -3,39 +3,7 @@ import KeyGenerator from "../../model/KeyGenerator";
 import { Message, MessageGroup, MessagesProps, ScrollableComponentProps } from "./interfaces";
 
 const Messages = (props: MessagesProps) => {
-    const message: Message = {
-        sender: { name: "Aviral", icon: "aaa" },
-        content: "This is sample content",
-        image: "qqqqqweqweqwe",
-    };
-    const messageGroups: MessageGroup[] = [
-        {
-            date: "16th June, 2023",
-            messages: [
-                message,
-                message,
-                message,
-                message,
-                message,
-                message,
-                message,
-                message,
-                message,
-            ],
-        },
-        {
-            date: "17th June, 2023",
-            messages: [message, message, message, message, message],
-        },
-        {
-            date: "18th June, 2023",
-            messages: [message, message, message, message, message],
-        },
-        {
-            date: "19th June, 2023",
-            messages: [message, message, message, message, message],
-        },
-    ];
+    
     return (
         <div className="flex flex-col flex-shrink-0 h-full w-full md:w-[70%] bg-gray-700 text-white shadow-lg">
             <ScrollableComponent
@@ -87,7 +55,6 @@ const MessageGroup = (props: { messageGroup: MessageGroup }) => {
                 return (
                     <div
                         key={KeyGenerator.getInstance().getNewKey()}
-                        className=""
                     >
                         {message.content}
                     </div>
@@ -96,11 +63,5 @@ const MessageGroup = (props: { messageGroup: MessageGroup }) => {
         </div>
     );
 };
-
-// const MessageItem = (props: {date:string, message: Message}) => {
-//     return (
-
-//     )
-// }
 
 export default Messages;
