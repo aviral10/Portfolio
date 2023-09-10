@@ -3,27 +3,23 @@ import {
     ChannelGroupProps,
     ChannelGroup,
     ChannelItemsProps,
-    ChannelProps,
 } from "./interfaces";
 import KeyGenerator from "../../model/KeyGenerator";
 import AppContext from "./AppContext";
 import { TfiAngleDoubleRight } from "react-icons/tfi";
 
-const Channels = (props: ChannelProps) => {
+const Channels = () => {
     //
     let { server, setServer } = useContext(AppContext);
-    const selectedChannel = props.selectedChannel
-    const setSelectedChannel = props.setSelectedChannel
+    let [selectedChannel, setSelectedChannel] = useState("0-0");
     let channelGroups: ChannelGroup[] = [];
     server.channelGroups.map((ChannelGroup) => {
         channelGroups.push(ChannelGroup);
     });
-    console.log("Channel Rendered", selectedChannel)
     //
     useEffect(()=>{
         setSelectedChannel("0-0")
-        console.log(selectedChannel)
-    }, [])
+    }, [server])
     return (
         <div
             className="min-w-[70%] md:min-w-max md:flex flex-col h-full w-1/5 bg-gray-800 text-white

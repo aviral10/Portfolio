@@ -19,8 +19,6 @@ function App() {
     const [server, setServer] = useState(tempServer);
     const { height, width } = useWindowDimensions();
     const [hamburgerClicked, setHamburgerClicked] = useState(true);
-    const [selectedChannel, setSelectedChannel] = useState("0-0");
-    console.log("Rendering App")
     // const gist = "ab03cbf6009cff87e7fdcd1b309cf438";
     // const fileName = "randomjsontwo.json";
     // const model:DataModel = new DataModelGithub(gist, fileName);
@@ -31,10 +29,6 @@ function App() {
         console.log(serverList.current);
         setServer(serverList.current[0]);
     }, []);
-
-    useEffect(()=>{
-        setSelectedChannel("0-0");
-    }, [server])
 
     if (serverList.current == undefined) {
         return <h1>BT</h1>;
@@ -60,7 +54,7 @@ function App() {
                         <Sidebar serverList={serverList.current} />
 
                         <div className="flex w-screen">
-                            <Channels selectedChannel={selectedChannel} setSelectedChannel={setSelectedChannel} />
+                            <Channels />
                             <div className="flex flex-col h-full w-full">
                                 <Searchbar />
                                 <div className="flex w-full h-full overflow-hidden">
