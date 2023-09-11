@@ -1,7 +1,3 @@
-- Move hamburger to context 
-- refactor code
-
-
 to include 
 - LinkedIn, Github, Socials
 - Add resume sections

@@ -14,7 +14,7 @@ const Channels = (props: ChannelsProps) => {
     const { selectedChannel, setSelectedChannel } = props;
 
     return (
-        <div className="min-w-[70%] md:min-w-max md:flex flex-col h-full w-1/5 bg-gray-800 text-white rounded-tl-lg">
+        <div className="min-w-[70%] md:min-w-[200px] md:flex flex-shrink-0 flex-col h-full w-1/5 bg-gray-800 text-white rounded-tl-lg">
             <ChannelTitle name={server.name} />
             {server.channelGroups.map((channelGroup) => (
                 <ChannelGroup
@@ -84,7 +84,7 @@ const ChannelItems = (props: ChannelItemsProps) => (
                     <span className="text-md ml-2 text-gray-500 font-bold">
                         @
                     </span>
-                    <p className="text-md pt-[0.5]">{item.name}</p>
+                    <p className="text-md pt-[0.5]">{item.name.toLowerCase()}</p>
                 </div>
             );
         })}

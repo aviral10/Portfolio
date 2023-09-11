@@ -22,7 +22,9 @@ module.exports = {
           200: '#ebedef',
           100: '#f2f3f5',
         },
+        starblue: {100: '#6A5ACD'}
       },
+      
     },
   },
   plugins: [],
