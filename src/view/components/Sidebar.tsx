@@ -24,7 +24,7 @@ const Sidebar = (props: SideBarProps) => {
 
     return (
         <div
-            className="z-50 fixed left-0 h-full w-20 bg-gray-900 text-white shadow-lg
+            className="z-50 left-0 h-full w-20 bg-gray-900 text-white shadow-lg
                         md:flex flex-col flex-shrink-0 space-y-4 p-3"
         >
             {elements}

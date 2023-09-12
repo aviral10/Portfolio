@@ -45,7 +45,7 @@ function App() {
                     setSelectedChannel,
                 }}
             >
-                <div className="fixed flex flex-col h-screen bg-gray-900">
+                <div className="fixed md:block flex flex-col h-full bg-gray-900">
                     <div className="w-full bg-gray-900 flex-shrink-0 h-4 text-gray-500 font-[900] text-[12px] pl-2">
                         BigPanda
                     </div>
@@ -56,7 +56,7 @@ function App() {
                                 : "-translate-x-3/4"
                         }`}
                     >
-                        <div className={`left-0 h-full w-20 `}></div>
+                        
                         <Sidebar serverList={serverList.current} />
 
                         <div className="flex w-screen">
