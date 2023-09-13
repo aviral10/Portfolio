@@ -11,7 +11,7 @@ import KeyGenerator from "../../model/KeyGenerator";
 import { AiOutlineSend } from "react-icons/ai";
 const Messages = (props: MessagesProps) => {
     return (
-        <div className="flex flex-col flex-shrink-0 h-full w-full md:w-[70%] bg-gray-700 text-white shadow-lg">
+        <div className="flex flex-col flex-shrink-0 h-full w-full md:w-[75%] bg-gray-700 text-white shadow-lg">
             <ScrollableComponent
                 messageHeader={props.messageHeader}
                 messageGroups={props.messageGroups}
@@ -108,7 +108,7 @@ const MessageItemDefault = ({ message }: { message: Message }) => {
 
     return (
         <div className="flex pb-6 space-x-4">
-            <div className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0">
+            <div className="w-10 h-10 flex-shrink-0">
                 <img className="rounded-3xl" src={sender.icon} alt="AVATAR" />
             </div>
             <div className="flex flex-col">
@@ -128,7 +128,7 @@ const MessageItemFancy = ({ message }: { message: Message }) => {
 
     return (
         <div className="flex pb-6 space-x-4">
-            <div className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0">
+            <div className="w-10 h-10 flex-shrink-0">
                 <img className="rounded-3xl" src={sender.icon} alt="AVATAR" />
             </div>
             <div className="flex flex-col">
@@ -153,6 +153,17 @@ const MessageItem = (props: MessageItemProps) => {
     const CurrentMessageItem = MessageItemOfType[props.messageType];
     return <CurrentMessageItem message={props.message} />;
 };
+// const MessageItem2 = (props: MessageItemProps) => {
+//     const CurrentMessageItem = MessageItemOfType[props.messageType];
+//     return (
+//         <div className="flex pb-6 space-x-4">
+//             <div className="w-10 h-10 flex-shrink-0">
+//                 <img className="rounded-3xl" src={sender.icon} alt="AVATAR" />
+//             </div>
+//             <CurrentMessageItem message={props.message} />
+//         </div>
+//     )
+// };
 
 const Mention = ({
     content,
