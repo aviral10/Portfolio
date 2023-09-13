@@ -15,7 +15,7 @@ const Channels = (props: ChannelsProps) => {
     const { selectedChannel, setSelectedChannel } = props;
 
     return (
-        <div className="min-w-[70%] md:min-w-[200px] md:flex flex-shrink-0 flex-col h-full w-1/5 bg-gray-800 text-white rounded-tl-lg">
+        <div className="w-full md:min-w-[200px] md:flex flex-shrink-0 flex-col h-full md:w-1/5 bg-gray-800 text-white rounded-tl-lg">
             <ChannelTitle name={server.name} />
             {server.channelGroups.map((channelGroup) => (
                 <ChannelGroup

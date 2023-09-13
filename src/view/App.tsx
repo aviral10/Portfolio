@@ -34,7 +34,14 @@ function App() {
     const [channelGroupId, channelId] = selectedChannel
         .split("-")
         .map((val) => +val);
-        // console.log(server)
+    // console.log(server)
+    const toShowOrNotToShow = () => {
+        return width >= 768
+            ? "translate-x-0"
+            : hamburgerClicked
+            ? "-translate-x-32"
+            : "-translate-x-[calc(100%+80px)]";
+    };
     return (
         <AppContext.Provider value={{ server, setServer }}>
             <GlobalStateContext.Provider
@@ -45,26 +52,22 @@ function App() {
                     setSelectedChannel,
                 }}
             >
-                <div className="fixed md:block flex flex-col h-full bg-gray-900">
+                <div className="fixed md:block flex flex-col h-full w-full bg-gray-900">
                     <div className="w-full bg-gray-900 flex-shrink-0 h-4 text-gray-500 font-[900] text-[12px] pl-2">
                         BigPanda
                     </div>
-                    <div
-                        className={`flex h-full ease-in-out duration-300 ${
-                            width >= 768 || hamburgerClicked
-                                ? "translate-x-0"
-                                : "-translate-x-3/4"
-                        }`}
-                    >
-                        
+                    <div className={`flex h-full`}>
+
                         <Sidebar serverList={serverList.current} />
 
-                        <div className="flex w-screen">
+                        <div className="flex w-full">
                             <Channels
                                 selectedChannel={selectedChannel}
                                 setSelectedChannel={setSelectedChannel}
                             />
-                            <div className="flex flex-col h-full w-full">
+                            <div
+                                className={`flex flex-col h-full w-full ease-in-out duration-300 ${toShowOrNotToShow()}`}
+                            >
                                 <Searchbar />
                                 <div className="flex w-full h-full overflow-hidden">
                                     <Messages
