@@ -610,5 +610,14 @@
         }
       ]
     }
-  ]
+  ],
+  "myprofile":{
+    "image": "https://media.licdn.com/dms/image/D4D03AQHzTADPmelb0Q/profile-displayphoto-shrink_800_800/0/1670226849678?e=2147483647&v=beta&t=KF8aF5hu3Yneeu2GIgaBIdCoyQv_RnEgVVeYe2CVW2k",
+    "name": "Aviral Rana 🚀",
+    "title": "Aspiring Software Engineer 💻",
+    "status": "online",
+    "locationTitle": "Noida, India",
+    "locationLink": "https://goo.gl/maps/zsSAfW4XNR8VSM4S9",
+    "email": "aviral19rana@gmail.com"
+  }
 }

@@ -1,6 +1,20 @@
-import { ChannelGroup, ChannelItem, Message, MessageGroup, Server } from "../view/components/interfaces";
+import { ChannelGroup, ChannelItem, Message, MessageGroup, MyProfileTab, Server } from "../view/components/interfaces";
 
 export default class DataConverter {
+    
+    public convertMyProfileTab(obj: any): MyProfileTab {
+        let myProfile: MyProfileTab = {
+            image: obj.image,
+            name: obj.name,
+            title: obj.title,
+            status: obj.status,
+            locationTitle: obj.locationTitle,
+            locationLink: obj.locationLink,
+            email: obj.email
+        };
+        return myProfile;
+    }
+
     public convertServer(obj: any): Server {
         let server: Server = {
             name: obj.name,
