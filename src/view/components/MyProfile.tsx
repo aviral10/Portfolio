@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 
 const MyProfile = () => {
+    const image_url = "https://avatars.githubusercontent.com/u/61791180"
     return (
-        <div className="hidden h-full md:flex flex-col md:w-[30%] bg-gray-800 text-white shadow-lg">
-            {/* <App8/> */}
+        <div className="hidden h-full md:flex flex-col md:w-[30%] flex-shrink-0 bg-gray-800 text-white shadow-lg">
+            <div>
+                <img className="w-full" src={image_url} alt="PROFILE" />
+            </div>
         </div>
     );
 };

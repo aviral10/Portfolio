@@ -8,6 +8,7 @@ import {
 import KeyGenerator from "../../model/KeyGenerator";
 import AppContext from "./AppContext";
 import { TfiAngleDoubleRight } from "react-icons/tfi";
+import GlobalStateContext from "./GlobalStateContext";
 
 const Channels = (props: ChannelsProps) => {
     const { server } = useContext(AppContext);
@@ -60,35 +61,41 @@ const ChannelGroup = (props: ChannelGroupProps) => {
     );
 };
 
-const ChannelItems = (props: ChannelItemsProps) => (
-    <div>
-        {props.items.map((item: ChannelItem, index: number) => {
-            const itemIndex = `${props.parent}-${index}`;
+const ChannelItems = (props: ChannelItemsProps) => {
+    const { hamburgerClicked, setHamburgerClicked } = useContext(GlobalStateContext)
+    return (
+        <div>
+            {props.items.map((item: ChannelItem, index: number) => {
+                const itemIndex = `${props.parent}-${index}`;
 
-            const handleClick = () => {
-                props.setSelectedChannel(itemIndex);
-            };
+                const handleClick = () => {
+                    props.setSelectedChannel(itemIndex);
+                    setHamburgerClicked(false)
+                };
 
-            const isItemSelected = props.selectedChannel === itemIndex;
+                const isItemSelected = props.selectedChannel === itemIndex;
 
-            return (
-                <div
-                    key={KeyGenerator.getInstance().getNewKey()}
-                    className={`p-1 flex space-x-2 rounded-md hover:text-gray-200 cursor-pointer ${
-                        isItemSelected
-                            ? "bg-gray-650 text-gray-200"
-                            : "text-gray-500 hover:bg-gray-700"
-                    }`}
-                    onClick={handleClick}
-                >
-                    <span className="text-md ml-2 text-gray-500 font-bold">
-                        @
-                    </span>
-                    <p className="text-md pt-[0.5]">{item.name.toLowerCase()}</p>
-                </div>
-            );
-        })}
-    </div>
-);
+                return (
+                    <div
+                        key={KeyGenerator.getInstance().getNewKey()}
+                        className={`p-1 flex space-x-2 rounded-md hover:text-gray-200 cursor-pointer ${
+                            isItemSelected
+                                ? "bg-gray-650 text-gray-200"
+                                : "text-gray-500 hover:bg-gray-700"
+                        }`}
+                        onClick={handleClick}
+                    >
+                        <span className="text-md ml-2 text-gray-500 font-bold">
+                            @
+                        </span>
+                        <p className="text-md pt-[0.5]">
+                            {item.name.toLowerCase()}
+                        </p>
+                    </div>
+                );
+            })}
+        </div>
+    );
+};
 
 export default Channels;

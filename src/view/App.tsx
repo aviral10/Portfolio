@@ -34,7 +34,7 @@ function App() {
     const [channelGroupId, channelId] = selectedChannel
         .split("-")
         .map((val) => +val);
-        console.log(server)
+        // console.log(server)
     return (
         <AppContext.Provider value={{ server, setServer }}>
             <GlobalStateContext.Provider
