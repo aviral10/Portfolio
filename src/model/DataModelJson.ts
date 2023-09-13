@@ -1,4 +1,4 @@
-import { Server } from "../view/components/interfaces";
+import { MyProfileTab, Server } from "../view/components/interfaces";
 import DataConverter from "./DataConverter";
 import DataModel from "./DataModel";
 
@@ -14,4 +14,9 @@ export default class DataModelJson implements DataModel {
             return dataConverter.convertServer(server);
         });
     }
+    public getMyProfile(): MyProfileTab {
+        const dataConverter = new DataConverter();
+        return dataConverter.convertMyProfileTab(this.data.myprofile);   
+    }
+
 }

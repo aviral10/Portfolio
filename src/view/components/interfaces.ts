@@ -54,6 +54,16 @@ export interface MessagesProps {
     messageGroups: MessageGroup[];
 }
 
+export interface MyProfileTab {
+    image: string
+    name: string
+    title: string
+    status: string
+    locationTitle: string
+    locationLink: string
+    email: string
+}
+
 export interface ScrollableComponentProps {
     messageHeader: string[];
     messageGroups: MessageGroup[];
