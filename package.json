@@ -13,6 +13,7 @@
   "devDependencies": {
     "@babel/core": "^7.22.11",
     "@types/react-icons": "^3.0.0",
+    "buffer": "^6.0.3",
     "parcel": "^2.9.3",
     "process": "^0.11.10"
   },
@@ -21,8 +22,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
     "react-markdown": "^8.0.7",
-    "react-transition-group": "^4.4.5",
-    "remark-gfm": "^3.0.1"
+    "react-transition-group": "^4.4.5"
   },
   "browserslist": [
     "last 5 Chrome versions"

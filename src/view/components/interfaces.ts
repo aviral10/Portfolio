@@ -42,6 +42,13 @@ export interface Message {
     sender: { name: string; icon: string };
     content: string;
     image: string;
+    messageType: MessageType
+}
+
+export enum MessageType {
+    DEFAULT,
+    FANCY,
+    RESUME
 }
 
 export interface MessageGroup {
@@ -67,6 +74,7 @@ export interface MyProfileTab {
 export interface ScrollableComponentProps {
     messageHeader: string[];
     messageGroups: MessageGroup[];
+    endRef: React.MutableRefObject<any>
 }
 
 export interface SearchBarProps {

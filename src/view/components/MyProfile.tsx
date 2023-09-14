@@ -1,11 +1,14 @@
 import React, { useContext, useState } from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { IoHome } from "react-icons/io5";
-import { HiOutlineMail } from "react-icons/hi";
+import { HiOutlineMail, HiOutlineOfficeBuilding } from "react-icons/hi";
 import { GoCloudOffline } from "react-icons/go";
 import AppContext from "./AppContext";
 import backupConfig from "../../model/fallbackConfig.json";
 import DataModelJson from "../../model/DataModelJson";
+import Cat_8 from "../../assets/cat_8.gif"
+import Cat_9 from "../../assets/cat_9.gif"
+
 
 const MyProfile = () => {
     const model = new DataModelJson(backupConfig);
@@ -14,6 +17,7 @@ const MyProfile = () => {
     return (
         <div className="hidden p-4 h-full md:flex flex-col md:w-[25%] flex-shrink-0 bg-gray-800 text-white shadow-lg">
             <div className="w-full">
+                <img className="z-40 absolute w-24 -translate-y-10 -translate-x-4" src={Cat_8} alt="" />
                 <img
                     className="rounded-2xl"
                     src={myProfile.image}
@@ -71,7 +75,7 @@ const StatusBox = (props: StatusBox) => {
                     <AiOutlineClockCircle />
                 </div>
                 <div className="flex items-center h-8 w-8">
-                    <IoHome />
+                    <HiOutlineOfficeBuilding />
                 </div>
                 <div className="flex items-center h-8 w-8">
                     <HiOutlineMail />

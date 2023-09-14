@@ -34,7 +34,7 @@ function App() {
     const [channelGroupId, channelId] = selectedChannel
         .split("-")
         .map((val) => +val);
-    // console.log(server)
+    console.log(server)
     const toShowOrNotToShow = () => {
         return width >= 768
             ? "translate-x-0"
@@ -82,7 +82,7 @@ function App() {
                                                 .messageGroups
                                         }
                                     />
-                                    <div className="bg-gray-700 w-1 h-full"></div>
+                                    
                                     <MyProfile />
                                 </div>
                             </div>

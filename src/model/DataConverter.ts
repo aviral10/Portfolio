@@ -1,4 +1,4 @@
-import { ChannelGroup, ChannelItem, Message, MessageGroup, MyProfileTab, Server } from "../view/components/interfaces";
+import { ChannelGroup, ChannelItem, Message, MessageGroup, MessageType, MyProfileTab, Server} from "../view/components/interfaces";
 
 export default class DataConverter {
     
@@ -53,7 +53,7 @@ export default class DataConverter {
             date: obj.date,
             messages: obj.messages.map((message:any)=>
                 this.convertMessage(message)
-            )
+            ),
         }
         return messageGroup
     }
@@ -65,8 +65,18 @@ export default class DataConverter {
             sender: {
                 name: obj.sender.name,
                 icon: obj.sender.icon
-            }
+            },
+            messageType: this.convertMessageType(obj.messageType)
         }
         return message
+    }
+
+    public convertMessageType(messageType: any): MessageType {
+        let types:{[key: string]:MessageType} = {
+            "default": MessageType.DEFAULT,
+            "fancy": MessageType.FANCY,
+            "resume": MessageType.RESUME,
+        };
+        return types[messageType] || MessageType.DEFAULT;
     }
 }

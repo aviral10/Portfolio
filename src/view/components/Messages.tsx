@@ -1,27 +1,81 @@
-import React from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import {
     Message,
     MessageGroup,
+    MessageType,
     MessagesProps,
     ScrollableComponentProps,
 } from "./interfaces";
 import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
 import KeyGenerator from "../../model/KeyGenerator";
 import { AiOutlineSend } from "react-icons/ai";
+import Resume from "../../assets/AviralRana_Resume_SDE_v2.pdf";
+import GlobalStateContext from "./GlobalStateContext";
+import AppContext from "./AppContext";
+
+const scrollToBottom = (ref: any) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
+};
+
 const Messages = (props: MessagesProps) => {
+    const ref = useRef(null);
+    const firstRender = useRef(true)
+    const globalStateContext = useContext(GlobalStateContext);
+    const { server, setServer } = useContext(AppContext);
+    const messageGroupState = useState(props.messageGroups);
+    const [channelGroupId, channelId] = globalStateContext.selectedChannel
+        .split("-")
+        .map((val: string) => +val);
+
+    useEffect(()=>{
+        messageGroupState[1](props.messageGroups)
+        firstRender.current = true
+    }, [globalStateContext.selectedChannel])
+
+    useEffect(()=>{
+        firstRender.current?firstRender.current=false:scrollToBottom(ref);
+        console.log(firstRender)
+    }, [messageGroupState[0]])
+
     return (
         <div className="flex flex-col flex-shrink-0 h-full w-full md:w-[75%] bg-gray-700 text-white shadow-lg">
             <ScrollableComponent
                 messageHeader={props.messageHeader}
-                messageGroups={props.messageGroups}
+                messageGroups={messageGroupState[0]}
+                endRef={ref}
             />
-            <InputComponent onKeyDown={()=>{}} />
+            <InputComponent
+                onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                        console.log("pp");
+                        
+                        const sampleMessage: Message = {
+                            sender: {
+                                name: "Random Man",
+                                icon: "",
+                            },
+                            content: e.target.value,
+                            image: "",
+                            messageType: MessageType.DEFAULT,
+                        };
+                        const sample: MessageGroup = {
+                            date: "20 Aug, 2023",
+                            messages: [sampleMessage],
+                        };
+                        e.target.value = "";
+                        server.channelGroups[channelGroupId].channelItems[channelId].messageGroups.push(sample);
+                        let nw = structuredClone(
+                            server.channelGroups[channelGroupId].channelItems[channelId].messageGroups
+                        );
+                        messageGroupState[1](nw);
+                    }
+                }}
+            />
         </div>
     );
 };
 
-const InputComponent = ({onKeyDown}:{onKeyDown:()=>void}) => {
+const InputComponent = ({ onKeyDown }: { onKeyDown: (event: any) => void }) => {
     return (
         <div className="bottom-0 flex h-16 w-full ">
             <div className="flex bg-gray-650 w-full h-10 m-4 mt-0 p-2 rounded-xl">
@@ -61,6 +115,7 @@ const ScrollableComponent = (props: ScrollableComponentProps) => {
                         messageGroup={messageGroup}
                     />
                 ))}
+                <div ref={props.endRef} className="LAST"></div>
             </div>
         </div>
     );
@@ -86,7 +141,7 @@ const MessageGroup = (props: { messageGroup: MessageGroup }) => {
                 <MessageItem
                     key={KeyGenerator.getInstance().getNewKey()}
                     message={message}
-                    messageType={MessageType.FANCY}
+                    messageType={message.messageType}
                 />
             ))}
         </div>
@@ -98,72 +153,64 @@ export interface MessageItemProps {
     messageType: MessageType;
 }
 
-enum MessageType {
-    DEFAULT,
-    FANCY,
-}
-
 const MessageItemDefault = ({ message }: { message: Message }) => {
     const { sender, content, image } = message;
 
     return (
-        <div className="flex pb-6 space-x-4">
-            <div className="w-10 h-10 flex-shrink-0">
-                <img className="rounded-3xl" src={sender.icon} alt="AVATAR" />
-            </div>
-            <div className="flex flex-col">
-                <div className="text-cyan-400">{sender.name}</div>
-                <div className="text-xs md:text-base">
-                    <pre className="font-larry font-light break-words whitespace-pre-wrap overflow-x-auto">
-                        {content} <Mention content={"PP"} onClick={() => {}} />
-                    </pre>
-                </div>
-            </div>
+        <div className="text-xs md:text-base">
+            <pre className="font-larry font-light break-words whitespace-pre-wrap overflow-x-auto">
+                {content} <Mention content={"PP"} onClick={() => {}} />
+            </pre>
         </div>
     );
 };
 
 const MessageItemFancy = ({ message }: { message: Message }) => {
     const { sender, content, image } = message;
-
     return (
-        <div className="flex pb-6 space-x-4">
-            <div className="w-10 h-10 flex-shrink-0">
-                <img className="rounded-3xl" src={sender.icon} alt="AVATAR" />
-            </div>
-            <div className="flex flex-col">
-                <div className="text-cyan-400">{sender.name}</div>
-                <div className="bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
-                    <div className="font-larry font-light text-xs md:text-base">
-                        <Markdown children={content} />
-                        <Mention content={"PP"} onClick={() => {}} />
-                    </div>
-                </div>
+        <div className="bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
+            <div className="font-larry font-light text-xs md:text-base">
+                <Markdown children={content} />
+                <Mention content={"PP"} onClick={() => {}} />
             </div>
         </div>
+    );
+};
+
+const MessageItemResume = ({ message }: { message: Message }) => {
+    return (
+        <iframe
+            src={Resume}
+            frameBorder={"0"}
+            className="h-[575] md:h-[1058] w-full"
+        ></iframe>
     );
 };
 
 let MessageItemOfType = {
     [MessageType.DEFAULT]: MessageItemDefault,
     [MessageType.FANCY]: MessageItemFancy,
+    [MessageType.RESUME]: MessageItemResume,
 };
 
 const MessageItem = (props: MessageItemProps) => {
     const CurrentMessageItem = MessageItemOfType[props.messageType];
-    return <CurrentMessageItem message={props.message} />;
+    return (
+        <div className="flex pb-6 space-x-4">
+            <div className="w-10 h-10 flex-shrink-0">
+                <img
+                    className="rounded-3xl"
+                    src={props.message.sender.icon}
+                    alt="AVATAR"
+                />
+            </div>
+            <div className="flex flex-col w-full">
+                <div className="text-cyan-400">{props.message.sender.name}</div>
+                <CurrentMessageItem message={props.message} />
+            </div>
+        </div>
+    );
 };
-// const MessageItem2 = (props: MessageItemProps) => {
-//     const CurrentMessageItem = MessageItemOfType[props.messageType];
-//     return (
-//         <div className="flex pb-6 space-x-4">
-//             <div className="w-10 h-10 flex-shrink-0">
-//                 <img className="rounded-3xl" src={sender.icon} alt="AVATAR" />
-//             </div>
-//             <CurrentMessageItem message={props.message} />
-//         </div>
-//     )
-// };
 
 const Mention = ({
     content,

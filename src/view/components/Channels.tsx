@@ -9,6 +9,10 @@ import KeyGenerator from "../../model/KeyGenerator";
 import AppContext from "./AppContext";
 import { TfiAngleDoubleRight } from "react-icons/tfi";
 import GlobalStateContext from "./GlobalStateContext";
+import DiscordLogo from "../../assets/discord-logo-b.png"
+import Cat_B from "../../assets/cat_2.gif"
+import Cat_9 from "../../assets/cat_9.gif"
+import Cat_10 from "../../assets/cat_10.gif"
 
 const Channels = (props: ChannelsProps) => {
     const { server } = useContext(AppContext);
@@ -25,15 +29,34 @@ const Channels = (props: ChannelsProps) => {
                     setSelectedChannel={setSelectedChannel}
                 />
             ))}
+            <ChannelFooter/>
         </div>
     );
 };
 
 const ChannelTitle = (props: { name: string }) => (
-    <div className="flex items-center justify-center z-50 flex-shrink-0 shadow-sm shadow-gray-900 h-14 text-lg">
+    <div className="flex items-center p-4 z-50 flex-shrink-0 shadow-sm shadow-gray-900 h-14 text-lg">
         {props.name}
+        
     </div>
 );
+
+const ChannelFooter = ()=>{
+    return (
+        <div className="fixed flex bottom-0 w-full bg-gray-900 space-x-3 flex-shrink-0 h-14 p-2">
+            <img className="absolute w-24 rotate-12 -translate-y-[72px]" src={Cat_10} alt="" />
+            <img className="rounded-3xl" src={"https://avatars.githubusercontent.com/u/61791180"} alt="" />
+            <div className="flex flex-col">
+                <div className="text-sm font-medium">Koro Sensei</div>
+                <div className="text-xs">_bigppanda_</div>
+            </div>
+            <div className="flex items-center">
+                <img className="w-12 h-7 hover:animate-[spin_1s_ease-in-out_infinite]" src={DiscordLogo} alt="" />
+                <img className="w-14" src={Cat_9} alt="" />
+            </div>
+        </div>
+    )
+}
 
 const ChannelGroup = (props: ChannelGroupProps) => {
     const [showFull, setShowFull] = useState(true);
@@ -46,7 +69,7 @@ const ChannelGroup = (props: ChannelGroupProps) => {
         <div className="space-y-1 w-full p-4 pb-0 text-gray-500">
             <div className="flex text-xs font-bold pb-1">
                 <div
-                    className={`text-md transform transition-transform duration-150 ${null}`}
+                    className={`text-base transform transition-transform duration-150`}
                 ></div>
                 <TfiAngleDoubleRight className="mt-[1.5px] mr-1" />
                 {props.channelGroup.name.toUpperCase()}
@@ -85,10 +108,10 @@ const ChannelItems = (props: ChannelItemsProps) => {
                         }`}
                         onClick={handleClick}
                     >
-                        <span className="text-md ml-2 text-gray-500 font-bold">
+                        <span className="text-base ml-2 text-gray-500 font-bold">
                             @
                         </span>
-                        <p className="text-md pt-[0.5]">
+                        <p className="text-base pt-[0.5]">
                             {item.name.toLowerCase()}
                         </p>
                     </div>

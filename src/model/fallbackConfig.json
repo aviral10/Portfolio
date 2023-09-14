@@ -25,7 +25,8 @@
                         "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
                       "content": "Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists*",
-                      "image": "IMAGE_URL"
+                      "image": "IMAGE_URL",
+                      "messageType":"fancy"
                     },
                     {
                       "sender": {
@@ -401,10 +402,11 @@
                     {
                       "sender": {
                         "name": "Aviral",
-                        "icon": "ICON_URL"
+                        "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
                       "content": "This is sample content",
-                      "image": "IMAGE_URL"
+                      "image": "IMAGE_URL",
+                      "messageType":"resume"
                     }
                   ]
                 }
