@@ -4,12 +4,14 @@ import Channels from "./components/Channels";
 import Messages from "./components/Messages";
 import MyProfile from "./components/MyProfile";
 import Searchbar from "./components/Searchbar";
-import AppContext from "./components/AppContext";
+import AppContextType from "./components/AppContext";
 import GlobalStateContext from "./components/GlobalStateContext";
 import useWindowDimensions from "./components/useWindowDimensions";
 import DataModelJson from "../model/DataModelJson";
 import backupConfig from "../model/fallbackConfig.json";
 import { Server } from "./components/interfaces";
+import { splitIds } from "../model/utils";
+import AppContext from "./components/AppContext";
 
 function App() {
     // Refs
@@ -20,6 +22,8 @@ function App() {
     const { width } = useWindowDimensions();
     const [hamburgerClicked, setHamburgerClicked] = useState(true);
     const [selectedChannel, setSelectedChannel] = useState("0-0");
+    const [selectedServer, setSelectedServer] = useState(0);
+
 
     useEffect(() => {
         const model = new DataModelJson(backupConfig);
@@ -31,10 +35,7 @@ function App() {
         return <h1>Loading...</h1>;
     }
 
-    const [channelGroupId, channelId] = selectedChannel
-        .split("-")
-        .map((val) => +val);
-    console.log(server)
+    const [channelGroupId, channelId] = splitIds(selectedChannel)
     const toShowOrNotToShow = () => {
         return width >= 768
             ? "translate-x-0"
@@ -43,13 +44,15 @@ function App() {
             : "-translate-x-[calc(100%+80px)]";
     };
     return (
-        <AppContext.Provider value={{ server, setServer }}>
+        <AppContext.Provider value={{ server: server, setServer: setServer, serverList: serverList.current}}>
             <GlobalStateContext.Provider
                 value={{
                     hamburgerClicked,
                     setHamburgerClicked,
                     selectedChannel,
                     setSelectedChannel,
+                    selectedServer,
+                    setSelectedServer
                 }}
             >
                 <div className="fixed md:block flex flex-col h-full w-full bg-gray-900">
@@ -58,7 +61,7 @@ function App() {
                     </div>
                     <div className={`flex h-full`}>
 
-                        <Sidebar serverList={serverList.current} />
+                        <Sidebar serverList={serverList.current} selectedServer={selectedServer} setSelectedServer={setSelectedServer} />
 
                         <div className="flex w-full">
                             <Channels

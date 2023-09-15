@@ -1,12 +1,10 @@
 import React, { useContext, useState } from "react";
-import { tempServer, tempServer_dup } from "./TempData";
 import { SideIconProps, SideBarProps } from "./interfaces";
 import AppContext from "./AppContext";
 import KeyGenerator from "../../model/KeyGenerator";
 import GlobalStateContext from "./GlobalStateContext";
 
 const Sidebar = (props: SideBarProps) => {
-    const [isSelected, setIsSelected] = useState(0);
 
     const elements = props.serverList.map((server, index) => {
         return (
@@ -16,8 +14,8 @@ const Sidebar = (props: SideBarProps) => {
                 image={server.image}
                 server={server}
                 tooltip={server.name}
-                isSelectedState={isSelected}
-                setSelectedState={setIsSelected}
+                isSelectedState={props.selectedServer}
+                setSelectedState={props.setSelectedServer}
             />
         );
     });

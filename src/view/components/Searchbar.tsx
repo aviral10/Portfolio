@@ -2,13 +2,12 @@ import React, { useContext } from "react";
 import GlobalStateContext from "./GlobalStateContext";
 import AppContext from "./AppContext";
 import Cat_4 from "../../assets/cat_4.gif"
+import { splitIds } from "../../model/utils";
 
 const Searchbar = () => {
     const { server } = useContext(AppContext);
     const globalStateContext = useContext(GlobalStateContext);
-    const [channelGroupId, channelId] = globalStateContext.selectedChannel
-        .split("-")
-        .map((val: string) => +val);
+    const [channelGroupId, channelId] = splitIds(globalStateContext.selectedChannel)
     return (
         <div className="flex items-center space-x-3 z-40 p-4 flex-shrink-0 shadow-sm shadow-gray-900 h-14 bg-gray-800">
             <HamburgerIcon />
@@ -21,7 +20,7 @@ const Searchbar = () => {
                 }
             </p>
             <div className="w-14">
-                <img className="" src={Cat_4} alt="" />
+                <img className="hover:scale-110" src={Cat_4} alt="" />
             </div>
         </div>
     );

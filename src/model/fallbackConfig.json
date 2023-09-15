@@ -24,7 +24,7 @@
                         "name": "Aviral",
                         "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
-                      "content": "Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists*",
+                      "content": "Sample content \n\n *dotted lists* Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists*",
                       "image": "IMAGE_URL",
                       "messageType":"fancy"
                     },
@@ -33,176 +33,7 @@
                         "name": "Aviral",
                         "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
-                      "content": "This is sample content",
-                      "image": "IMAGE_URL"
-                    }
-                  ]
-                },
-                {
-                  "date": "16 Aug, 2023",
-                  "messages": [
-                    {
-                      "sender": {
-                        "name": "Aviral",
-                        "icon": "https://avatars.githubusercontent.com/u/61791180"
-                      },
-                      "content": "# Header *dotted lists*",
-                      "image": "IMAGE_URL"
-                    },
-                    {
-                      "sender": {
-                        "name": "Aviral",
-                        "icon": "https://avatars.githubusercontent.com/u/61791180"
-                      },
-                      "content": "This is sample content",
-                      "image": "IMAGE_URL"
-                    }
-                  ]
-                },
-                {
-                  "date": "16 Aug, 2023",
-                  "messages": [
-                    {
-                      "sender": {
-                        "name": "Aviral",
-                        "icon": "https://avatars.githubusercontent.com/u/61791180"
-                      },
-                      "content": "# Header *dotted lists*",
-                      "image": "IMAGE_URL"
-                    },
-                    {
-                      "sender": {
-                        "name": "Aviral",
-                        "icon": "https://avatars.githubusercontent.com/u/61791180"
-                      },
-                      "content": "This is sample content",
-                      "image": "IMAGE_URL"
-                    }
-                  ]
-                },
-                {
-                  "date": "16 Aug, 2023",
-                  "messages": [
-                    {
-                      "sender": {
-                        "name": "Aviral",
-                        "icon": "https://avatars.githubusercontent.com/u/61791180"
-                      },
-                      "content": "# Header *dotted lists*",
-                      "image": "IMAGE_URL"
-                    },
-                    {
-                      "sender": {
-                        "name": "Aviral",
-                        "icon": "https://avatars.githubusercontent.com/u/61791180"
-                      },
-                      "content": "This is sample content",
-                      "image": "IMAGE_URL"
-                    }
-                  ]
-                },
-                {
-                  "date": "16 Aug, 2023",
-                  "messages": [
-                    {
-                      "sender": {
-                        "name": "Aviral",
-                        "icon": "https://avatars.githubusercontent.com/u/61791180"
-                      },
-                      "content": "# Header *dotted lists*",
-                      "image": "IMAGE_URL"
-                    },
-                    {
-                      "sender": {
-                        "name": "Aviral",
-                        "icon": "https://avatars.githubusercontent.com/u/61791180"
-                      },
-                      "content": "This is sample content",
-                      "image": "IMAGE_URL"
-                    }
-                  ]
-                },
-                {
-                  "date": "16 Aug, 2023",
-                  "messages": [
-                    {
-                      "sender": {
-                        "name": "Aviral",
-                        "icon": "https://avatars.githubusercontent.com/u/61791180"
-                      },
-                      "content": "# Header *dotted lists*",
-                      "image": "IMAGE_URL"
-                    },
-                    {
-                      "sender": {
-                        "name": "Aviral",
-                        "icon": "https://avatars.githubusercontent.com/u/61791180"
-                      },
-                      "content": "This is sample content",
-                      "image": "IMAGE_URL"
-                    }
-                  ]
-                },
-                {
-                  "date": "16 Aug, 2023",
-                  "messages": [
-                    {
-                      "sender": {
-                        "name": "Aviral",
-                        "icon": "https://avatars.githubusercontent.com/u/61791180"
-                      },
-                      "content": "# Header *dotted lists*",
-                      "image": "IMAGE_URL"
-                    },
-                    {
-                      "sender": {
-                        "name": "Aviral",
-                        "icon": "https://avatars.githubusercontent.com/u/61791180"
-                      },
-                      "content": "This is sample content",
-                      "image": "IMAGE_URL"
-                    }
-                  ]
-                },
-                {
-                  "date": "16 Aug, 2023",
-                  "messages": [
-                    {
-                      "sender": {
-                        "name": "Aviral",
-                        "icon": "https://avatars.githubusercontent.com/u/61791180"
-                      },
-                      "content": "# Header *dotted lists*",
-                      "image": "IMAGE_URL"
-                    },
-                    {
-                      "sender": {
-                        "name": "Aviral",
-                        "icon": "https://avatars.githubusercontent.com/u/61791180"
-                      },
-                      "content": "This is sample content",
-                      "image": "IMAGE_URL"
-                    }
-                  ]
-                },
-
-                {
-                  "date": "16 Aug, 2023",
-                  "messages": [
-                    {
-                      "sender": {
-                        "name": "Aviral",
-                        "icon": "https://avatars.githubusercontent.com/u/61791180"
-                      },
-                      "content": "# Header *dotted lists*",
-                      "image": "IMAGE_URL"
-                    },
-                    {
-                      "sender": {
-                        "name": "Aviral",
-                        "icon": "https://avatars.githubusercontent.com/u/61791180"
-                      },
-                      "content": "This is sample content",
+                      "content": "This is sample content asdasd",
                       "image": "IMAGE_URL"
                     }
                   ]
@@ -314,10 +145,10 @@
           "id": 1,
           "channelItems": [
             {
-              "name": "Achievements",
+              "name": "Academic",
               "messageHeader": [
                 "Welcome to",
-                "Achievements",
+                "Academic",
                 "This is a SUBTITLE"
               ],
               "messageGroups": [

@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
-import { IoHome } from "react-icons/io5";
 import { HiOutlineMail, HiOutlineOfficeBuilding } from "react-icons/hi";
 import { GoCloudOffline } from "react-icons/go";
 import AppContext from "./AppContext";
@@ -17,7 +16,7 @@ const MyProfile = () => {
     return (
         <div className="hidden p-4 h-full md:flex flex-col md:w-[25%] flex-shrink-0 bg-gray-800 text-white shadow-lg">
             <div className="w-full">
-                <img className="z-40 absolute w-24 -translate-y-10 -translate-x-4" src={Cat_8} alt="" />
+                <img className="z-40 absolute w-24 -translate-y-10 -translate-x-4 hover:scale-110" src={Cat_8} alt="" />
                 <img
                     className="rounded-2xl"
                     src={myProfile.image}

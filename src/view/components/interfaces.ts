@@ -1,6 +1,7 @@
-export interface AppContext {
-    server: Server;
+export interface AppContextType {
+    server: Server
     setServer: (server: Server) => void;
+    serverList: Server[]
 }
 
 export interface ChannelGroup {
@@ -89,6 +90,8 @@ export interface Server {
 
 export interface SideBarProps {
     serverList: Server[];
+    selectedServer: number;
+    setSelectedServer: (selectedServer: number) => void
 }
 
 export interface SideIconProps {

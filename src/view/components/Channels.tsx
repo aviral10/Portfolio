@@ -44,15 +44,15 @@ const ChannelTitle = (props: { name: string }) => (
 const ChannelFooter = ()=>{
     return (
         <div className="fixed flex bottom-0 w-full bg-gray-900 space-x-3 flex-shrink-0 h-14 p-2">
-            <img className="absolute w-24 rotate-12 -translate-y-[72px]" src={Cat_10} alt="" />
+            <img className="absolute w-24 rotate-12 -translate-y-[72px] hover:scale-110" src={Cat_10} alt="" />
             <img className="rounded-3xl" src={"https://avatars.githubusercontent.com/u/61791180"} alt="" />
             <div className="flex flex-col">
                 <div className="text-sm font-medium">Koro Sensei</div>
                 <div className="text-xs">_bigppanda_</div>
             </div>
             <div className="flex items-center">
-                <img className="w-12 h-7 hover:animate-[spin_1s_ease-in-out_infinite]" src={DiscordLogo} alt="" />
-                <img className="w-14" src={Cat_9} alt="" />
+                <img className="w-12 h-7 hover:animate-[spin_0.5s_ease-in-out]" src={DiscordLogo} alt="" />
+                <img className="w-10 md:w-14 hover:scale-110" src={Cat_9} alt="" />
             </div>
         </div>
     )

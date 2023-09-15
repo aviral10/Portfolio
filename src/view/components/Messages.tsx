@@ -11,6 +11,7 @@ import KeyGenerator from "../../model/KeyGenerator";
 import { AiOutlineSend } from "react-icons/ai";
 import Resume from "../../assets/AviralRana_Resume_SDE_v2.pdf";
 import GlobalStateContext from "./GlobalStateContext";
+import { splitIds } from "../../model/utils";
 import AppContext from "./AppContext";
 
 const scrollToBottom = (ref: any) => {
@@ -22,32 +23,33 @@ const Messages = (props: MessagesProps) => {
     const firstRender = useRef(true)
     const globalStateContext = useContext(GlobalStateContext);
     const { server, setServer } = useContext(AppContext);
+
+    // Typescript was complaining here :(
     const messageGroupState = useState(props.messageGroups);
-    const [channelGroupId, channelId] = globalStateContext.selectedChannel
-        .split("-")
-        .map((val: string) => +val);
+    const messageGroup = messageGroupState[0]
+    const setMessageGroup = messageGroupState[1]
+
+    const [channelGroupId, channelId] = splitIds(globalStateContext.selectedChannel)
 
     useEffect(()=>{
-        messageGroupState[1](props.messageGroups)
+        setMessageGroup(props.messageGroups)
         firstRender.current = true
     }, [globalStateContext.selectedChannel])
 
     useEffect(()=>{
         firstRender.current?firstRender.current=false:scrollToBottom(ref);
-        console.log(firstRender)
-    }, [messageGroupState[0]])
+    }, [messageGroup])
 
     return (
         <div className="flex flex-col flex-shrink-0 h-full w-full md:w-[75%] bg-gray-700 text-white shadow-lg">
             <ScrollableComponent
                 messageHeader={props.messageHeader}
-                messageGroups={messageGroupState[0]}
+                messageGroups={messageGroup}
                 endRef={ref}
             />
             <InputComponent
                 onKeyDown={(e) => {
                     if (e.key === "Enter") {
-                        console.log("pp");
                         
                         const sampleMessage: Message = {
                             sender: {
@@ -67,7 +69,7 @@ const Messages = (props: MessagesProps) => {
                         let nw = structuredClone(
                             server.channelGroups[channelGroupId].channelItems[channelId].messageGroups
                         );
-                        messageGroupState[1](nw);
+                        setMessageGroup(nw);
                     }
                 }}
             />
@@ -155,11 +157,13 @@ export interface MessageItemProps {
 
 const MessageItemDefault = ({ message }: { message: Message }) => {
     const { sender, content, image } = message;
+    const { server, setServer} = useContext(AppContext);
+    const globalStateContext = useContext(GlobalStateContext);
 
     return (
         <div className="text-xs md:text-base">
             <pre className="font-larry font-light break-words whitespace-pre-wrap overflow-x-auto">
-                {content} <Mention content={"PP"} onClick={() => {}} />
+                {content} <Mention content={"PP"} selectedChannel={"1-0-1"} />
             </pre>
         </div>
     );
@@ -171,7 +175,7 @@ const MessageItemFancy = ({ message }: { message: Message }) => {
         <div className="bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
             <div className="font-larry font-light text-xs md:text-base">
                 <Markdown children={content} />
-                <Mention content={"PP"} onClick={() => {}} />
+                <Mention content={"PP"} selectedChannel={"1-0-1"} />
             </div>
         </div>
     );
@@ -181,7 +185,6 @@ const MessageItemResume = ({ message }: { message: Message }) => {
     return (
         <iframe
             src={Resume}
-            frameBorder={"0"}
             className="h-[575] md:h-[1058] w-full"
         ></iframe>
     );
@@ -214,15 +217,22 @@ const MessageItem = (props: MessageItemProps) => {
 
 const Mention = ({
     content,
-    onClick,
+    selectedChannel
 }: {
     content: string;
-    onClick?: () => void;
+    selectedChannel: string
 }) => {
+    const { server, setServer, serverList} = useContext(AppContext);
+    const globalStateContext = useContext(GlobalStateContext);
+    const [serverId, channelGroupId, channelId] = splitIds(selectedChannel)
     return (
         <span
             className="bg-starblue-100 opacity-75 rounded-md font-medium pr-1 cursor-pointer"
-            onClick={onClick}
+            onClick={()=>{
+                setServer(serverList[serverId])
+                globalStateContext.setSelectedChannel(channelGroupId+"-"+channelId)
+                globalStateContext.setSelectedServer(serverId)
+            }}
         >
             {" @ " + content}
         </span>
