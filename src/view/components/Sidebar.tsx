@@ -38,7 +38,7 @@ const SideIcon = (props: SideIconProps) => {
             <a
                 onClick={() => {
                     setServer(props.server);
-                    globalStateContext.setSelectedChannel("0-0")
+                    globalStateContext.setSelectedChannel("0-0-0")
                     props.setSelectedState(props.index);
                 }}
             >

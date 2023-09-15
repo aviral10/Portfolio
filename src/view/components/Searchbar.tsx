@@ -7,7 +7,7 @@ import { splitIds } from "../../model/utils";
 const Searchbar = () => {
     const { server } = useContext(AppContext);
     const globalStateContext = useContext(GlobalStateContext);
-    const [channelGroupId, channelId] = splitIds(globalStateContext.selectedChannel)
+    const [serverId, channelGroupId, channelId] = splitIds(globalStateContext.selectedChannel)
     return (
         <div className="flex items-center space-x-3 z-40 p-4 flex-shrink-0 shadow-sm shadow-gray-900 h-14 bg-gray-800">
             <HamburgerIcon />

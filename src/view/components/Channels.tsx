@@ -85,11 +85,14 @@ const ChannelGroup = (props: ChannelGroupProps) => {
 };
 
 const ChannelItems = (props: ChannelItemsProps) => {
-    const { hamburgerClicked, setHamburgerClicked } = useContext(GlobalStateContext)
+    const { hamburgerClicked, setHamburgerClicked, selectedChannel,
+        setSelectedChannel,
+        selectedServer,
+        setSelectedServer } = useContext(GlobalStateContext)
     return (
         <div>
             {props.items.map((item: ChannelItem, index: number) => {
-                const itemIndex = `${props.parent}-${index}`;
+                const itemIndex = `${selectedServer}-${props.parent}-${index}`;
 
                 const handleClick = () => {
                     props.setSelectedChannel(itemIndex);

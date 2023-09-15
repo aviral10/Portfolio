@@ -29,7 +29,7 @@ const Messages = (props: MessagesProps) => {
     const messageGroup = messageGroupState[0]
     const setMessageGroup = messageGroupState[1]
 
-    const [channelGroupId, channelId] = splitIds(globalStateContext.selectedChannel)
+    const [serverId, channelGroupId, channelId] = splitIds(globalStateContext.selectedChannel)
 
     useEffect(()=>{
         setMessageGroup(props.messageGroups)
@@ -230,7 +230,7 @@ const Mention = ({
             className="bg-starblue-100 opacity-75 rounded-md font-medium pr-1 cursor-pointer"
             onClick={()=>{
                 setServer(serverList[serverId])
-                globalStateContext.setSelectedChannel(channelGroupId+"-"+channelId)
+                globalStateContext.setSelectedChannel(serverId+"-"+channelGroupId+"-"+channelId)
                 globalStateContext.setSelectedServer(serverId)
             }}
         >

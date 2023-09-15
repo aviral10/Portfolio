@@ -4,7 +4,6 @@ import Channels from "./components/Channels";
 import Messages from "./components/Messages";
 import MyProfile from "./components/MyProfile";
 import Searchbar from "./components/Searchbar";
-import AppContextType from "./components/AppContext";
 import GlobalStateContext from "./components/GlobalStateContext";
 import useWindowDimensions from "./components/useWindowDimensions";
 import DataModelJson from "../model/DataModelJson";
@@ -21,7 +20,7 @@ function App() {
     const [server, setServer] = useState<Server | undefined>(undefined);
     const { width } = useWindowDimensions();
     const [hamburgerClicked, setHamburgerClicked] = useState(true);
-    const [selectedChannel, setSelectedChannel] = useState("0-0");
+    const [selectedChannel, setSelectedChannel] = useState("0-0-0");
     const [selectedServer, setSelectedServer] = useState(0);
 
 
@@ -35,7 +34,7 @@ function App() {
         return <h1>Loading...</h1>;
     }
 
-    const [channelGroupId, channelId] = splitIds(selectedChannel)
+    const [serverId, channelGroupId, channelId] = splitIds(selectedChannel)
     const toShowOrNotToShow = () => {
         return width >= 768
             ? "translate-x-0"
