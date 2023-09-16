@@ -3,9 +3,9 @@ export default class KeyGenerator {
     private counter: number = 0;
     private constructor() {}
     public static getInstance(): KeyGenerator {
-        if (!KeyGenerator.instance) {
-            KeyGenerator.instance = new KeyGenerator();
-        }
+        !KeyGenerator.instance
+            ? (KeyGenerator.instance = new KeyGenerator())
+            : null;
         return KeyGenerator.instance;
     }
     public getNewKey() {

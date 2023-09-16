@@ -9,10 +9,11 @@ import {
 import Markdown from "react-markdown";
 import KeyGenerator from "../../model/KeyGenerator";
 import { AiOutlineSend } from "react-icons/ai";
-import Resume from "../../assets/AviralRana_Resume_SDE_v2.pdf";
+import Resume from "../../assets/AviralRana_Resume.pdf";
 import GlobalStateContext from "./GlobalStateContext";
 import { splitIds } from "../../model/utils";
 import AppContext from "./AppContext";
+import IdStore from "../../model/IdStore";
 
 const scrollToBottom = (ref: any) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -20,25 +21,29 @@ const scrollToBottom = (ref: any) => {
 
 const Messages = (props: MessagesProps) => {
     const ref = useRef(null);
-    const firstRender = useRef(true)
+    const firstRender = useRef(true);
     const globalStateContext = useContext(GlobalStateContext);
     const { server, setServer } = useContext(AppContext);
 
     // Typescript was complaining here :(
     const messageGroupState = useState(props.messageGroups);
-    const messageGroup = messageGroupState[0]
-    const setMessageGroup = messageGroupState[1]
+    const messageGroup = messageGroupState[0];
+    const setMessageGroup = messageGroupState[1];
 
-    const [serverId, channelGroupId, channelId] = splitIds(globalStateContext.selectedChannel)
+    const [serverId, channelGroupId, channelId] = splitIds(
+        globalStateContext.selectedChannel
+    );
 
-    useEffect(()=>{
-        setMessageGroup(props.messageGroups)
-        firstRender.current = true
-    }, [globalStateContext.selectedChannel])
+    useEffect(() => {
+        setMessageGroup(props.messageGroups);
+        firstRender.current = true;
+    }, [globalStateContext.selectedChannel]);
 
-    useEffect(()=>{
-        firstRender.current?firstRender.current=false:scrollToBottom(ref);
-    }, [messageGroup])
+    useEffect(() => {
+        firstRender.current
+            ? (firstRender.current = false)
+            : scrollToBottom(ref);
+    }, [messageGroup]);
 
     return (
         <div className="flex flex-col flex-shrink-0 h-full w-full md:w-[75%] bg-gray-700 text-white shadow-lg">
@@ -50,24 +55,15 @@ const Messages = (props: MessagesProps) => {
             <InputComponent
                 onKeyDown={(e) => {
                     if (e.key === "Enter") {
-                        
-                        const sampleMessage: Message = {
-                            sender: {
-                                name: "Random Man",
-                                icon: "",
-                            },
-                            content: e.target.value,
-                            image: "",
-                            messageType: MessageType.DEFAULT,
-                        };
-                        const sample: MessageGroup = {
-                            date: "20 Aug, 2023",
-                            messages: [sampleMessage],
-                        };
+                        let sample = createUserMessage(e.target.value);
                         e.target.value = "";
-                        server.channelGroups[channelGroupId].channelItems[channelId].messageGroups.push(sample);
+                        server.channelGroups[channelGroupId]
+                        .channelItems[channelId]
+                        .messageGroups.push(sample);
                         let nw = structuredClone(
-                            server.channelGroups[channelGroupId].channelItems[channelId].messageGroups
+                            server.channelGroups[channelGroupId]
+                            .channelItems[channelId]
+                            .messageGroups
                         );
                         setMessageGroup(nw);
                     }
@@ -94,6 +90,22 @@ const InputComponent = ({ onKeyDown }: { onKeyDown: (event: any) => void }) => {
             </div>
         </div>
     );
+};
+
+const createUserMessage = (content: string): MessageGroup => {
+    const message: Message = {
+        sender: {
+            name: "Random Man",
+            icon: "",
+        },
+        content: content,
+        image: "",
+        messageType: MessageType.DEFAULT,
+    };
+    return {
+        date: "20 Aug, 2023",
+        messages: [message],
+    };
 };
 
 const ScrollableComponent = (props: ScrollableComponentProps) => {
@@ -157,13 +169,16 @@ export interface MessageItemProps {
 
 const MessageItemDefault = ({ message }: { message: Message }) => {
     const { sender, content, image } = message;
-    const { server, setServer} = useContext(AppContext);
+    const { server, setServer } = useContext(AppContext);
     const globalStateContext = useContext(GlobalStateContext);
-
     return (
         <div className="text-xs md:text-base">
             <pre className="font-larry font-light break-words whitespace-pre-wrap overflow-x-auto">
-                {content} <Mention content={"PP"} selectedChannel={"1-0-1"} />
+                {parseMessage(content).map((element) => {
+                    return element.type == Mention
+                        ? element
+                        : element.props.children;
+                })}
             </pre>
         </div>
     );
@@ -172,10 +187,29 @@ const MessageItemDefault = ({ message }: { message: Message }) => {
 const MessageItemFancy = ({ message }: { message: Message }) => {
     const { sender, content, image } = message;
     return (
+        <div className="w-fit bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
+            <div className="font-larry font-light text-xs md:text-base break-words whitespace-pre-wrap">
+                {parseMessage(content).map((element) => {
+                    return element.type == Mention
+                        ? element
+                        : element.props.children;
+                })}
+            </div>
+        </div>
+    );
+};
+
+const MessageItemSkills = ({ message }: { message: Message }) => {
+    const { sender, content, image } = message;
+    console.log(parseMessage(content)[0]);
+    return (
         <div className="bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
-            <div className="font-larry font-light text-xs md:text-base">
-                <Markdown children={content} />
-                <Mention content={"PP"} selectedChannel={"1-0-1"} />
+            <div className="font-larry font-light text-xs md:text-base break-words whitespace-pre-wrap">
+                {parseMessage(content).map((element) => {
+                    return element.type == Mention
+                        ? element
+                        : element.props.children;
+                })}
             </div>
         </div>
     );
@@ -183,16 +217,14 @@ const MessageItemFancy = ({ message }: { message: Message }) => {
 
 const MessageItemResume = ({ message }: { message: Message }) => {
     return (
-        <iframe
-            src={Resume}
-            className="h-[575] md:h-[1058] w-full"
-        ></iframe>
+        <iframe src={Resume} className="h-[575] md:h-[1058] w-full"></iframe>
     );
 };
 
 let MessageItemOfType = {
     [MessageType.DEFAULT]: MessageItemDefault,
     [MessageType.FANCY]: MessageItemFancy,
+    [MessageType.SKILLS]: MessageItemSkills,
     [MessageType.RESUME]: MessageItemResume,
 };
 
@@ -217,26 +249,62 @@ const MessageItem = (props: MessageItemProps) => {
 
 const Mention = ({
     content,
-    selectedChannel
+    selectedChannel,
 }: {
     content: string;
-    selectedChannel: string
+    selectedChannel: string;
 }) => {
-    const { server, setServer, serverList} = useContext(AppContext);
+    const { server, setServer, serverList } = useContext(AppContext);
     const globalStateContext = useContext(GlobalStateContext);
-    const [serverId, channelGroupId, channelId] = splitIds(selectedChannel)
+    const [serverId, channelGroupId, channelId] = splitIds(selectedChannel);
     return (
         <span
-            className="bg-starblue-100 opacity-75 rounded-md font-medium pr-1 cursor-pointer"
-            onClick={()=>{
-                setServer(serverList[serverId])
-                globalStateContext.setSelectedChannel(serverId+"-"+channelGroupId+"-"+channelId)
-                globalStateContext.setSelectedServer(serverId)
+            className="bg-starblue-100 opacity-75 rounded-md font-medium pr-1 cursor-pointe ml-1 mr-1 cursor-pointer"
+            onClick={() => {
+                setServer(serverList[serverId]);
+                globalStateContext.setSelectedChannel(
+                    serverId + "-" + channelGroupId + "-" + channelId
+                );
+                globalStateContext.setSelectedServer(serverId);
             }}
         >
             {" @ " + content}
         </span>
     );
+};
+
+export const parseMessage = (content: string) => {
+    let contents = content.split(";");
+    return contents.map((content) => {
+        return content.startsWith("<mention>")
+            ? createMentionComponent(extractTaggedContent("mention", content))
+            : createMarkdownComponent(content);
+    });
+};
+
+const createMentionComponent = (content: string) => {
+    return (
+        <Mention
+            key={KeyGenerator.getInstance().getNewKey()}
+            content={content}
+            selectedChannel={IdStore.getInstance().getIdOf(content)}
+        />
+    );
+};
+
+const createMarkdownComponent = (content: string) => {
+    return (
+        <p key={KeyGenerator.getInstance().getNewKey()}>{content}</p>
+    );
+};
+
+export const extractTaggedContent = (tag:string, text: string) => {
+    const pattern = new RegExp(`<${tag}>(.*?)<\/${tag}>`, "g")
+    const matches = text.match(pattern);
+    const extractedContent = matches?.map((match) => {
+        return match.replace(new RegExp(`<\/?${tag}>`, "g"), "");
+    });
+    return extractedContent ? extractedContent[0] : "";
 };
 
 export default Messages;

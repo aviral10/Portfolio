@@ -1,6 +1,5 @@
 to include 
 - LinkedIn, Github, Socials
-- Add resume sections
 - Feedback, take in google form
 - (Social Aviral, Aviral with hobbies)
 

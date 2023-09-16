@@ -29,7 +29,6 @@ export default class DataConverter {
     public convertChannelGroup(obj: any): ChannelGroup {
         let channelGroup: ChannelGroup = {
             name: obj.name,
-            id: obj.id,
             channelItems: obj.channelItems.map((channelItem: any) =>
                 this.convertChannelItem(channelItem)
             )
@@ -75,6 +74,7 @@ export default class DataConverter {
         let types:{[key: string]:MessageType} = {
             "default": MessageType.DEFAULT,
             "fancy": MessageType.FANCY,
+            "skills": MessageType.SKILLS,
             "resume": MessageType.RESUME,
         };
         return types[messageType] || MessageType.DEFAULT;

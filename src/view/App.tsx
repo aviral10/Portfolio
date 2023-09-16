@@ -11,6 +11,7 @@ import backupConfig from "../model/fallbackConfig.json";
 import { Server } from "./components/interfaces";
 import { splitIds } from "../model/utils";
 import AppContext from "./components/AppContext";
+import IdStore from "../model/IdStore";
 
 function App() {
     // Refs
@@ -28,6 +29,7 @@ function App() {
         const model = new DataModelJson(backupConfig);
         serverList.current = model.getServerList();
         setServer(serverList.current?.[0]);
+        IdStore.getInstance().populate(serverList.current)
     }, []);
 
     if (serverList.current === undefined || server === undefined) {
@@ -42,6 +44,7 @@ function App() {
             ? "-translate-x-32"
             : "-translate-x-[calc(100%+80px)]";
     };
+    
     return (
         <AppContext.Provider value={{ server: server, setServer: setServer, serverList: serverList.current}}>
             <GlobalStateContext.Provider

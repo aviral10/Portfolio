@@ -6,7 +6,6 @@
       "channelGroups": [
         {
           "name": "General",
-          "id": 0,
           "channelItems": [
             {
               "name": "Server-Map",
@@ -24,16 +23,16 @@
                         "name": "Aviral",
                         "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
-                      "content": "Sample content \n\n *dotted lists* Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists* Sample content *dotted lists*",
+                      "content": "<mention>server-map</mention>; : Current channel \n;<mention>about-me</mention>;    : A little bit about me \n;",
                       "image": "IMAGE_URL",
-                      "messageType":"fancy"
+                      "messageType": "fancy"
                     },
                     {
                       "sender": {
                         "name": "Aviral",
                         "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
-                      "content": "This is sample content asdasd",
+                      "content": "asdasd;<mention>general</mention>;\n;dsfd;<mention>boobies</mention>;adshasd;<mention>lalala</mention>;asdasd;<mention>general</mention>;dsfd;<mention>boobies</mention>;adshasd;<mention>lalala</mention>",
                       "image": "IMAGE_URL"
                     }
                   ]
@@ -41,7 +40,7 @@
               ]
             },
             {
-              "name": "About Me",
+              "name": "About-Me",
               "messageHeader": [
                 "Welcome to",
                 "Valhalla",
@@ -97,7 +96,7 @@
               "messageHeader": [
                 "Welcome to",
                 "Skills",
-                "This is a SUBTITLE"
+                "A little about my skills"
               ],
               "messageGroups": [
                 {
@@ -109,7 +108,8 @@
                         "icon": "ICON_URL"
                       },
                       "content": "This is sample content",
-                      "image": "IMAGE_URL"
+                      "image": "IMAGE_URL",
+                      "messageType": "fancy"
                     }
                   ]
                 }
@@ -142,7 +142,6 @@
         },
         {
           "name": "Professional",
-          "id": 1,
           "channelItems": [
             {
               "name": "Academic",
@@ -217,7 +216,6 @@
         },
         {
           "name": "Documents",
-          "id": 2,
           "channelItems": [
             {
               "name": "Resume",
@@ -237,7 +235,7 @@
                       },
                       "content": "This is sample content",
                       "image": "IMAGE_URL",
-                      "messageType":"resume"
+                      "messageType": "resume"
                     }
                   ]
                 }
@@ -253,7 +251,6 @@
       "channelGroups": [
         {
           "name": "Socials",
-          "id": 0,
           "channelItems": [
             {
               "name": "Discord",
@@ -271,7 +268,7 @@
                         "name": "Aviral",
                         "icon": "ICON_URL"
                       },
-                      "content": "This is sample content",
+                      "content": "asdasd;<mention>general</mention>;\n;dsfd;<mention>boobies</mention>",
                       "image": "IMAGE_URL"
                     }
                   ]
@@ -374,7 +371,6 @@
         },
         {
           "name": "Contact",
-          "id": 1,
           "channelItems": [
             {
               "name": "Mail-Me",
@@ -395,7 +391,6 @@
       "channelGroups": [
         {
           "name": "Writing",
-          "id": 0,
           "channelItems": [
             {
               "name": "Poetry",
@@ -419,7 +414,6 @@
         },
         {
           "name": "Other",
-          "id": 1,
           "channelItems": [
             {
               "name": "Sketching",
@@ -444,7 +438,7 @@
       ]
     }
   ],
-  "myprofile":{
+  "myprofile": {
     "image": "https://media.licdn.com/dms/image/D4D03AQHzTADPmelb0Q/profile-displayphoto-shrink_800_800/0/1670226849678?e=2147483647&v=beta&t=KF8aF5hu3Yneeu2GIgaBIdCoyQv_RnEgVVeYe2CVW2k",
     "name": "Aviral Rana 🚀",
     "title": "Aspiring Software Engineer 💻",

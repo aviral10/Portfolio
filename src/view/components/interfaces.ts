@@ -7,10 +7,10 @@ export interface AppContextType {
 export interface ChannelGroup {
     name: string;
     channelItems: ChannelItem[];
-    id: number;
 }
 
 export interface ChannelGroupProps {
+    index: number
     channelGroup: ChannelGroup;
     selectedChannel: any;
     setSelectedChannel: (selectedChannel: string) => void;
@@ -49,6 +49,7 @@ export interface Message {
 export enum MessageType {
     DEFAULT,
     FANCY,
+    SKILLS,
     RESUME
 }
 

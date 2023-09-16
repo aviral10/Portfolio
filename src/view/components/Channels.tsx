@@ -21,9 +21,10 @@ const Channels = (props: ChannelsProps) => {
     return (
         <div className="w-full md:min-w-[200px] md:flex flex-shrink-0 flex-col h-full md:w-1/5 bg-gray-800 text-white rounded-tl-lg">
             <ChannelTitle name={server.name} />
-            {server.channelGroups.map((channelGroup) => (
+            {server.channelGroups.map((channelGroup, index) => (
                 <ChannelGroup
                     key={KeyGenerator.getInstance().getNewKey()}
+                    index={index}
                     channelGroup={channelGroup}
                     selectedChannel={selectedChannel}
                     setSelectedChannel={setSelectedChannel}
@@ -35,7 +36,7 @@ const Channels = (props: ChannelsProps) => {
 };
 
 const ChannelTitle = (props: { name: string }) => (
-    <div className="flex items-center p-4 z-50 flex-shrink-0 shadow-sm shadow-gray-900 h-14 text-lg">
+    <div className="flex items-center p-4 flex-shrink-0 shadow-sm shadow-gray-900 h-14 text-lg">
         {props.name}
         
     </div>
@@ -76,7 +77,7 @@ const ChannelGroup = (props: ChannelGroupProps) => {
             </div>
             <ChannelItems
                 items={showFull ? props.channelGroup.channelItems : []}
-                parent={props.channelGroup.id}
+                parent={props.index}
                 selectedChannel={props.selectedChannel}
                 setSelectedChannel={props.setSelectedChannel}
             />
