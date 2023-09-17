@@ -49,8 +49,8 @@ export interface Message {
 export enum MessageType {
     DEFAULT,
     FANCY,
-    SKILLS,
-    RESUME
+    RESUME,
+    ONLYTAGS
 }
 
 export interface MessageGroup {

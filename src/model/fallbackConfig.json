@@ -116,9 +116,9 @@
                         "name": "Aviral",
                         "icon": "ICON_URL"
                       },
-                      "content": "<badge>https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white</badge>;<badge>https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white</badge>",
+                      "content": "Tools and Frameworks ; https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=ffffff ; https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white ; https://img.shields.io/badge/-Nodejs-339933?style=flat&logo=Node.js&logoColor=ffffff ; https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white ; https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white ; https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white ; https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white ; https://img.shields.io/badge/-Git-%23F05032?style=flat&logo=git&logoColor=%23ffffff ; https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white ; ",
                       "image": "IMAGE_URL",
-                      "messageType": "fancy"
+                      "messageType": "onlytags"
                     },
                     {
                       "sender": {

@@ -133,7 +133,7 @@ const MessageGroup = (props: { messageGroup: MessageGroup }) => {
                 </div>
             </div>
             {messages.map((message) => (
-                <MessageItem
+                <MessageItemNormal
                     key={KeyGenerator.getInstance().getNewKey()}
                     message={message}
                     messageType={message.messageType}
@@ -153,10 +153,13 @@ const MessageItemDefault = ({ message }: { message: Message }) => {
     const { server, setServer } = useContext(AppContext);
     const globalStateContext = useContext(GlobalStateContext);
     return (
-        <div className="text-xs md:text-base">
-            <pre className="font-larry font-light break-words whitespace-pre-wrap overflow-x-auto">
-                {parseMessage(content)}
-            </pre>
+        <div className="flex flex-col w-full">
+            <div className="text-cyan-400">{message.sender.name}</div>
+            <div className="text-xs md:text-base">
+                <pre className="font-larry font-light break-words whitespace-pre-wrap overflow-x-auto">
+                    {parseMessage(content)}
+                </pre>
+            </div>
         </div>
     );
 };
@@ -164,20 +167,44 @@ const MessageItemDefault = ({ message }: { message: Message }) => {
 const MessageItemFancy = ({ message }: { message: Message }) => {
     const { sender, content, image } = message;
     return (
-        <div className="w-fit bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
-            <div className="font-larry font-light text-xs md:text-base break-words whitespace-pre-wrap">
-                {parseMessage(content)}
+        <div className="flex flex-col w-full">
+            <div className="text-cyan-400">{message.sender.name}</div>
+            <div className="w-fit bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
+                <div className="font-larry font-light text-xs md:text-base break-words whitespace-pre-wrap">
+                    {parseMessage(content)}
+                </div>
             </div>
         </div>
     );
 };
 
-const MessageItemSkills = ({ message }: { message: Message }) => {
+
+const MessageItemOnlyTags = ({ message }: { message: Message }) => {
     const { sender, content, image } = message;
+    const links = content.split(';')
+    const heading = links.splice(0,1)
+    const imageElements = links.map((link)=><img key={KeyGenerator.getInstance().getNewKey()} className="h-4 md:h-6 rounded-sm" src={link} alt="" />)
+    const imageContainers:JSX.Element[][] = []
+    imageElements.map((element, index)=>{
+        index%4?null:imageContainers.push([])
+        imageContainers[imageContainers.length-1].push(element)
+    })
     return (
-        <div className="bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
-            <div className="font-larry font-light text-xs md:text-base break-words whitespace-pre-wrap">
-                {}
+        <div className="flex flex-col w-full">
+            <div className="text-cyan-400">{message.sender.name}</div>
+            <div className="w-fit bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
+                <span className="font-medium">{heading}</span>
+                <div className="p-1">
+                    {
+                        imageContainers.map((container)=>{
+                            return (
+                                <div key={KeyGenerator.getInstance().getNewKey()} className="flex space-x-2 p-1">
+                                    {container}
+                                </div>
+                            )
+                        })
+                    }
+                </div>
             </div>
         </div>
     );
@@ -185,18 +212,21 @@ const MessageItemSkills = ({ message }: { message: Message }) => {
 
 const MessageItemResume = ({ message }: { message: Message }) => {
     return (
-        <iframe src={Resume} className="h-[575] md:h-[1058] w-full"></iframe>
+        <div className="flex flex-col w-full">
+            <div className="text-cyan-400">{message.sender.name}</div>
+            <iframe src={Resume} className="h-[575] md:h-[1058] w-full"></iframe>
+        </div>
     );
 };
 
 let MessageItemOfType = {
     [MessageType.DEFAULT]: MessageItemDefault,
     [MessageType.FANCY]: MessageItemFancy,
-    [MessageType.SKILLS]: MessageItemSkills,
     [MessageType.RESUME]: MessageItemResume,
+    [MessageType.ONLYTAGS]: MessageItemOnlyTags,
 };
 
-const MessageItem = (props: MessageItemProps) => {
+const MessageItemNormal = (props: MessageItemProps) => {
     const CurrentMessageItem = MessageItemOfType[props.messageType];
     return (
         <div className="flex pb-6 space-x-4">
@@ -207,10 +237,9 @@ const MessageItem = (props: MessageItemProps) => {
                     alt="AVATAR"
                 />
             </div>
-            <div className="flex flex-col w-full">
-                <div className="text-cyan-400">{props.message.sender.name}</div>
-                <CurrentMessageItem message={props.message} />
-            </div>
+            
+            <CurrentMessageItem message={props.message} />
+            
         </div>
     );
 };

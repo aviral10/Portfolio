@@ -74,8 +74,8 @@ export default class DataConverter {
         let types:{[key: string]:MessageType} = {
             "default": MessageType.DEFAULT,
             "fancy": MessageType.FANCY,
-            "skills": MessageType.SKILLS,
             "resume": MessageType.RESUME,
+            "onlytags": MessageType.ONLYTAGS
         };
         return types[messageType] || MessageType.DEFAULT;
     }
