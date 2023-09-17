@@ -4,7 +4,7 @@ import {
     ChannelItem,
     ChannelItemsProps,
     ChannelsProps,
-} from "./interfaces";
+} from "../../model/interfaces";
 import KeyGenerator from "../../model/KeyGenerator";
 import AppContext from "./AppContext";
 import { TfiAngleDoubleRight } from "react-icons/tfi";

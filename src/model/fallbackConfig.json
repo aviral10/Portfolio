@@ -1,8 +1,8 @@
 {
   "servers": [
     {
-      "name": "About Me",
-      "image": "https://cdn1.iconfinder.com/data/icons/material-apps/512/icon-android-material-design-512.png",
+      "name": "Know Aviral",
+      "image": "https://t3.ftcdn.net/jpg/06/09/96/56/360_F_609965643_XAOcB0N9tXgGt2WANQNh48vN2FkGM9Ko.jpg",
       "channelGroups": [
         {
           "name": "General",
@@ -23,7 +23,7 @@
                         "name": "Aviral",
                         "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
-                      "content": "<mention>server-map</mention>; : Current channel \n;<mention>about-me</mention>;    : A little bit about me \n;",
+                      "content": "•;<mention>server-map</mention>; : Current channel \n;•;<mention>about-me</mention>;    : A little bit about me \n;",
                       "image": "IMAGE_URL",
                       "messageType": "fancy"
                     },
@@ -94,8 +94,8 @@
             {
               "name": "Skills",
               "messageHeader": [
-                "Welcome to",
-                "Skills",
+                "Aviral's",
+                "Technical Skills",
                 "A little about my skills"
               ],
               "messageGroups": [
@@ -107,7 +107,25 @@
                         "name": "Aviral",
                         "icon": "ICON_URL"
                       },
-                      "content": "This is sample content",
+                      "content": "<heading>Programming Languages</heading>;\n;<Skill>C++/C,90,Excellent,<badge>https://img.shields.io/badge/C++-00599C?style=flat-square&logo=C%2B%2B&logoColor=white</badge></Skill>;<Skill>JavaScript/TypeScript, 90,Excellent,<badge>https://img.shields.io/badge/-JavaScript-%23F7DF1C?style=flat&logo=javascript&logoColor=000000&labelColor=%23F7DF1C&color=%23FFCE5A</badge></Skill>;<Skill>Python, 85,Advanced, <badge>https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=ffffff</badge></Skill>;<Skill>Java, 75,Intermediate,<badge>https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white</badge></Skill>;<Skill>Kotlin, 60,Intermediate,<badge>https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white</badge></Skill>",
+                      "image": "IMAGE_URL",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "ICON_URL"
+                      },
+                      "content": "<badge>https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white</badge>;<badge>https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white</badge>",
+                      "image": "IMAGE_URL",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "ICON_URL"
+                      },
+                      "content": "Academic Coursework;<Link>Data Structures and Algorithms, 95</Link>;",
                       "image": "IMAGE_URL",
                       "messageType": "fancy"
                     }
@@ -246,8 +264,8 @@
       ]
     },
     {
-      "name": "Other Server",
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAaVBMVEUAAAD////x8fHp6enGxsarq6uPj49cXFxYWFiBgYEQEBDDw8N2dna+vr74+Pifn5/Y2NgoKCiZmZlPT0+0tLSKiorl5eVkZGQVFRU7OztqamrQ0NDa2tpCQkKnp6dubm43NzcgICAvLy+29WF1AAADV0lEQVR4nO3c2XqiQBCGYRt3I2oUTeKSmNz/RY6YZARCA6PFVNn53mMO6n+A3qHTAQAAAAAAAAAAAAAAAAAAAADglzk8alfQpmG/69xAu4r2LGcutdSuoy1L9yXQe7iKvgO6qXYtrZi7i5F2MW3oZQI67WLasMgG7GpX04I4G9Al2uXIW+cCBvgaHvMBI+165G3yCcPrDcf5gAG2pNEvu4UBdhX7fMIX7XrEPYb+jHYGuYCxdjkt6IUeMNeSzrWLaUUm4JN2La2YhP2Enjx/5XsIr5f4lg61ewH2EcE6bMfj6arigtE82e33i7g//vhvRYmZJn87hijZllzwvsytZbj4rpbcDg+uIC7cyvW+eMVJf6JT7j972ZVU77qXpe1RXHbBOaNi2c31feW73frY6QxfI+8Fzs2G2uXXOlbV34T1sdz2xnwnPe0MlYqLMMFFnEoEtNzejGQC2t2NmtSX3pDVm7ioL70Zq+v8Iq3MSWR2ZCMUcKOdw+tVJqDhJWKZgDPtGH7L+uqbqJpNKrt1OPrJ8KB0JRLQ8m5pIpLwTTtGha5EQMPtqNCAba0do4LMpEI7RRWR7n6nnaLKj7W1axjuKoQaGqtTijOJgO5ZO0UVkYTaIaqIdBaGB90/TliQ8LcmNP0evoskDL8tDb8/ND2mEUloeb9CZtRmuqkRGXmbnuL7933/heXp07q+/CYO2jn8DjIJF9o5KsgktPwmbuqrb0Q7h5/Meqlze+0gXkI7+M49aCfxkkpo92ht2Tm161jtFYV211Jdm0cxP+QSWv3QRKq/OOuWnUjVJviYpgzeRrnzQmcWj5yUnpu9lskGVeDg5YXNk20yhxU+aWcpJzRJTL1qZ/GQS6idxEesw7D7m4WZUEK7q99Cb6LdWyjVnGqnqDKUCGhwwJYhsDRs+WRU6vaEhhdNz24eu1nt7C+836U1Y/0ZTd3Wnt7DJ9A3rfDbbke/DeqD+JicFpbo1UcpZ/rASc61W8JH7cKbu661MX0Yo2ByTcQ7+xVIyYO6mD99TotWg7I39Z7u4FlhhBoV/sM6Lqwgb+7wX7vbzJPaK/kI/ZAZ/cwsH9Ov8Bank/4o9pY/TRanKzaJ4c1tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECJPwYTI4UwDxjEAAAAAElFTkSuQmCC",
+      "name": "Socials",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKB7T9J876Fx9IRyYAGcxm4U9A2S4_iYQiS-TRg5NIr5lThh_XTgtPguJ4vho6BDcdppk&usqp=CAU",
       "channelGroups": [
         {
           "name": "Socials",
@@ -387,7 +405,7 @@
     },
     {
       "name": "Hobbies",
-      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAaVBMVEUAAAD////x8fHp6enGxsarq6uPj49cXFxYWFiBgYEQEBDDw8N2dna+vr74+Pifn5/Y2NgoKCiZmZlPT0+0tLSKiorl5eVkZGQVFRU7OztqamrQ0NDa2tpCQkKnp6dubm43NzcgICAvLy+29WF1AAADV0lEQVR4nO3c2XqiQBCGYRt3I2oUTeKSmNz/RY6YZARCA6PFVNn53mMO6n+A3qHTAQAAAAAAAAAAAAAAAAAAAADglzk8alfQpmG/69xAu4r2LGcutdSuoy1L9yXQe7iKvgO6qXYtrZi7i5F2MW3oZQI67WLasMgG7GpX04I4G9Al2uXIW+cCBvgaHvMBI+165G3yCcPrDcf5gAG2pNEvu4UBdhX7fMIX7XrEPYb+jHYGuYCxdjkt6IUeMNeSzrWLaUUm4JN2La2YhP2Enjx/5XsIr5f4lg61ewH2EcE6bMfj6arigtE82e33i7g//vhvRYmZJn87hijZllzwvsytZbj4rpbcDg+uIC7cyvW+eMVJf6JT7j972ZVU77qXpe1RXHbBOaNi2c31feW73frY6QxfI+8Fzs2G2uXXOlbV34T1sdz2xnwnPe0MlYqLMMFFnEoEtNzejGQC2t2NmtSX3pDVm7ioL70Zq+v8Iq3MSWR2ZCMUcKOdw+tVJqDhJWKZgDPtGH7L+uqbqJpNKrt1OPrJ8KB0JRLQ8m5pIpLwTTtGha5EQMPtqNCAba0do4LMpEI7RRWR7n6nnaLKj7W1axjuKoQaGqtTijOJgO5ZO0UVkYTaIaqIdBaGB90/TliQ8LcmNP0evoskDL8tDb8/ND2mEUloeb9CZtRmuqkRGXmbnuL7933/heXp07q+/CYO2jn8DjIJF9o5KsgktPwmbuqrb0Q7h5/Meqlze+0gXkI7+M49aCfxkkpo92ht2Tm161jtFYV211Jdm0cxP+QSWv3QRKq/OOuWnUjVJviYpgzeRrnzQmcWj5yUnpu9lskGVeDg5YXNk20yhxU+aWcpJzRJTL1qZ/GQS6idxEesw7D7m4WZUEK7q99Cb6LdWyjVnGqnqDKUCGhwwJYhsDRs+WRU6vaEhhdNz24eu1nt7C+836U1Y/0ZTd3Wnt7DJ9A3rfDbbke/DeqD+JicFpbo1UcpZ/rASc61W8JH7cKbu661MX0Yo2ByTcQ7+xVIyYO6mD99TotWg7I39Z7u4FlhhBoV/sM6Lqwgb+7wX7vbzJPaK/kI/ZAZ/cwsH9Ov8Bank/4o9pY/TRanKzaJ4c1tAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECJPwYTI4UwDxjEAAAAAElFTkSuQmCC",
+      "image": "data:image/png;base64,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",
       "channelGroups": [
         {
           "name": "Writing",

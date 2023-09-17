@@ -1,4 +1,4 @@
-import { Server } from "../view/components/interfaces";
+import { Server } from "./interfaces";
 import DataConverter from "./DataConverter";
 import DataModel from "./DataModel";
 export default class DataModelGithub implements DataModel {

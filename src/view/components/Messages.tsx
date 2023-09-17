@@ -5,15 +5,14 @@ import {
     MessageType,
     MessagesProps,
     ScrollableComponentProps,
-} from "./interfaces";
-import Markdown from "react-markdown";
+} from "../../model/interfaces";
 import KeyGenerator from "../../model/KeyGenerator";
-import { AiOutlineSend } from "react-icons/ai";
 import Resume from "../../assets/AviralRana_Resume.pdf";
 import GlobalStateContext from "./GlobalStateContext";
 import { splitIds } from "../../model/utils";
 import AppContext from "./AppContext";
-import IdStore from "../../model/IdStore";
+import { parseMessage } from "./MessageProcessor";
+import InputComponent from "./InputComponent";
 
 const scrollToBottom = (ref: any) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -73,24 +72,6 @@ const Messages = (props: MessagesProps) => {
     );
 };
 
-const InputComponent = ({ onKeyDown }: { onKeyDown: (event: any) => void }) => {
-    return (
-        <div className="bottom-0 flex h-16 w-full ">
-            <div className="flex bg-gray-650 w-full h-10 m-4 mt-0 p-2 rounded-xl">
-                <div className="w-4"></div>
-                <input
-                    className="w-full bg-gray-650 focus:outline-none placeholder-gray-500"
-                    type="text"
-                    placeholder="Enter Text"
-                    onKeyDown={onKeyDown}
-                />
-                <div className="right-0 flex items-center justify-center cursor-pointer">
-                    <AiOutlineSend />
-                </div>
-            </div>
-        </div>
-    );
-};
 
 const createUserMessage = (content: string): MessageGroup => {
     const message: Message = {
@@ -174,11 +155,7 @@ const MessageItemDefault = ({ message }: { message: Message }) => {
     return (
         <div className="text-xs md:text-base">
             <pre className="font-larry font-light break-words whitespace-pre-wrap overflow-x-auto">
-                {parseMessage(content).map((element) => {
-                    return element.type == Mention
-                        ? element
-                        : element.props.children;
-                })}
+                {parseMessage(content)}
             </pre>
         </div>
     );
@@ -189,11 +166,7 @@ const MessageItemFancy = ({ message }: { message: Message }) => {
     return (
         <div className="w-fit bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
             <div className="font-larry font-light text-xs md:text-base break-words whitespace-pre-wrap">
-                {parseMessage(content).map((element) => {
-                    return element.type == Mention
-                        ? element
-                        : element.props.children;
-                })}
+                {parseMessage(content)}
             </div>
         </div>
     );
@@ -201,15 +174,10 @@ const MessageItemFancy = ({ message }: { message: Message }) => {
 
 const MessageItemSkills = ({ message }: { message: Message }) => {
     const { sender, content, image } = message;
-    console.log(parseMessage(content)[0]);
     return (
         <div className="bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
             <div className="font-larry font-light text-xs md:text-base break-words whitespace-pre-wrap">
-                {parseMessage(content).map((element) => {
-                    return element.type == Mention
-                        ? element
-                        : element.props.children;
-                })}
+                {}
             </div>
         </div>
     );
@@ -247,7 +215,7 @@ const MessageItem = (props: MessageItemProps) => {
     );
 };
 
-const Mention = ({
+export const Mention = ({
     content,
     selectedChannel,
 }: {
@@ -273,38 +241,5 @@ const Mention = ({
     );
 };
 
-export const parseMessage = (content: string) => {
-    let contents = content.split(";");
-    return contents.map((content) => {
-        return content.startsWith("<mention>")
-            ? createMentionComponent(extractTaggedContent("mention", content))
-            : createMarkdownComponent(content);
-    });
-};
-
-const createMentionComponent = (content: string) => {
-    return (
-        <Mention
-            key={KeyGenerator.getInstance().getNewKey()}
-            content={content}
-            selectedChannel={IdStore.getInstance().getIdOf(content)}
-        />
-    );
-};
-
-const createMarkdownComponent = (content: string) => {
-    return (
-        <p key={KeyGenerator.getInstance().getNewKey()}>{content}</p>
-    );
-};
-
-export const extractTaggedContent = (tag:string, text: string) => {
-    const pattern = new RegExp(`<${tag}>(.*?)<\/${tag}>`, "g")
-    const matches = text.match(pattern);
-    const extractedContent = matches?.map((match) => {
-        return match.replace(new RegExp(`<\/?${tag}>`, "g"), "");
-    });
-    return extractedContent ? extractedContent[0] : "";
-};
 
 export default Messages;

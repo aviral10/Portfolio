@@ -1,4 +1,4 @@
-import { Server } from "../view/components/interfaces";
+import { Server } from "./interfaces";
 
 export default class IdStore{
     private IdMap:Map<string, string> = new Map<string, string>();

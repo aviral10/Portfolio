@@ -1,4 +1,4 @@
-import { ChannelGroup, ChannelItem, Message, MessageGroup, MessageType, MyProfileTab, Server} from "../view/components/interfaces";
+import { ChannelGroup, ChannelItem, Message, MessageGroup, MessageType, MyProfileTab, Server} from "./interfaces";
 
 export default class DataConverter {
     

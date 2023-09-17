@@ -1,4 +1,4 @@
-import { Server } from "../view/components/interfaces";
+import { Server } from "./interfaces";
 
 export default interface DataModel {
     getServerList(): Server[];

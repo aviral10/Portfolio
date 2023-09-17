@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { SideIconProps, SideBarProps } from "./interfaces";
+import { SideIconProps, SideBarProps } from "../../model/interfaces";
 import AppContext from "./AppContext";
 import KeyGenerator from "../../model/KeyGenerator";
 import GlobalStateContext from "./GlobalStateContext";

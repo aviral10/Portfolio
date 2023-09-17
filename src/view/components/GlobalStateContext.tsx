@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { Hamburger } from "./interfaces";
+import { Hamburger } from "../../model/interfaces";
 
 const GlobalStateContext = createContext<any>({});
 

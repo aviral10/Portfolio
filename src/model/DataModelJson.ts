@@ -1,4 +1,4 @@
-import { MyProfileTab, Server } from "../view/components/interfaces";
+import { MyProfileTab, Server } from "./interfaces";
 import DataConverter from "./DataConverter";
 import DataModel from "./DataModel";
 

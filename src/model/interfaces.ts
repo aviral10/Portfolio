@@ -103,3 +103,7 @@ export interface SideIconProps {
     isSelectedState: number;
     setSelectedState: (isSelectedState: number) => void;
 }
+
+export interface TagConverter {
+    convert(content: string): JSX.Element;
+}

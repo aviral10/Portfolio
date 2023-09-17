@@ -8,7 +8,7 @@ import GlobalStateContext from "./components/GlobalStateContext";
 import useWindowDimensions from "./components/useWindowDimensions";
 import DataModelJson from "../model/DataModelJson";
 import backupConfig from "../model/fallbackConfig.json";
-import { Server } from "./components/interfaces";
+import { Server } from "../model/interfaces";
 import { splitIds } from "../model/utils";
 import AppContext from "./components/AppContext";
 import IdStore from "../model/IdStore";
