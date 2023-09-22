@@ -3,6 +3,8 @@ to include
 - Feedback, take in google form
 - (Social Aviral, Aviral with hobbies)
 - Coding profiles (https://github.com/Envoy-VC/awesome-badges), CF: https://img.shields.io/badge/Codechef-%23B92B.svg?&style=for-the-badge&logo=Codechef&logoColor=white
+
+- swap positions of onlyTags, mix long and short
  
 - About Me
 - Education

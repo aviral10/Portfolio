@@ -95,7 +95,7 @@ const ScrollableComponent = (props: ScrollableComponentProps) => {
 
     return (
         <div className="w-full h-[calc(100%-64px)] rounded-lg overflow-y-scroll">
-            <div className="p-4 md:p-4">
+            <div className="p-4">
                 <div className="w-[92vw] md:w-full flex flex-col items-center justify-center text-3xl font-semibold mb-4">
                     <p>{header1}</p>
                     <p>{header2}</p>
@@ -167,7 +167,7 @@ const MessageItemDefault = ({ message }: { message: Message }) => {
 const MessageItemFancy = ({ message }: { message: Message }) => {
     const { sender, content, image } = message;
     return (
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-fit">
             <div className="text-cyan-400">{message.sender.name}</div>
             <div className="w-fit bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
                 <div className="font-larry font-light text-xs md:text-base break-words whitespace-pre-wrap">
@@ -190,9 +190,9 @@ const MessageItemOnlyTags = ({ message }: { message: Message }) => {
         imageContainers[imageContainers.length-1].push(element)
     })
     return (
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col">
             <div className="text-cyan-400">{message.sender.name}</div>
-            <div className="w-fit bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
+            <div className="w-fit bg-gray-800 border-lime-400 text-xs md:text-base border-l-4 rounded-md p-2">
                 <span className="font-medium">{heading}</span>
                 <div className="p-1">
                     {
