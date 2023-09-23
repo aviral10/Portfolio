@@ -1,6 +1,9 @@
 import { TagConverter } from "../../../model/interfaces";
 import BadgeConverter from "./BadgeConverter";
+import BoldConverter from "./BoldConverter";
 import HeadingConverter from "./HeadingConverter";
+import HeadingXLConverter from "./HeadingXLConverter";
+import ItalicsConverter from "./ItalicsConverter";
 import LinkConverter from "./LinkConverter";
 import MentionConverter from "./MentionConverter";
 import SkillConverter from "./SkillConverter";
@@ -13,11 +16,15 @@ class TagFactory {
         "link": new LinkConverter(),
         "skill": new SkillConverter(),
         "heading": new HeadingConverter(),
-        "badge": new BadgeConverter()
+        "headingxl": new HeadingXLConverter(),
+        "badge": new BadgeConverter(),
+        "b": new BoldConverter(),
+        "i": new ItalicsConverter()
     };
     static defaultConverter = new TextConverter()
     static getConverter(tag: string): TagConverter {
         tag = tag.toLowerCase()
+        console.log(tag)
         return this.converterList[tag]?this.converterList[tag]:this.defaultConverter;
     }
 }

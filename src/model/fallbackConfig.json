@@ -11,7 +11,7 @@
               "name": "Server-Map",
               "messageHeader": [
                 "Welcome to",
-                "Server Map",
+                "Aviral's Server",
                 "This is a SUBTITLE"
               ],
               "messageGroups": [
@@ -23,17 +23,9 @@
                         "name": "Aviral",
                         "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
-                      "content": "•;<mention>server-map</mention>; : Current channel \n;•;<mention>about-me</mention>;    : A little bit about me \n;",
+                      "content": "Click to navigate to a channel\n\n;•;<mention>server-map</mention>;           : You are here \n;•;<mention>about-me</mention>;              : Aviral who? \n;•;<mention>skills</mention>;                      : Know Aviral's skill set \n;•;<mention>projects</mention>;                 : Checkout Aviral's cool projects \n;•;<mention>academic</mention>;              : Aviral's acedemic history \n;•;<mention>work-experience</mention>; : Aviral's Work Experience \n;•;<mention>linked-in</mention>;               : Aviral's Socials \n;•;<mention>sketching</mention>;              : Aviral's Hobbies \n;",
                       "image": "IMAGE_URL",
                       "messageType": "fancy"
-                    },
-                    {
-                      "sender": {
-                        "name": "Aviral",
-                        "icon": "https://avatars.githubusercontent.com/u/61791180"
-                      },
-                      "content": "asdasd;<mention>general</mention>;\n;dsfd;<mention>blahh</mention>;adshasd;<mention>lalala</mention>;asdasd;<mention>general</mention>;dsfd;<mention>blahh</mention>;adshasd;<mention>lalala</mention>",
-                      "image": "IMAGE_URL"
                     }
                   ]
                 }
@@ -116,7 +108,7 @@
                         "name": "Aviral",
                         "icon": "ICON_URL"
                       },
-                      "content": "Tools and Frameworks ; https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=ffffff ; https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white ; https://img.shields.io/badge/-Nodejs-339933?style=flat&logo=Node.js&logoColor=ffffff ; https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white ; https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white ; https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white ; https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white ; https://img.shields.io/badge/-Git-%23F05032?style=flat&logo=git&logoColor=%23ffffff ; https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white ; ",
+                      "content": "Tools and Frameworks ; https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=ffffff; https://img.shields.io/badge/-Git-%23F05032?style=flat&logo=git&logoColor=%23ffffff ; https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white ; https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white ; https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white ; https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white ; https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white ; https://img.shields.io/badge/-Nodejs-339933?style=flat&logo=Node.js&logoColor=ffffff ; https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white ",
                       "image": "IMAGE_URL",
                       "messageType": "onlytags"
                     },
@@ -125,7 +117,7 @@
                         "name": "Aviral",
                         "icon": "ICON_URL"
                       },
-                      "content": "Academic Coursework;<Link>Data Structures and Algorithms, 95</Link>;",
+                      "content": "Academic Coursework;<Link>Data Structures and Algorithms,javascript:void(0)</Link>;",
                       "image": "IMAGE_URL",
                       "messageType": "fancy"
                     }
@@ -187,21 +179,36 @@
             {
               "name": "Work-Experience",
               "messageHeader": [
-                "Welcome to",
+                "Aviral's",
                 "Work Experience",
-                "This is a SUBTITLE"
+                "Currently looking for SDE/SWE, Developer roles"
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "16 Jan, 2023",
                   "messages": [
                     {
                       "sender": {
                         "name": "Aviral",
-                        "icon": "ICON_URL"
+                        "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
-                      "content": "This is sample content",
-                      "image": "IMAGE_URL"
+                      "content": "<headingxl>Amazon Inc.</headingxl>;\n;<i>Software Developer Engineer Intern</i>;\n;January 2023 - June 2023\n;Location: Bangalore, India\n\n; • Collaborated with the;<b> Amazon Music </b>;International Expansion (IX) team.\n; • Successfully launched a novel Home Tab experience of Amazon Music for Android Automotive clients. \n; • Migrated the old home experience to a newer architecture.\n; • Developed a front-end module for handing network calls made to the backend.\n; • Contributed to the development of the back-end data processing layer as well.\n; • Orchestrated the deployment of a robust CI/CD pipeline.\n; • The pipeline was utilized for experimentation, testing and feature development.\n; • Implemented th new Home Tab support for Navigation Apps such as Google Assistant and Waze.\n; • Worked on Front-end for the development of a personalised widge (My Presets).\n; • My Presets was successfully launched to production.\n; • Skills: C++ · Java · Android · TypeScript · Kotlin · Amazon CloudWatch · Python · JavaScript\n\n",
+                      "image": "https://res.cloudinary.com/zenbusiness/image/upload/v1670445040/logaster/logaster-2020-03-amazon-gif-logo.gif",
+                      "messageType": "fancy"
+                    }
+                  ]
+                },
+                {
+                  "date": "7 Aug, 2023",
+                  "messages": [
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://avatars.githubusercontent.com/u/61791180"
+                      },
+                      "content": "<headingxl>Adobe Systems</headingxl>;\n;<i>Technical Support Engineer</i>;\n;August 2023 - Present\n;Location: Noida, India\n\n; • Working as a Technical Support Engineer with ;<b> Adobe Analytics </b>; global support team.\n; • During the internship developed a chatbot for Service Desk.\n; • The bot helped in narrowing down the search space of First Call Resolution queries. \n; • Developed an automation tool from scratch and deployed it to company servers to be used internally.\n; • Skills: Python · Adobe Analytics\n\n",
+                      "image": "https://assets.website-files.com/5ee732bebd9839b494ff27cd/5ee732bebd98398649ff2801_hXrc7y.jpg",
+                      "messageType": "fancy"
                     }
                   ]
                 }
@@ -317,7 +324,7 @@
               ]
             },
             {
-              "name": "LinkedIn",
+              "name": "Linked-In",
               "messageHeader": [
                 "Welcome to",
                 "LinkedIn",
@@ -395,9 +402,24 @@
               "messageHeader": [
                 "Welcome to",
                 "Mail-Me",
-                "This is a SUBTITLE"
+                "Drop a hi, I'm usually responsive"
               ],
-              "messageGroups": []
+              "messageGroups": [
+                {
+                  "date": "16 Aug, 2023",
+                  "messages": [
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://avatars.githubusercontent.com/u/61791180"
+                      },
+                      "content": "You can officially reach out to me at: \n;<link>aviral19rana@gmail.com,mailto:aviral19rana@gmail.com</link>",
+                      "image": "IMAGE_URL",
+                      "messageType": "fancy"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }

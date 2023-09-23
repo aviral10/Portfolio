@@ -18,8 +18,8 @@ export default class IdStore{
             })
         })
     }
-    public getIdOf(name: string){
+    public getIdOf(name: string, defaultID:string="0-0-0"){
         let channelID = this.IdMap.get(name)
-        return channelID?channelID:"0-0-0"
+        return channelID?channelID:defaultID
     }
 }

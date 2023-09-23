@@ -99,7 +99,7 @@ const ScrollableComponent = (props: ScrollableComponentProps) => {
                 <div className="w-[92vw] md:w-full flex flex-col items-center justify-center text-3xl font-semibold mb-4">
                     <p>{header1}</p>
                     <p>{header2}</p>
-                    <p className="pt-3 text-sm font-extralight text-gray-500">
+                    <p className="pt-3 text-sm font-extralight text-gray-400">
                         {header3}
                     </p>
                 </div>
@@ -166,13 +166,18 @@ const MessageItemDefault = ({ message }: { message: Message }) => {
 
 const MessageItemFancy = ({ message }: { message: Message }) => {
     const { sender, content, image } = message;
+    let imageUrl = image?image==="IMAGE_URL"?null:image:null
     return (
-        <div className="flex flex-col w-fit">
+        <div className="w-fit md:max-w-[80%] flex flex-col">
             <div className="text-cyan-400">{message.sender.name}</div>
-            <div className="w-fit bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
+            <div className="bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
                 <div className="font-larry font-light text-xs md:text-base break-words whitespace-pre-wrap">
                     {parseMessage(content)}
                 </div>
+                {
+                    imageUrl?<img className="object-contain rounded-sm" src={image} alt="" />:null
+                }
+                
             </div>
         </div>
     );
@@ -229,7 +234,7 @@ let MessageItemOfType = {
 const MessageItemNormal = (props: MessageItemProps) => {
     const CurrentMessageItem = MessageItemOfType[props.messageType];
     return (
-        <div className="flex pb-6 space-x-4">
+        <div className="flex pb-6 space-x-2 md:space-x-4">
             <div className="w-10 h-10 flex-shrink-0">
                 <img
                     className="rounded-3xl"
