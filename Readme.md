@@ -4,6 +4,8 @@ to include
 - (Social Aviral, Aviral with hobbies)
 - Coding profiles (https://github.com/Envoy-VC/awesome-badges), CF: https://img.shields.io/badge/Codechef-%23B92B.svg?&style=for-the-badge&logo=Codechef&logoColor=white
 
+- fav quotes, what I cannot create I do no understand
+
 - swap positions of onlyTags, mix long and short
 - Extract JSX components from Converters and store them as atomic components
 - About Me

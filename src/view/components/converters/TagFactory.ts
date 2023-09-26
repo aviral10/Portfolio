@@ -24,7 +24,6 @@ class TagFactory {
     static defaultConverter = new TextConverter()
     static getConverter(tag: string): TagConverter {
         tag = tag.toLowerCase()
-        console.log(tag)
         return this.converterList[tag]?this.converterList[tag]:this.defaultConverter;
     }
 }

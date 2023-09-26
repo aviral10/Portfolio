@@ -10,9 +10,9 @@
             {
               "name": "Server-Map",
               "messageHeader": [
-                "Welcome to",
-                "Aviral's Server",
-                "This is a SUBTITLE"
+                "Hi, I'm Aviral",
+                "Software Enginner",
+                "Soon to be*"
               ],
               "messageGroups": [
                 {
@@ -23,7 +23,7 @@
                         "name": "Aviral",
                         "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
-                      "content": "Click to navigate to a channel\n\n;•;<mention>server-map</mention>;           : You are here \n;•;<mention>about-me</mention>;              : Aviral who? \n;•;<mention>skills</mention>;                      : Know Aviral's skill set \n;•;<mention>projects</mention>;                 : Checkout Aviral's cool projects \n;•;<mention>academic</mention>;              : Aviral's acedemic history \n;•;<mention>work-experience</mention>; : Aviral's Work Experience \n;•;<mention>linked-in</mention>;               : Aviral's Socials \n;•;<mention>sketching</mention>;              : Aviral's Hobbies \n;",
+                      "content": "Click to navigate to a channel\n\n;•;<mention>server-map</mention>;           : You are here \n;•;<mention>about-me</mention>;              : Aviral who? \n;•;<mention>skills</mention>;                      : Know Aviral's skill set \n;•;<mention>projects</mention>;                 : Aviral's cool projects \n;•;<mention>academic</mention>;              : Aviral's acedemic history \n;•;<mention>work-experience</mention>; : Aviral's work experience \n;•;<mention>linked-in</mention>;               : Aviral's socials \n;•;<mention>sketching</mention>;              : Aviral's hobbies \n;",
                       "image": "IMAGE_URL",
                       "messageType": "fancy"
                     }
@@ -34,9 +34,9 @@
             {
               "name": "About-Me",
               "messageHeader": [
-                "Welcome to",
-                "Valhalla",
-                "This is a SUBTITLE"
+                "Hi, I'm Aviral",
+                "Software Enginner",
+                "Soon to be*"
               ],
               "messageGroups": [
                 {
@@ -97,7 +97,7 @@
                     {
                       "sender": {
                         "name": "Aviral",
-                        "icon": "ICON_URL"
+                        "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
                       "content": "<heading>Programming Languages</heading>;\n;<Skill>C++/C,90,Excellent,<badge>https://img.shields.io/badge/C++-00599C?style=flat-square&logo=C%2B%2B&logoColor=white</badge></Skill>;<Skill>JavaScript/TypeScript, 90,Excellent,<badge>https://img.shields.io/badge/-JavaScript-%23F7DF1C?style=flat&logo=javascript&logoColor=000000&labelColor=%23F7DF1C&color=%23FFCE5A</badge></Skill>;<Skill>Python, 85,Advanced, <badge>https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=ffffff</badge></Skill>;<Skill>Java, 75,Intermediate,<badge>https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white</badge></Skill>;<Skill>Kotlin, 60,Intermediate,<badge>https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white</badge></Skill>",
                       "image": "IMAGE_URL",
@@ -106,7 +106,7 @@
                     {
                       "sender": {
                         "name": "Aviral",
-                        "icon": "ICON_URL"
+                        "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
                       "content": "Tools and Frameworks ; https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=ffffff; https://img.shields.io/badge/-Git-%23F05032?style=flat&logo=git&logoColor=%23ffffff ; https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white ; https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white ; https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white ; https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white ; https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white ; https://img.shields.io/badge/-Nodejs-339933?style=flat&logo=Node.js&logoColor=ffffff ; https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white ",
                       "image": "IMAGE_URL",
@@ -115,9 +115,9 @@
                     {
                       "sender": {
                         "name": "Aviral",
-                        "icon": "ICON_URL"
+                        "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
-                      "content": "Academic Coursework;<Link>Data Structures and Algorithms,javascript:void(0)</Link>;",
+                      "content": "Academic Coursework \n;<Link>Data Structures and Algorithms,javascript:void(0)</Link>;",
                       "image": "IMAGE_URL",
                       "messageType": "fancy"
                     }

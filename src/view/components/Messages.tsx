@@ -55,16 +55,28 @@ const Messages = (props: MessagesProps) => {
                 onKeyDown={(e) => {
                     if (e.key === "Enter") {
                         let sample = createUserMessage(e.target.value);
+                        let messageGroups = server.channelGroups[channelGroupId].channelItems[channelId].messageGroups
                         e.target.value = "";
-                        server.channelGroups[channelGroupId]
-                        .channelItems[channelId]
-                        .messageGroups.push(sample);
-                        let nw = structuredClone(
-                            server.channelGroups[channelGroupId]
+
+                        
+                        const displayDate = getTodaysDate();
+                        messageGroups[messageGroups.length-1].date === displayDate
+                            ? null
+                            : server.channelGroups[channelGroupId]
                             .channelItems[channelId]
-                            .messageGroups
+                            .messageGroups.push({
+                                  date: displayDate,
+                                  messages: [],
+                              });
+
+                        messageGroups[messageGroups.length-1].messages.push(sample)
+                        
+                        let newMessageGroup = structuredClone(
+                            server.channelGroups[channelGroupId].channelItems[
+                                channelId
+                            ].messageGroups
                         );
-                        setMessageGroup(nw);
+                        setMessageGroup(newMessageGroup);
                     }
                 }}
             />
@@ -72,20 +84,28 @@ const Messages = (props: MessagesProps) => {
     );
 };
 
+const getTodaysDate = ()=>{
+    const today = new Date();
+    const date = today.getDate();
+    const month = today.toLocaleString("default", {
+        month: "short",
+    });
+    const year = today.getFullYear();
+    return `${date} ${month}, ${year}`;
+}
 
-const createUserMessage = (content: string): MessageGroup => {
-    const message: Message = {
+
+
+// Pulling a prank on a friend
+const createUserMessage = (content: string): Message => {
+    return {
         sender: {
-            name: "Random Man",
-            icon: "",
+            name: "Pain in the butt!",
+            icon: "https://media.licdn.com/dms/image/D4D03AQENLlGuJ05AIg/profile-displayphoto-shrink_800_800/0/1686918845899?e=2147483647&v=beta&t=zpOvvFLSc2iiDcbL5vKQBAnT1EbptPFd_0tpuAJlesg",
         },
         content: content,
         image: "",
         messageType: MessageType.DEFAULT,
-    };
-    return {
-        date: "20 Aug, 2023",
-        messages: [message],
     };
 };
 
@@ -153,10 +173,10 @@ const MessageItemDefault = ({ message }: { message: Message }) => {
     const { server, setServer } = useContext(AppContext);
     const globalStateContext = useContext(GlobalStateContext);
     return (
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col">
             <div className="text-cyan-400">{message.sender.name}</div>
             <div className="text-xs md:text-base">
-                <pre className="font-larry font-light break-words whitespace-pre-wrap overflow-x-auto">
+                <pre className="font-larry font-light break-all whitespace-pre-wrap overflow-x-auto">
                     {parseMessage(content)}
                 </pre>
             </div>
@@ -166,49 +186,59 @@ const MessageItemDefault = ({ message }: { message: Message }) => {
 
 const MessageItemFancy = ({ message }: { message: Message }) => {
     const { sender, content, image } = message;
-    let imageUrl = image?image==="IMAGE_URL"?null:image:null
+    let imageUrl = image ? (image === "IMAGE_URL" ? null : image) : null;
     return (
         <div className="w-fit md:max-w-[80%] flex flex-col">
             <div className="text-cyan-400">{message.sender.name}</div>
             <div className="bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
-                <div className="font-larry font-light text-xs md:text-base break-words whitespace-pre-wrap">
+                <div className="font-larry font-light text-xs md:text-base break-all whitespace-pre-wrap">
                     {parseMessage(content)}
                 </div>
-                {
-                    imageUrl?<img className="object-contain rounded-sm" src={image} alt="" />:null
-                }
-                
+                {imageUrl ? (
+                    <img
+                        className="object-contain rounded-sm"
+                        src={image}
+                        alt=""
+                    />
+                ) : null}
             </div>
         </div>
     );
 };
 
-
 const MessageItemOnlyTags = ({ message }: { message: Message }) => {
     const { sender, content, image } = message;
-    const links = content.split(';')
-    const heading = links.splice(0,1)
-    const imageElements = links.map((link)=><img key={KeyGenerator.getInstance().getNewKey()} className="h-4 md:h-6 rounded-sm" src={link} alt="" />)
-    const imageContainers:JSX.Element[][] = []
-    imageElements.map((element, index)=>{
-        index%4?null:imageContainers.push([])
-        imageContainers[imageContainers.length-1].push(element)
-    })
+    const links = content.split(";");
+    const heading = links.splice(0, 1);
+    const imageElements = links.map((link) => (
+        <img
+            key={KeyGenerator.getInstance().getNewKey()}
+            className="h-4 md:h-6 rounded-sm"
+            src={link}
+            alt=""
+        />
+    ));
+    const imageContainers: JSX.Element[][] = [];
+    imageElements.map((element, index) => {
+        index % 4 ? null : imageContainers.push([]);
+        imageContainers[imageContainers.length - 1].push(element);
+    });
     return (
         <div className="flex flex-col">
             <div className="text-cyan-400">{message.sender.name}</div>
             <div className="w-fit bg-gray-800 border-lime-400 text-xs md:text-base border-l-4 rounded-md p-2">
                 <span className="font-medium">{heading}</span>
                 <div className="p-1">
-                    {
-                        imageContainers.map((container)=>{
-                            return (
-                                <div key={KeyGenerator.getInstance().getNewKey()} className="flex space-x-2 p-1">
-                                    {container}
-                                </div>
-                            )
-                        })
-                    }
+                    {imageContainers.map((container) => {
+                        return (
+                            <div
+                                key={KeyGenerator.getInstance().getNewKey()}
+                                className="flex space-x-2 p-1"
+                            >
+                                {container}
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </div>
@@ -219,7 +249,10 @@ const MessageItemResume = ({ message }: { message: Message }) => {
     return (
         <div className="flex flex-col w-full">
             <div className="text-cyan-400">{message.sender.name}</div>
-            <iframe src={Resume} className="h-[575] md:h-[1058] w-full"></iframe>
+            <iframe
+                src={Resume}
+                className="h-[575] md:h-[1058] w-full"
+            ></iframe>
         </div>
     );
 };
@@ -242,9 +275,8 @@ const MessageItemNormal = (props: MessageItemProps) => {
                     alt="AVATAR"
                 />
             </div>
-            
+
             <CurrentMessageItem message={props.message} />
-            
         </div>
     );
 };
@@ -274,6 +306,5 @@ export const Mention = ({
         </span>
     );
 };
-
 
 export default Messages;
