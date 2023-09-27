@@ -44,6 +44,30 @@ const Messages = (props: MessagesProps) => {
             : scrollToBottom(ref);
     }, [messageGroup]);
 
+    const handleMessageSent = (e:any) => {
+        let sample = createUserMessage(e.value);
+        let messageGroups = server.channelGroups[channelGroupId].channelItems[channelId].messageGroups
+        e.value = "";
+
+        
+        const displayDate = getTodaysDate();
+        messageGroups[messageGroups.length-1].date === displayDate
+            ? null
+            : server.channelGroups[channelGroupId]
+            .channelItems[channelId]
+            .messageGroups.push({
+                date: displayDate,
+                messages: [],
+            });
+
+        messageGroups[messageGroups.length-1].messages.push(sample)
+        
+        let newMessageGroup = structuredClone(
+            server.channelGroups[channelGroupId].channelItems[channelId].messageGroups
+        );
+        setMessageGroup(newMessageGroup);
+    }
+    
     return (
         <div className="flex flex-col flex-shrink-0 h-full w-full md:w-[75%] bg-gray-700 text-white shadow-lg">
             <ScrollableComponent
@@ -52,33 +76,7 @@ const Messages = (props: MessagesProps) => {
                 endRef={ref}
             />
             <InputComponent
-                onKeyDown={(e) => {
-                    if (e.key === "Enter") {
-                        let sample = createUserMessage(e.target.value);
-                        let messageGroups = server.channelGroups[channelGroupId].channelItems[channelId].messageGroups
-                        e.target.value = "";
-
-                        
-                        const displayDate = getTodaysDate();
-                        messageGroups[messageGroups.length-1].date === displayDate
-                            ? null
-                            : server.channelGroups[channelGroupId]
-                            .channelItems[channelId]
-                            .messageGroups.push({
-                                  date: displayDate,
-                                  messages: [],
-                              });
-
-                        messageGroups[messageGroups.length-1].messages.push(sample)
-                        
-                        let newMessageGroup = structuredClone(
-                            server.channelGroups[channelGroupId].channelItems[
-                                channelId
-                            ].messageGroups
-                        );
-                        setMessageGroup(newMessageGroup);
-                    }
-                }}
+                onSend={(e) => handleMessageSent(e)}
             />
         </div>
     );
@@ -176,9 +174,9 @@ const MessageItemDefault = ({ message }: { message: Message }) => {
         <div className="flex flex-col">
             <div className="text-cyan-400">{message.sender.name}</div>
             <div className="text-xs md:text-base">
-                <pre className="font-larry font-light break-all whitespace-pre-wrap overflow-x-auto">
+                <p className="font-larry font-light custom-break-words whitespace-pre-wrap">
                     {parseMessage(content)}
-                </pre>
+                </p>
             </div>
         </div>
     );
@@ -191,7 +189,7 @@ const MessageItemFancy = ({ message }: { message: Message }) => {
         <div className="w-fit md:max-w-[80%] flex flex-col">
             <div className="text-cyan-400">{message.sender.name}</div>
             <div className="bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
-                <div className="font-larry font-light text-xs md:text-base break-all whitespace-pre-wrap">
+                <div className="font-larry font-light text-xs md:text-base break-words whitespace-pre-wrap">
                     {parseMessage(content)}
                 </div>
                 {imageUrl ? (

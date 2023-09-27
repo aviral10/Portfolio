@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.custom-break-words {
+    word-break: break-word;
+}
+
 @layer base {
     html {
         font-family: Nunito Sans, system-ui, sans-serif;
