@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { HiOutlineMail, HiOutlineOfficeBuilding } from "react-icons/hi";
 import { GoCloudOffline } from "react-icons/go";
@@ -47,7 +47,7 @@ export interface StatusBox {
     email: string;
 }
 
-const StatusBox = (props: StatusBox) => {
+const getISTTime = () => {
     let currentTime = new Date();
     let currentOffset = currentTime.getTimezoneOffset();
     let ISTOffset = 330; // IST offset UTC +5:30
@@ -59,7 +59,36 @@ const StatusBox = (props: StatusBox) => {
     hoursIST = hoursIST % 12;
     hoursIST = (hoursIST ? hoursIST : 12).toString().padStart(2, "0");
     let minutesIST = ISTTime.getMinutes().toString().padStart(2, "0");
+    return [hoursIST, minutesIST, meridian]
+}
 
+const DynamicClock = ()=>{
+    let [hoursIST, minutesIST, meridian] = getISTTime()
+    const [currTime, setCurrTime] = useState({
+        hours: hoursIST,
+        minutes: minutesIST,
+        meridian: meridian
+    })
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+        let [hoursIST, minutesIST, meridian] = getISTTime()
+        setCurrTime({
+            hours: hoursIST,
+            minutes: minutesIST,
+            meridian: meridian
+          })
+        }, 10000)
+    
+        return () => clearInterval(intervalId);
+      }, [])
+
+    return (
+        <span>{`${currTime.hours}:${currTime.minutes} ${meridian} IST local time`}</span>
+    )
+}
+
+const StatusBox = (props: StatusBox) => {
     return (
         <div className="flex flex-shrink-0">
             <div className="flex flex-col w-8">
@@ -82,7 +111,7 @@ const StatusBox = (props: StatusBox) => {
             </div>
             <div className="flex flex-col w-full text-xs md:text-base ">
                 <div className="flex items-center h-8">{props.status}</div>
-                <div className="flex items-center h-8 min-w-[200px]">{`${hoursIST}:${minutesIST} ${meridian} IST local time`}</div>
+                <div className="flex items-center h-8 min-w-[200px]">{<DynamicClock/>}</div>
                 <div className="flex items-center h-8">
                     <a
                         className="text-blue-400"

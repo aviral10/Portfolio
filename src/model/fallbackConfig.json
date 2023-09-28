@@ -45,42 +45,56 @@
                     {
                       "sender": {
                         "name": "Aviral",
-                        "icon": "ICON_URL"
+                        "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
-                      "content": "This is sample content",
-                      "image": "IMAGE_URL"
+                      "content": "I'm a recent grad of the batch 2023. 🏫\nI've completed my Bachelor's in ;<i>Computer Science and Engineering.</i>; 🐱‍💻;\nI've recently completed my 6 month Internship with ;<b>Amazon</b>; as an SDE Intern. 🎶\n;Know more about my ;<mention>work-experience</mention>",
+                      "image": "IMAGE_URL",
+                      "messageType": "default"
                     },
                     {
                       "sender": {
                         "name": "Aviral",
-                        "icon": "ICON_URL"
+                        "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
-                      "content": "This is sample content",
-                      "image": "IMAGE_URL"
+                      "content": "I'm currectly looking for full-time ;<b>SDE/SWE</b>; or ;<b>Developer</b>; roles.\nHit me up: ;<link>aviral19rana@gmail.com,mailto:aviral19rana@gmail.com</link>; 📧",
+                      "image": "IMAGE_URL",
+                      "messageType": "default"
                     }
                   ]
                 },
                 {
-                  "date": "17 Aug, 2023",
+                  "date": "16 Aug, 2023",
                   "messages": [
                     {
                       "sender": {
                         "name": "Aviral",
-                        "icon": "ICON_URL"
+                        "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
-                      "content": "This is sample content",
-                      "image": "IMAGE_URL"
+                      "content": "I enjoy solving complex programming challenges and coming up with creative solutions for them.\nI also enjoy building simulations and visualizations, check some of them out here: ;<mention>projects</mention>",
+                      "image": "IMAGE_URL",
+                      "messageType": "default"
                     },
                     {
                       "sender": {
                         "name": "Aviral",
-                        "icon": "ICON_URL"
+                        "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
-                      "content": "This is sample content",
-                      "image": "IMAGE_URL"
+                      "content": "When I'm not building awesome projects, I like to:\n • play video games 🎮\n • watch movies, TV shows and sitcoms (I love FRIENDS) 📺\n • go for a run 🏃🏻",
+                      "image": "IMAGE_URL",
+                      "messageType": "default"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://avatars.githubusercontent.com/u/61791180"
+                      },
+                      "content": "I love playing ;<b>badminton</b>; as well. 🏸\nand I'm really bad at it\n.\n.\nliving upto it's name. 🙂",
+                      "image": "IMAGE_URL",
+                      "messageType": "default"
                     }
                   ]
                 }
+                
               ]
             },
             {
