@@ -19,10 +19,10 @@ function App() {
 
     // State
     const [server, setServer] = useState<Server | undefined>(undefined);
-    const { width } = useWindowDimensions();
     const [hamburgerClicked, setHamburgerClicked] = useState(true);
     const [selectedChannel, setSelectedChannel] = useState("0-0-0");
     const [selectedServer, setSelectedServer] = useState(0);
+    const { width } = useWindowDimensions();
 
 
     useEffect(() => {
@@ -37,6 +37,7 @@ function App() {
     }
 
     const [serverId, channelGroupId, channelId] = splitIds(selectedChannel)
+
     const toShowOrNotToShow = () => {
         return width >= 768
             ? "translate-x-0"

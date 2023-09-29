@@ -194,7 +194,7 @@ const MessageItemFancy = ({ message }: { message: Message }) => {
                 </div>
                 {imageUrl ? (
                     <img
-                        className="object-contain rounded-sm"
+                        className="md:max-w-md rounded-md m-auto"
                         src={image}
                         alt=""
                     />

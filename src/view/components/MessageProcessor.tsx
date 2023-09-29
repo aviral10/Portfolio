@@ -11,7 +11,8 @@ export const parseMessage = (content: string) => {
 };
 
 export const extractTaggedContent = (tag: string, text: string) => {
-    const pattern = new RegExp(`<${tag}>(.*?)<\/${tag}>`, "g");
+    // const pattern = new RegExp(`<${tag}>(.*?)<\/${tag}>`, "g");
+    const pattern = new RegExp(`<${tag}>((.|\n)*)<\/${tag}>`,"g");
     const matches = text?.match(pattern);
     const extractedContent = matches?.map((match) => {
         return match.replace(new RegExp(`<\/?${tag}>`, "g"), "");

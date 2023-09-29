@@ -7,6 +7,7 @@ import backupConfig from "../../model/fallbackConfig.json";
 import DataModelJson from "../../model/DataModelJson";
 import Cat_8 from "../../assets/cat_8.gif"
 import Cat_9 from "../../assets/cat_9.gif"
+import { StatusBox } from "../../model/interfaces";
 
 
 const MyProfile = () => {
@@ -39,13 +40,7 @@ const MyProfile = () => {
     );
 };
 
-export interface StatusBox {
-    title: string;
-    status: string;
-    locationTitle: string;
-    locationLink: string;
-    email: string;
-}
+
 
 const getISTTime = () => {
     let currentTime = new Date();
@@ -87,7 +82,6 @@ const DynamicClock = ()=>{
         <span>{`${currTime.hours}:${currTime.minutes} ${meridian} IST local time`}</span>
     )
 }
-
 const StatusBox = (props: StatusBox) => {
     return (
         <div className="flex flex-shrink-0">

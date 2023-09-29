@@ -104,6 +104,14 @@ export interface SideIconProps {
     setSelectedState: (isSelectedState: number) => void;
 }
 
+export interface StatusBox {
+    title: string;
+    status: string;
+    locationTitle: string;
+    locationLink: string;
+    email: string;
+}
+
 export interface TagConverter {
     convert(content: string): JSX.Element;
 }

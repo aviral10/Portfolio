@@ -12,7 +12,7 @@
               "messageHeader": [
                 "Hi, I'm Aviral",
                 "Software Enginner",
-                "Soon to be*"
+                "*Soon to be"
               ],
               "messageGroups": [
                 {
@@ -26,6 +26,20 @@
                       "content": "Click to navigate to a channel\n\n;•;<mention>server-map</mention>;           : You are here \n;•;<mention>about-me</mention>;              : Aviral who? \n;•;<mention>skills</mention>;                      : Know Aviral's skill set \n;•;<mention>projects</mention>;                 : Aviral's cool projects \n;•;<mention>academic</mention>;              : Aviral's acedemic history \n;•;<mention>work-experience</mention>; : Aviral's work experience \n;•;<mention>linked-in</mention>;               : Aviral's socials \n;•;<mention>sketching</mention>;              : Aviral's hobbies \n;",
                       "image": "IMAGE_URL",
                       "messageType": "fancy"
+                    }
+                  ]
+                },
+                {
+                  "date": "16 Aug, 2023",
+                  "messages": [
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://avatars.githubusercontent.com/u/61791180"
+                      },
+                      "content": "Welcome to my server! :)",
+                      "image": "IMAGE_URL",
+                      "messageType": "default"
                     }
                   ]
                 }
@@ -131,7 +145,7 @@
                         "name": "Aviral",
                         "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
-                      "content": "Academic Coursework \n;<Link>Data Structures and Algorithms,javascript:void(0)</Link>;",
+                      "content": "<heading>Academic Coursework:</heading>;\n; • ;Data Structures and Algorithms;\n; • ;Object Oriented Programming;\n; • ;Operating Systems;\n; • ;Database Management Systems;\n; • ;Computer Networks;\n;",
                       "image": "IMAGE_URL",
                       "messageType": "fancy"
                     }
@@ -143,8 +157,8 @@
               "name": "Projects",
               "messageHeader": [
                 "Welcome to",
-                "Projects",
-                "This is a SUBTITLE"
+                "my cool Projects",
+                "Most of them are useless 🥲"
               ],
               "messageGroups": [
                 {
@@ -153,10 +167,34 @@
                     {
                       "sender": {
                         "name": "Aviral",
-                        "icon": "ICON_URL"
+                        "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
-                      "content": "This is sample content",
-                      "image": "IMAGE_URL"
+                      "content": "<headingxl>Beauty in Chaos</headingxl>;\n\n;<i>A simple project, written in JS.\nMade using p5JS, draws random abstract art.</i>;\n;<b>Tech:</b>; • Javascript • HTML/CSS;\n\n;Project highlight:\n • This project made me understand Javascript. ;\n\n;GitHub: ;<Link>https://github.com/aviral10/Beauty_in_Chaos,https://github.com/aviral10/Beauty_in_Chaos</Link>;\n;Live: ;<Link>https://aviralrana.me/Beauty_in_Chaos/,https://aviral10.github.io/Beauty_in_Chaos/</Link>;\n\n;",
+                      "image": "https://raw.githubusercontent.com/aviral10/Beauty_in_Chaos/main/sample_2.png",
+                      "messageType": "fancy"
+                    }
+                  ]
+                },
+                {
+                  "date": "16 Aug, 2023",
+                  "messages": [
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://avatars.githubusercontent.com/u/61791180"
+                      },
+                      "content": "<headingxl>Visualizing Paths</headingxl>;\n\n;<i> - Visualised Path-Finding Algorithms that I learned on paper during college.\n - Created an interactive web application built using JavaScript and p5.js library.\n - Included two pathfinding algorithms: Breadth-First Search (BFS) and A* (A Star).\n - Additionally, it features a maze generator based on a randomized DFS.</i>;\n;<b>Tech:</b>; • Javascript • p5JS • HTML/CSS;\n\n;Project highlight:\n • First big project that I made entirely from scratch.\n • Followed Object Oriented Design. ;\n\n;GitHub: ;<Link>https://github.com/aviral10/Visualizing-Paths,https://github.com/aviral10/Visualizing-Paths</Link>;\n;Live: ;<Link>https://aviralrana.me/Visualizing-Paths/,https://aviral10.github.io/Visualizing-Paths</Link>;\n\n;",
+                      "image": "https://raw.githubusercontent.com/aviral10/Visualizing-Paths/main/example.gif",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://avatars.githubusercontent.com/u/61791180"
+                      },
+                      "content": "<headingxl>EKANS - Reverse Snake</headingxl>;\n\n;<i> - Extended scope of Visualising Paths' project in this fun game.\n - Contrary to classic snake game, you control the food here.\n - Snake uses path-finding algorithms to chase the food.\n</i>;\n;<b>Tech:</b>; • Javascript • p5JS • HTML/CSS;\n\n;Project highlight:\n • This project helped me grab my first internship!;\n\n;GitHub: ;<Link>https://github.com/aviral10/Snake_but_you_the_snack,https://github.com/aviral10/Snake_but_you_the_snack</Link>;\n;Live: ;<Link>https://aviralrana.me/Snake_but_you_the_snack/,https://aviral10.github.io/Snake_but_you_the_snack/</Link>;\n\n;",
+                      "image": "https://raw.githubusercontent.com/aviral10/Beauty_in_Chaos/main/sample_2.png",
+                      "messageType": "fancy"
                     }
                   ]
                 }
@@ -206,7 +244,7 @@
                         "name": "Aviral",
                         "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
-                      "content": "<headingxl>Amazon Inc.</headingxl>;\n;<i>Software Developer Engineer Intern</i>;\n;January 2023 - June 2023\n;Location: Bangalore, India\n\n; • Collaborated with the;<b> Amazon Music </b>;International Expansion (IX) team.\n; • Successfully launched a novel Home Tab experience of Amazon Music for Android Automotive clients. \n; • Migrated the old home experience to a newer architecture.\n; • Developed a front-end module for handing network calls made to the backend.\n; • Contributed to the development of the back-end data processing layer as well.\n; • Orchestrated the deployment of a robust CI/CD pipeline.\n; • The pipeline was utilized for experimentation, testing and feature development.\n; • Implemented th new Home Tab support for Navigation Apps such as Google Assistant and Waze.\n; • Worked on Front-end for the development of a personalised widge (My Presets).\n; • My Presets was successfully launched to production.\n; • Skills: C++ · Java · Android · TypeScript · Kotlin · Amazon CloudWatch · Python · JavaScript\n\n",
+                      "content": "<headingxl>Amazon Inc.</headingxl>;\n\n;<i>Software Developer Engineer Intern</i>;\n;January 2023 - June 2023\n;Location: Bangalore, India\n\n; • Collaborated with the;<b> Amazon Music </b>;International Expansion (IX) team.\n; • Successfully launched a novel Home Tab experience of Amazon Music for Android Automotive clients. \n; • Migrated the old home experience to a newer architecture.\n; • Developed a front-end module for handing network calls made to the backend.\n; • Contributed to the development of the back-end data processing layer as well.\n; • Orchestrated the deployment of a robust CI/CD pipeline.\n; • The pipeline was utilized for experimentation, testing and feature development.\n; • Implemented th new Home Tab support for Navigation Apps such as Google Assistant and Waze.\n; • Worked on Front-end for the development of a personalised widge (My Presets).\n; • My Presets was successfully launched to production.\n; • Skills: C++ · Java · Android · TypeScript · Kotlin · Amazon CloudWatch · Python · JavaScript\n\n",
                       "image": "https://res.cloudinary.com/zenbusiness/image/upload/v1670445040/logaster/logaster-2020-03-amazon-gif-logo.gif",
                       "messageType": "fancy"
                     }
@@ -220,7 +258,7 @@
                         "name": "Aviral",
                         "icon": "https://avatars.githubusercontent.com/u/61791180"
                       },
-                      "content": "<headingxl>Adobe Systems</headingxl>;\n;<i>Technical Support Engineer</i>;\n;August 2023 - Present\n;Location: Noida, India\n\n; • Working as a Technical Support Engineer with ;<b> Adobe Analytics </b>; global support team.\n; • During the internship developed a chatbot for Service Desk.\n; • The bot helped in narrowing down the search space of First Call Resolution queries. \n; • Developed an automation tool from scratch and deployed it to company servers to be used internally.\n; • Skills: Python · Adobe Analytics\n\n",
+                      "content": "<headingxl>Adobe Systems</headingxl>;\n\n;<i>Technical Support Engineer</i>;\n;August 2023 - Present\n;Location: Noida, India\n\n; • Working as a Technical Support Engineer with ;<b> Adobe Analytics </b>; global support team.\n; • During the internship developed a chatbot for Service Desk.\n; • The bot helped in narrowing down the search space of First Call Resolution queries. \n; • Developed an automation tool from scratch and deployed it to company servers to be used internally.\n; • Skills: Python · Adobe Analytics\n\n",
                       "image": "https://assets.website-files.com/5ee732bebd9839b494ff27cd/5ee732bebd98398649ff2801_hXrc7y.jpg",
                       "messageType": "fancy"
                     }
@@ -233,6 +271,29 @@
               "messageHeader": [
                 "Welcome to",
                 "Achievements",
+                "This is a SUBTITLE"
+              ],
+              "messageGroups": [
+                {
+                  "date": "16 Aug, 2023",
+                  "messages": [
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "ICON_URL"
+                      },
+                      "content": "This is sample content",
+                      "image": "IMAGE_URL"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "coding-profiles",
+              "messageHeader": [
+                "Welcome to",
+                "coding profiles",
                 "This is a SUBTITLE"
               ],
               "messageGroups": [
@@ -475,6 +536,15 @@
                 "Welcome to",
                 "Sketching",
                 "This is a SUBTITLE"
+              ],
+              "messageGroups": []
+            },
+            {
+              "name": "video-games",
+              "messageHeader": [
+                "Welcome to",
+                "To-do",
+                "List of Hobbies I want to develop"
               ],
               "messageGroups": []
             },

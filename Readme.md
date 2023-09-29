@@ -1,4 +1,5 @@
 to include 
+- Shimmer
 - LinkedIn, Github, Socials
 - Feedback, take in google form
 - (Social Aviral, Aviral with hobbies)
@@ -17,3 +18,4 @@ to include
 - Resume
 - Future medium articles
 - Mail-me
+- refactor and move mention to its rightful place
