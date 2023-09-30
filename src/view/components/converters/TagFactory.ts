@@ -6,6 +6,7 @@ import HeadingXLConverter from "./HeadingXLConverter";
 import ItalicsConverter from "./ItalicsConverter";
 import LinkConverter from "./LinkConverter";
 import MentionConverter from "./MentionConverter";
+import OutlineConverter from "./OutlineConverter";
 import SkillConverter from "./SkillConverter";
 import TextConverter from "./TextConverter";
 
@@ -18,6 +19,7 @@ class TagFactory {
         "heading": new HeadingConverter(),
         "headingxl": new HeadingXLConverter(),
         "badge": new BadgeConverter(),
+        "outline": new OutlineConverter(),
         "b": new BoldConverter(),
         "i": new ItalicsConverter()
     };
