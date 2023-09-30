@@ -39,6 +39,12 @@ export interface Hamburger {
     setHamburgerClicked: (hamburgerClicked: boolean) => void;
 }
 
+export interface HomeScreenProps {
+    server: Server,
+    setServer: (server: Server) => void
+    serverList: Server[]
+}
+
 export interface Message {
     sender: { name: string; icon: string };
     content: string;

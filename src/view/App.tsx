@@ -8,35 +8,26 @@ import GlobalStateContext from "./components/GlobalStateContext";
 import useWindowDimensions from "./components/useWindowDimensions";
 import DataModelJson from "../model/DataModelJson";
 import backupConfig from "../model/fallbackConfig.json";
-import { Server } from "../model/interfaces";
+import { HomeScreenProps, Server } from "../model/interfaces";
 import { splitIds } from "../model/utils";
 import AppContext from "./components/AppContext";
 import IdStore from "../model/IdStore";
+import Shimmer from "./components/Shimmer";
+import KeyGenerator from "../model/KeyGenerator";
 
-function App() {
+
+function HomeScreen(props: HomeScreenProps) {
     // Refs
-    const serverList = useRef<Server[] | undefined>(undefined);
-
+    const serverList = props.serverList;
     // State
-    const [server, setServer] = useState<Server | undefined>(undefined);
+    const server = props.server;
+    const setServer = props.setServer;
     const [hamburgerClicked, setHamburgerClicked] = useState(true);
     const [selectedChannel, setSelectedChannel] = useState("0-0-0");
     const [selectedServer, setSelectedServer] = useState(0);
     const { width } = useWindowDimensions();
 
-
-    useEffect(() => {
-        const model = new DataModelJson(backupConfig);
-        serverList.current = model.getServerList();
-        setServer(serverList.current?.[0]);
-        IdStore.getInstance().populate(serverList.current)
-    }, []);
-
-    if (serverList.current === undefined || server === undefined) {
-        return <h1>Loading...</h1>;
-    }
-
-    const [serverId, channelGroupId, channelId] = splitIds(selectedChannel)
+    const [serverId, channelGroupId, channelId] = splitIds(selectedChannel);
 
     const toShowOrNotToShow = () => {
         return width >= 768
@@ -45,9 +36,15 @@ function App() {
             ? "-translate-x-32"
             : "-translate-x-[calc(100%+80px)]";
     };
-    
+
     return (
-        <AppContext.Provider value={{ server: server, setServer: setServer, serverList: serverList.current}}>
+        <AppContext.Provider
+            value={{
+                server: server,
+                setServer: setServer,
+                serverList: serverList,
+            }}
+        >
             <GlobalStateContext.Provider
                 value={{
                     hamburgerClicked,
@@ -55,7 +52,7 @@ function App() {
                     selectedChannel,
                     setSelectedChannel,
                     selectedServer,
-                    setSelectedServer
+                    setSelectedServer,
                 }}
             >
                 <div className="fixed md:block flex flex-col h-full w-full bg-gray-900">
@@ -63,8 +60,11 @@ function App() {
                         BigPanda
                     </div>
                     <div className={`flex h-full`}>
-
-                        <Sidebar serverList={serverList.current} selectedServer={selectedServer} setSelectedServer={setSelectedServer} />
+                        <Sidebar
+                            serverList={serverList}
+                            selectedServer={selectedServer}
+                            setSelectedServer={setSelectedServer}
+                        />
 
                         <div className="flex w-full">
                             <Channels
@@ -88,7 +88,6 @@ function App() {
                                                 .messageGroups
                                         }
                                     />
-                                    
                                     <MyProfile />
                                 </div>
                             </div>
@@ -97,6 +96,37 @@ function App() {
                 </div>
             </GlobalStateContext.Provider>
         </AppContext.Provider>
+    );
+}
+
+function App() {
+    // Refs
+    const serverList = useRef<Server[] | undefined>(undefined);
+
+    // State
+    const [server, setServer] = useState<Server | undefined>(undefined);
+
+    useEffect(() => {
+        setTimeout(() => {
+            const model = new DataModelJson(backupConfig);
+            serverList.current = model.getServerList();
+            setServer(serverList.current?.[0]);
+            IdStore.getInstance().populate(serverList.current);
+        }, 2000);
+    }, []);
+
+    return (
+        <div>
+            {serverList.current === undefined || server === undefined ? (
+                <Shimmer />
+            ) : (
+                <HomeScreen
+                    server={server}
+                    setServer={setServer}
+                    serverList={serverList.current!}
+                />
+            )}
+        </div>
     );
 }
 

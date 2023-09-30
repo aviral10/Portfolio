@@ -6,6 +6,28 @@
     word-break: break-word;
 }
 
+.logo-path path {
+    stroke: #fff;
+    stroke-width: 0;
+    stroke-dasharray: 500;
+}
+.logo-path path {
+    animation: letter-animation 1s linear forwards infinite;
+}
+
+@keyframes letter-animation {
+    0% {
+        stroke-dashoffset: 500;
+        stroke-width: 2;
+        fill-opacity: 0;
+   }
+    100% {
+        stroke-width: 0;
+        stroke-dashoffset: 0;
+        fill-opacity: 0;
+   }
+}
+
 @layer base {
     html {
         font-family: Nunito Sans, system-ui, sans-serif;
