@@ -14,6 +14,7 @@ import AppContext from "./components/AppContext";
 import IdStore from "../model/IdStore";
 import Shimmer from "./components/Shimmer";
 import KeyGenerator from "../model/KeyGenerator";
+import Config from "../model/Config";
 
 
 function HomeScreen(props: HomeScreenProps) {
@@ -108,7 +109,10 @@ function App() {
 
     useEffect(() => {
         setTimeout(() => {
-            const model = new DataModelJson(backupConfig);
+            //
+            Config.updateConfig(backupConfig)
+            //
+            const model = new DataModelJson(Config.getConfig());
             serverList.current = model.getServerList();
             setServer(serverList.current?.[0]);
             IdStore.getInstance().populate(serverList.current);

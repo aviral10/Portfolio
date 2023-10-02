@@ -10,7 +10,9 @@ export default class DataConverter {
             status: obj.status,
             locationTitle: obj.locationTitle,
             locationLink: obj.locationLink,
-            email: obj.email
+            email: obj.email,
+            discord: obj.discord,
+            discordImage: obj.discordImage
         };
         return myProfile;
     }

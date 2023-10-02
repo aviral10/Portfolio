@@ -3,17 +3,15 @@ import { AiOutlineClockCircle } from "react-icons/ai";
 import { HiOutlineMail, HiOutlineOfficeBuilding } from "react-icons/hi";
 import { GoCloudOffline } from "react-icons/go";
 import AppContext from "./AppContext";
-import backupConfig from "../../model/fallbackConfig.json";
 import DataModelJson from "../../model/DataModelJson";
 import Cat_8 from "../../assets/cat_8.gif"
-import Cat_9 from "../../assets/cat_9.gif"
 import { StatusBox } from "../../model/interfaces";
+import Config from "../../model/Config";
 
 
 const MyProfile = () => {
-    const model = new DataModelJson(backupConfig);
+    const model = new DataModelJson(Config.getConfig());
     const myProfile = model.getMyProfile();
-    const { server, setServer } = useContext(AppContext);
     return (
         <div className="hidden p-4 h-full md:flex flex-col md:w-[25%] flex-shrink-0 bg-gray-800 text-white shadow-lg">
             <div className="w-full">

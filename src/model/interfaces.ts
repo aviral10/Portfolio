@@ -77,6 +77,8 @@ export interface MyProfileTab {
     locationTitle: string
     locationLink: string
     email: string
+    discord: string
+    discordImage: string
 }
 
 export interface ScrollableComponentProps {
