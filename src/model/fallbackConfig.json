@@ -50,7 +50,7 @@
               "messageHeader": [
                 "Hi, I'm Aviral",
                 "Software Enginner",
-                "Soon to be*"
+                "*Soon to be"
               ],
               "messageGroups": [
                 {
@@ -437,8 +437,8 @@
                         "name": "Aviral",
                         "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
                       },
-                      "content": "<heading>Discord</heading>;\n;Click on the link below to join my discord server: \n;<link>BigPanda's Discord Server,https://discord.gg/RvTTbQBtdF</link>;;\n",
-                      "image": "https://marketingtool.online/en/youtube-thumbnail-download/images/placeholder.jpg",
+                      "content": "<heading>Discord</heading>;\n;Click on the link below to join my discord server: \n;<link>BigPanda's Discord Server,https://discord.gg/RvTTbQBtdF</link>;\n\n",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/socials/discord.png",
                       "messageType": "fancy"
                     }
                   ]
@@ -461,8 +461,8 @@
                         "name": "Aviral",
                         "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
                       },
-                      "content": "<heading>GitHub</heading>;\n;Link: ;<link>https://github.com/aviral10,https://github.com/aviral10</link>;\n;Don't forget to follow :);\n",
-                      "image": "https://marketingtool.online/en/youtube-thumbnail-download/images/placeholder.jpg",
+                      "content": "<heading>GitHub</heading>;\n;Link: ;<link>https://github.com/aviral10,https://github.com/aviral10</link>;\n;Don't forget to follow :);\n\n",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/socials/github.png",
                       "messageType": "fancy"
                     }
                   ]
@@ -485,8 +485,8 @@
                         "name": "Aviral",
                         "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
                       },
-                      "content": "<heading>LinkedIn</heading>;\n;Link: ;<link>https://www.linkedin.com/in/aviral-rana/,https://www.linkedin.com/in/aviral-rana/</link>;\n;Would love to connect with you!;\n",
-                      "image": "https://marketingtool.online/en/youtube-thumbnail-download/images/placeholder.jpg",
+                      "content": "<heading>LinkedIn</heading>;\n;Link: ;<link>https://www.linkedin.com/in/aviral-rana/,https://www.linkedin.com/in/aviral-rana/</link>;\n;Would love to connect with you!;\n\n",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/socials/linkedIn.png",
                       "messageType": "fancy"
                     }
                   ]
@@ -509,8 +509,8 @@
                         "name": "Aviral",
                         "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
                       },
-                      "content": "<heading>X</heading>;\n;Link: ;<link>https://twitter.com/_bigppanda_,https://twitter.com/_bigppanda_</link>;\n;Don't forget to follow :);\n",
-                      "image": "https://marketingtool.online/en/youtube-thumbnail-download/images/placeholder.jpg",
+                      "content": "<heading>X</heading>;\n;Link: ;<link>https://twitter.com/_bigppanda_,https://twitter.com/_bigppanda_</link>;\n;Don't forget to follow :);\n\n",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/socials/twitter.png",
                       "messageType": "fancy"
                     }
                   ]
@@ -533,8 +533,8 @@
                         "name": "Aviral",
                         "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
                       },
-                      "content": "<heading>YouTube</heading>;\n;Link: ;<link>https://www.youtube.com/@bigppanda,https://www.youtube.com/watch?v=dQw4w9WgXcQ</link>;\n",
-                      "image": "https://marketingtool.online/en/youtube-thumbnail-download/images/placeholder.jpg",
+                      "content": "<heading>YouTube</heading>;\n;Link: ;<link>https://www.youtube.com/@bigppanda,https://www.youtube.com/watch?v=dQw4w9WgXcQ</link>;\n\n",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/socials/youtube.jpg",
                       "messageType": "fancy"
                     }
                   ]
@@ -562,8 +562,8 @@
                         "name": "Aviral",
                         "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
                       },
-                      "content": "You can officially reach out to me at: \n;Email: ;<link>aviral19rana@gmail.com,mailto:aviral19rana@gmail.com</link>;\n",
-                      "image": "https://www.usebouncer.com/wp-content/uploads/2022/10/435452310-how-to-export-an-email-list-from-gmail.png",
+                      "content": "You can officially reach out to me at: \n;Email: ;<link>aviral19rana@gmail.com,mailto:aviral19rana@gmail.com</link>;\n\n",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/socials/email.png",
                       "messageType": "fancy"
                     }
                   ]
@@ -585,19 +585,67 @@
               "name": "Poetry",
               "messageHeader": [
                 "Welcome to",
-                "Poetry",
-                "This is a SUBTITLE"
+                "Poetry Section 🩺",
+                "Stuff from my teenage years 📜"
               ],
-              "messageGroups": []
+              "messageGroups": [
+                {
+                  "date": "16 Aug, 2023",
+                  "messages": [
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "Here's an excerpt from a little poem that I wrote. :)",
+                      "image": "",
+                      "messageType": "default"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "<headingxl>I once drew a friend</headingxl>;\n;.......\nI told her to not desire rain\nShe wasn't ready to know \nWhat the rain would do \nBut she craved and as of one day\nI left my window open.\nIt was raining.\nIt was raining love.\n\nLove that she craved for, so much.\nShe jumped out of my canvas and \nTook a leap out in the open\n\nI held my breath\nAnd looked at her,\nShe was happy, happier than she ever was \nThe rain of love was making her colors wash.\n \nHer glitters, I painted with so much Love \nWere washed away \nHer crimson dress was\nspoilt, her colors \nfaded and she slowly blurred away \n\nI cried in grief, cause she was the only friend I had\nI couldn't pick my colors up,\nI was all wet and soaked in love \n\nThe moon showed up and its light paved her way \nShe crossed oblivion, bidding me goodbye.\n.......\n",
+                      "image": "",
+                      "messageType": "fancy"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "name": "Unfinished Novel",
               "messageHeader": [
-                "Welcome to",
-                "UF",
-                "This is a SUBTITLE"
+                "Welcome to my",
+                "Unfinished Novel",
+                "~ Aviral 📔"
               ],
-              "messageGroups": []
+              "messageGroups": [
+                {
+                  "date": "16 Aug, 2023",
+                  "messages": [
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "And here's an excerpt from an unfinished novel that I started writing during college. :)\nI don't know if I will ever \"finish\" it.",
+                      "image": "",
+                      "messageType": "default"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "<headingxl>Red, Chapter 1: Yo</headingxl>;\n\n;“Well, I'm not here for Red, I'm here for me, I'm not here for Red” I said while I looked out for her here and there. I sat down on my usual spot and opened my book, still waiting for Red to show up. I looked up leaning back on the bench, the sky wasn't as bright as it usually was, the birds were flying north, and there was a plane leaving a jet trail behind. I was busy staring at the sky and suddenly someone blocks my view from behind. “Yo”, she greets me with. I raised my hand and held her nose don't ask me why, I just felt like. “We meet again”, I replied.\n\nShe sits next to me and looks happier than yesterday, or maybe she usually is like this, how long have I known her anyway?  We chatted and not once had I taken my eyes off her, her eyes, her big eyes detailed with mascara, I wonder if she put on that for me? Maybe she had a date or something. Is she seeing someone, maybe I should ask her?  My internal thoughts were making it hard to concentrate. Is sh- She interrupts me and asks “Why are you looking at me like that?” giving me a funny look and I got alarmed and apologized for my creepy behavior. She giggled and said “You're Cute” to which I had no reply. “Hey maybe we should go out for a coffee next time?” I asked. With a few seconds of silence which felt like hours she replied “Sure”. “I'm Aviral”, I said, offering my hand. “I'm Lily” she replied and shook my hand.",
+                      "image": "",
+                      "messageType": "fancy"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -608,28 +656,96 @@
               "name": "Sketching",
               "messageHeader": [
                 "Welcome to",
-                "Sketching",
-                "This is a SUBTITLE"
+                "My Sketches",
+                "sadhvhg"
               ],
-              "messageGroups": []
+              "messageGroups": [
+                {
+                  "date": "16 Aug, 2023",
+                  "messages": [
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "asdasd",
+                      "image": "",
+                      "messageType": "default"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "asdasd",
+                      "image": "",
+                      "messageType": "default"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "name": "video-games",
               "messageHeader": [
                 "Welcome to",
-                "To-do",
-                "List of Hobbies I want to develop"
+                "Video Games",
+                "It's a-me, Mario! ~Uncle Mario, AC2"
               ],
               "messageGroups": []
             },
             {
               "name": "To-do",
               "messageHeader": [
-                "Welcome to",
-                "To-do",
-                "List of Hobbies I want to develop"
+                "Hobbies",
+                "bucket list",
+                "List of hobbies, I want to develop"
               ],
-              "messageGroups": []
+              "messageGroups": [
+                {
+                  "date": "16 Aug, 2023",
+                  "messages": [
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "<heading>To-develop in 2024: </heading>;\n; • Working out 🏋️‍♂️\n • Playing an electric guitar 🎸\n; • Actively follow a sport ⚽\n; • Biking 🚵\n; • Avid Reading 📖\n; • Travelling to places 🌍",
+                      "image": "",
+                      "messageType": "fancy"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Blogging",
+          "channelItems": [
+            {
+              "name": "Blogs",
+              "messageHeader": [
+                "Welcome to",
+                "My Blogs",
+                "Under construction"
+              ],
+              "messageGroups": [
+                {
+                  "date": "16 Aug, 2023",
+                  "messages": [
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "This section is under construction,\nI'll update my blogs and articles in this section.",
+                      "image": "",
+                      "messageType": "fancy"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
