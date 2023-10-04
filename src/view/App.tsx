@@ -1,21 +1,20 @@
-import React, { useState, useEffect, useRef } from "react";
-import Sidebar from "./components/Sidebar";
+import { useState, useEffect, useRef } from "react";
+import { HomeScreenProps, Server } from "../model/interfaces";
+import { mediumScreen, splitIds } from "../model/utils";
+
+import backupConfig from "../model/fallbackConfig.json";
+import useWindowDimensions from "./components/useWindowDimensions";
+import AppContext from "./components/AppContext";
 import Channels from "./components/Channels";
+import Config from "../model/Config";
+import DataModelJson from "../model/DataModelJson";
+import GlobalStateContext from "./components/GlobalStateContext";
+import IdStore from "../model/IdStore";
 import Messages from "./components/Messages";
 import MyProfile from "./components/MyProfile";
 import Searchbar from "./components/Searchbar";
-import GlobalStateContext from "./components/GlobalStateContext";
-import useWindowDimensions from "./components/useWindowDimensions";
-import DataModelJson from "../model/DataModelJson";
-import backupConfig from "../model/fallbackConfig.json";
-import { HomeScreenProps, Server } from "../model/interfaces";
-import { splitIds } from "../model/utils";
-import AppContext from "./components/AppContext";
-import IdStore from "../model/IdStore";
+import Sidebar from "./components/Sidebar";
 import Shimmer from "./components/Shimmer";
-import KeyGenerator from "../model/KeyGenerator";
-import Config from "../model/Config";
-
 
 function HomeScreen(props: HomeScreenProps) {
     // Refs
@@ -31,12 +30,14 @@ function HomeScreen(props: HomeScreenProps) {
     const [serverId, channelGroupId, channelId] = splitIds(selectedChannel);
 
     const toShowOrNotToShow = () => {
-        return width >= 768
+        return width >= mediumScreen
             ? "translate-x-0"
             : hamburgerClicked
             ? "-translate-x-32"
             : "-translate-x-[calc(100%+80px)]";
     };
+
+    width < mediumScreen ? registerSwipes(setHamburgerClicked) : null;
 
     return (
         <AppContext.Provider
@@ -80,13 +81,13 @@ function HomeScreen(props: HomeScreenProps) {
                                     <Messages
                                         messageHeader={
                                             server.channelGroups[channelGroupId]
-                                                .channelItems[channelId]
-                                                .messageHeader
+                                                  .channelItems[channelId]
+                                                  .messageHeader
                                         }
                                         messageGroups={
                                             server.channelGroups[channelGroupId]
-                                                .channelItems[channelId]
-                                                .messageGroups
+                                                  .channelItems[channelId]
+                                                  .messageGroups
                                         }
                                     />
                                     <MyProfile />
@@ -100,6 +101,27 @@ function HomeScreen(props: HomeScreenProps) {
     );
 }
 
+const registerSwipes = (
+    setHamburgerClicked: (hamburgerClicked: boolean) => void
+) => {
+    let touchstartX = 0;
+    let touchendX = 0;
+
+    function commenceAction() {
+        (touchendX - touchstartX < -100)?setHamburgerClicked(false):null;
+        (touchendX - touchstartX > 100)?setHamburgerClicked(true):null;
+    }
+
+    document.addEventListener("touchstart", (e) => {
+        touchstartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener("touchend", (e) => {
+        touchendX = e.changedTouches[0].screenX;
+        commenceAction();
+    });
+};
+
 function App() {
     // Refs
     const serverList = useRef<Server[] | undefined>(undefined);
@@ -110,7 +132,7 @@ function App() {
     useEffect(() => {
         setTimeout(() => {
             //
-            Config.updateConfig(backupConfig)
+            Config.updateConfig(backupConfig);
             //
             const model = new DataModelJson(Config.getConfig());
             serverList.current = model.getServerList();

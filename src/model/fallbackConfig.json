@@ -657,7 +657,7 @@
               "messageHeader": [
                 "Welcome to",
                 "My Sketches",
-                "sadhvhg"
+                "Doodling here and there"
               ],
               "messageGroups": [
                 {
@@ -668,18 +668,18 @@
                         "name": "Aviral",
                         "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
                       },
-                      "content": "asdasd",
-                      "image": "",
-                      "messageType": "default"
+                      "content": "",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/hobbies/draw_1.jpg",
+                      "messageType": "fancy"
                     },
                     {
                       "sender": {
                         "name": "Aviral",
                         "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
                       },
-                      "content": "asdasd",
-                      "image": "",
-                      "messageType": "default"
+                      "content": "",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/hobbies/draw_2.jpg",
+                      "messageType": "fancy"
                     }
                   ]
                 }
@@ -689,10 +689,129 @@
               "name": "video-games",
               "messageHeader": [
                 "Welcome to",
-                "Video Games",
+                "Video Games! 🎮",
                 "It's a-me, Mario! ~Uncle Mario, AC2"
               ],
-              "messageGroups": []
+              "messageGroups": [
+                {
+                  "date": "16 Aug, 2023",
+                  "messages": [
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "<heading>My absolute favourite games: </heading>;\n; • GTA V \n • Witcher 3 \n; • Read Dead Redemption 2\n; • Minecraft\n • Assassins Creed Black Flag 🏴‍☠️\n",
+                      "image": "",
+                      "messageType": "default"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "<heading>Games I've played in the past:</heading>;\n; • Life Is Strange\n • The Walking Dead: TellTale series\n • All Assassins Creed games\n • Overwatch 2\n • Cyberpunk 2077\n • Call of Duty: Mordern Warfare Series\n • Call of Duty: Black Ops\n • Hogwarts Legacy\n • Portal 2\n • GTA Vice City and San Andreas ❣️\n • Age of Empires/Mythology\n\nAnd the list goes on......",
+                      "image": "",
+                      "messageType": "default"
+                    }
+                  ]
+                },
+                {
+                  "date": "16 Aug, 2023",
+                  "messages": [
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/hobbies/game_0.png",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/hobbies/game_1.png",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/hobbies/game_2.png",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/hobbies/game_3.png",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/hobbies/game_4.png",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/hobbies/game_5.png",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/hobbies/game_6.png",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/hobbies/game_7.png",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/hobbies/game_8.png",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/hobbies/game_9.png",
+                      "messageType": "fancy"
+                    }
+                  ]
+                }
+              ]
             },
             {
               "name": "To-do",
