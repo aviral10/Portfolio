@@ -168,8 +168,6 @@ export interface MessageItemProps {
 
 const MessageItemDefault = ({ message }: { message: Message }) => {
     const { sender, content, image } = message;
-    const { server, setServer } = useContext(AppContext);
-    const globalStateContext = useContext(GlobalStateContext);
     return (
         <div className="flex flex-col">
             <div className="text-cyan-400">{message.sender.name}</div>
@@ -203,6 +201,7 @@ const MessageItemFancy = ({ message }: { message: Message }) => {
         </div>
     );
 };
+
 
 const MessageItemOnlyTags = ({ message }: { message: Message }) => {
     const { sender, content, image } = message;
