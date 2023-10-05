@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import {
     Message,
     MessageGroup,
@@ -13,6 +13,8 @@ import { splitIds } from "../../model/utils";
 import AppContext from "./AppContext";
 import { parseMessage } from "./MessageProcessor";
 import InputComponent from "./InputComponent";
+import useDynamicImage from "../hooks/useDynamicImage";
+import AnonymousAnimal from "../../model/AnonymousAnimal";
 
 const scrollToBottom = (ref: any) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -44,30 +46,32 @@ const Messages = (props: MessagesProps) => {
             : scrollToBottom(ref);
     }, [messageGroup]);
 
-    const handleMessageSent = (e:any) => {
+    const handleMessageSent = (e: any) => {
         let sample = createUserMessage(e.value);
-        let messageGroups = server.channelGroups[channelGroupId].channelItems[channelId].messageGroups
+        let messageGroups =
+            server.channelGroups[channelGroupId].channelItems[channelId]
+                .messageGroups;
         e.value = "";
 
-        
         const displayDate = getTodaysDate();
-        messageGroups[messageGroups.length-1].date === displayDate
+        messageGroups[messageGroups.length - 1].date === displayDate
             ? null
-            : server.channelGroups[channelGroupId]
-            .channelItems[channelId]
-            .messageGroups.push({
-                date: displayDate,
-                messages: [],
-            });
+            : server.channelGroups[channelGroupId].channelItems[
+                  channelId
+              ].messageGroups.push({
+                  date: displayDate,
+                  messages: [],
+              });
 
-        messageGroups[messageGroups.length-1].messages.push(sample)
-        
+        messageGroups[messageGroups.length - 1].messages.push(sample);
+
         let newMessageGroup = structuredClone(
-            server.channelGroups[channelGroupId].channelItems[channelId].messageGroups
+            server.channelGroups[channelGroupId].channelItems[channelId]
+                .messageGroups
         );
         setMessageGroup(newMessageGroup);
-    }
-    
+    };
+
     return (
         <div className="flex flex-col flex-shrink-0 h-full w-full md:w-[75%] bg-gray-700 text-white shadow-lg">
             <ScrollableComponent
@@ -75,14 +79,12 @@ const Messages = (props: MessagesProps) => {
                 messageGroups={messageGroup}
                 endRef={ref}
             />
-            <InputComponent
-                onSend={(e) => handleMessageSent(e)}
-            />
+            <InputComponent onSend={(e) => handleMessageSent(e)} />
         </div>
     );
 };
 
-const getTodaysDate = ()=>{
+const getTodaysDate = () => {
     const today = new Date();
     const date = today.getDate();
     const month = today.toLocaleString("default", {
@@ -90,16 +92,16 @@ const getTodaysDate = ()=>{
     });
     const year = today.getFullYear();
     return `${date} ${month}, ${year}`;
-}
-
-
+};
 
 // Pulling a prank on a friend
 const createUserMessage = (content: string): Message => {
+    let {name, randomAnimal} = AnonymousAnimal.getInstance().getAnimal()
+    
     return {
         sender: {
-            name: "Pain in the butt!",
-            icon: "https://media.licdn.com/dms/image/D4D03AQENLlGuJ05AIg/profile-displayphoto-shrink_800_800/0/1686918845899?e=2147483647&v=beta&t=zpOvvFLSc2iiDcbL5vKQBAnT1EbptPFd_0tpuAJlesg",
+            name: name,
+            icon: randomAnimal,
         },
         content: content,
         image: "",
@@ -183,6 +185,7 @@ const MessageItemDefault = ({ message }: { message: Message }) => {
 const MessageItemFancy = ({ message }: { message: Message }) => {
     const { sender, content, image } = message;
     let imageUrl = image ? (image === "IMAGE_URL" ? null : image) : null;
+    let url = imageUrl?useDynamicImage(imageUrl):null
     return (
         <div className="w-fit md:max-w-[80%] flex flex-col">
             <div className="text-cyan-400">{message.sender.name}</div>
@@ -193,7 +196,7 @@ const MessageItemFancy = ({ message }: { message: Message }) => {
                 {imageUrl ? (
                     <img
                         className="md:max-w-md rounded-md m-auto"
-                        src={image}
+                        src={url!}
                         alt=""
                     />
                 ) : null}
@@ -267,7 +270,7 @@ const MessageItemNormal = (props: MessageItemProps) => {
         <div className="flex pb-6 space-x-2 md:space-x-4">
             <div className="w-10 h-10 flex-shrink-0">
                 <img
-                    className="rounded-3xl"
+                    className="rounded-3xl bg-gray-650"
                     src={props.message.sender.icon}
                     alt="AVATAR"
                 />

@@ -3,7 +3,7 @@ import { HomeScreenProps, Server } from "../model/interfaces";
 import { mediumScreen, splitIds } from "../model/utils";
 
 import backupConfig from "../model/fallbackConfig.json";
-import useWindowDimensions from "./components/useWindowDimensions";
+import useWindowDimensions from "./hooks/useWindowDimensions";
 import AppContext from "./components/AppContext";
 import Channels from "./components/Channels";
 import Config from "../model/Config";
@@ -15,6 +15,7 @@ import MyProfile from "./components/MyProfile";
 import Searchbar from "./components/Searchbar";
 import Sidebar from "./components/Sidebar";
 import Shimmer from "./components/Shimmer";
+import AnonymousAnimal from "../model/AnonymousAnimal";
 
 function HomeScreen(props: HomeScreenProps) {
     // Refs
@@ -26,8 +27,9 @@ function HomeScreen(props: HomeScreenProps) {
     const [selectedChannel, setSelectedChannel] = useState("0-0-0");
     const [selectedServer, setSelectedServer] = useState(0);
     const { width } = useWindowDimensions();
-
     const [serverId, channelGroupId, channelId] = splitIds(selectedChannel);
+    // Initialise Anonymous animals, so animal image is prefetched
+    AnonymousAnimal.getInstance()
 
     const toShowOrNotToShow = () => {
         return width >= mediumScreen
