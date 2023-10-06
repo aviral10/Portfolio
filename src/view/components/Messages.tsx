@@ -13,8 +13,8 @@ import { splitIds } from "../../model/utils";
 import AppContext from "./AppContext";
 import { parseMessage } from "./MessageProcessor";
 import InputComponent from "./InputComponent";
-import useDynamicImage from "../hooks/useDynamicImage";
 import AnonymousAnimal from "../../model/AnonymousAnimal";
+import ImageCache from "../../model/ImageCache";
 
 const scrollToBottom = (ref: any) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -184,19 +184,18 @@ const MessageItemDefault = ({ message }: { message: Message }) => {
 
 const MessageItemFancy = ({ message }: { message: Message }) => {
     const { sender, content, image } = message;
-    let imageUrl = image ? (image === "IMAGE_URL" ? null : image) : null;
-    let url = imageUrl?useDynamicImage(imageUrl):null
+    let imageUrl = image ? (image === "IMAGE_URL" ? null : ImageCache.get(image)) : null;
     return (
-        <div className="w-fit md:max-w-[80%] flex flex-col">
+        <div className={`w-fit md:max-w-[80%] flex flex-col`}>
             <div className="text-cyan-400">{message.sender.name}</div>
-            <div className="bg-gray-800 border-lime-400 border-l-4 rounded-md p-2">
+            <div className={`bg-gray-800 border-lime-400 border-l-4 rounded-md p-2  ${imageUrl?"min-h-[120px]":null}`}>
                 <div className="font-larry font-light text-xs md:text-base break-words whitespace-pre-wrap">
                     {parseMessage(content)}
                 </div>
                 {imageUrl ? (
                     <img
                         className="md:max-w-md rounded-md m-auto"
-                        src={url!}
+                        src={imageUrl}
                         alt=""
                     />
                 ) : null}

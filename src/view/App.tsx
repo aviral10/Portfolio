@@ -16,6 +16,7 @@ import Searchbar from "./components/Searchbar";
 import Sidebar from "./components/Sidebar";
 import Shimmer from "./components/Shimmer";
 import AnonymousAnimal from "../model/AnonymousAnimal";
+import ImageCache from "../model/ImageCache";
 
 function HomeScreen(props: HomeScreenProps) {
     // Refs
@@ -140,6 +141,7 @@ function App() {
             serverList.current = model.getServerList();
             setServer(serverList.current?.[0]);
             IdStore.getInstance().populate(serverList.current);
+            ImageCache.prefetch(serverList.current)
         }, 2000);
     }, []);
 
