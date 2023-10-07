@@ -1,6 +1,6 @@
 import IdStore from "../../../model/IdStore";
 import KeyGenerator from "../../../model/KeyGenerator";
-import { TagConverter } from "../../../model/interfaces";
+import { TagConverter } from "../../../model/Interfaces";
 import Mention from "../../atomicComponents/Mention";
 
 class MentionConverter implements TagConverter {

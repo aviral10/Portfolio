@@ -4,10 +4,10 @@ import { HiOutlineMail, HiOutlineOfficeBuilding } from "react-icons/hi";
 import { GoCloudOffline } from "react-icons/go";
 import DataModelJson from "../../model/DataModelJson";
 import Cat_8 from "../../assets/cat_8.gif";
-import { StatusBox } from "../../model/interfaces";
+import { StatusBox } from "../../model/Interfaces";
 import Config from "../../model/Config";
 import Link from "../atomicComponents/Link";
-import { getISTTime } from "../../model/utils";
+import { getISTTime } from "../../model/Utils";
 
 const MyProfile = () => {
     const model = new DataModelJson(Config.getConfig());

@@ -1,5 +1,5 @@
 import KeyGenerator from "../../../model/KeyGenerator";
-import { TagConverter } from "../../../model/interfaces";
+import { TagConverter } from "../../../model/Interfaces";
 import Link from "../../atomicComponents/Link";
 
 class LinkConverter implements TagConverter {

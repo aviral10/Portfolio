@@ -1,4 +1,4 @@
-import { Server } from "./interfaces";
+import { Server } from "./Interfaces";
 
 class ImageCache {
     private static cache: Map<string, string> = new Map();

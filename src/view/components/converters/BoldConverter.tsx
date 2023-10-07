@@ -1,5 +1,5 @@
 import KeyGenerator from "../../../model/KeyGenerator";
-import { TagConverter } from "../../../model/interfaces";
+import { TagConverter } from "../../../model/Interfaces";
 import Bold from "../../atomicComponents/Bold";
 
 class BoldConverter implements TagConverter {

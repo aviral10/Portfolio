@@ -1,4 +1,4 @@
-import { TagConverter } from "../../../model/interfaces";
+import { TagConverter } from "../../../model/Interfaces";
 import BadgeConverter from "./BadgeConverter";
 import BoldConverter from "./BoldConverter";
 import HeadingConverter from "./HeadingConverter";

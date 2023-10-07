@@ -1,5 +1,5 @@
 import KeyGenerator from "../../../model/KeyGenerator";
-import { TagConverter } from "../../../model/interfaces";
+import { TagConverter } from "../../../model/Interfaces";
 import Outline from "../../atomicComponents/Outline";
 
 class OutlineConverter implements TagConverter {

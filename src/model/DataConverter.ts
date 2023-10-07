@@ -6,7 +6,7 @@ import {
     MessageType,
     MyProfileTab,
     Server,
-} from "./interfaces";
+} from "./Interfaces";
 
 export default class DataConverter {
     public convertMyProfileTab(obj: any): MyProfileTab {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import placeholder_b from "../../assets/placeholder_g.gif";
 import ImageCache from "../model/ImageCache";
-import { blobToBase64 } from "../model/utils";
+import { blobToBase64 } from "../model/Utils";
 
 const useDynamicImage = (url:string, placeholder:string=placeholder_b) => {
     const [imageUrl, setImageUrl] = useState(ImageCache.get(url));

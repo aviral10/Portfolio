@@ -1,4 +1,4 @@
-import { Server } from "./interfaces";
+import { Server } from "./Interfaces";
 
 export default class IdStore {
     private IdMap: Map<string, string> = new Map<string, string>();

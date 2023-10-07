@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import Analytics from "../../model/Analytics/Analytics";
 import AnonymousAnimal from "../../model/AnonymousAnimal";
-import { HomeScreenProps } from "../../model/interfaces";
-import { splitIds, mediumScreen } from "../../model/utils";
+import { HomeScreenProps } from "../../model/Interfaces";
+import { splitIds, mediumScreen } from "../../model/Utils";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import AppContext from "./AppContext";
 import Channels from "./Channels";

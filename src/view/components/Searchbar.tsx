@@ -2,7 +2,7 @@ import { useContext } from "react";
 import GlobalStateContext from "./GlobalStateContext";
 import AppContext from "./AppContext";
 import Cat_4 from "../../assets/cat_4.gif";
-import { splitIds } from "../../model/utils";
+import { splitIds } from "../../model/Utils";
 
 const Searchbar = () => {
     const { server } = useContext(AppContext);

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { splitIds } from "../../model/utils";
+import { splitIds } from "../../model/Utils";
 import AppContext from "../components/AppContext";
 import GlobalStateContext from "../components/GlobalStateContext";
 

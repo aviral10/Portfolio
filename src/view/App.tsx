@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Server } from "../model/interfaces";
+import { Server } from "../model/Interfaces";
 
 import backupConfig from "../model/fallbackConfig.json";
 import Config from "../model/Config";
@@ -8,6 +8,7 @@ import IdStore from "../model/IdStore";
 import Shimmer from "./components/Shimmer";
 import ImageCache from "../model/ImageCache";
 import HomeScreen from "./components/HomeScreen";
+import FetchRemoteConfig from "../model/FetchRemoteConfig";
 
 function App() {
     // Refs
@@ -16,17 +17,35 @@ function App() {
     // State
     const [server, setServer] = useState<Server | undefined>(undefined);
 
+    const updateServerList = () => {
+        const model = new DataModelJson(Config.getConfig());
+        serverList.current = model.getServerList();
+        setServer(serverList.current?.[0]);
+        IdStore.getInstance().populate(serverList.current);
+        ImageCache.prefetch(serverList.current);
+    };
+
     useEffect(() => {
         setTimeout(() => {
-            //
             Config.updateConfig(backupConfig);
-            //
-            const model = new DataModelJson(Config.getConfig());
-            serverList.current = model.getServerList();
-            setServer(serverList.current?.[0]);
-            IdStore.getInstance().populate(serverList.current);
-            ImageCache.prefetch(serverList.current);
-        }, 2000);
+
+            // Attempt fetching remote Config
+            try {
+                let url =
+                    "https://raw.githubusercontent.com/aviral10/Public-assets/main/portfolioConfig.json";
+                let fetchRemoteConfig = new FetchRemoteConfig(url);
+                fetchRemoteConfig.fetchRemoteData().then((data) => {
+                    Config.updateConfig(data);
+                    updateServerList();
+                });
+            } catch (error) {
+                console.error(
+                    "Could not fetch remote config, falling back to backup config"
+                );
+                updateServerList();
+            }
+
+        }, 1000);
     }, []);
 
     return (

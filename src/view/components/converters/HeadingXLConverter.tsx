@@ -1,5 +1,5 @@
 import KeyGenerator from "../../../model/KeyGenerator";
-import { TagConverter } from "../../../model/interfaces";
+import { TagConverter } from "../../../model/Interfaces";
 import HeadingXL from "../../atomicComponents/HeadingXL";
 
 class HeadingXLConverter implements TagConverter {

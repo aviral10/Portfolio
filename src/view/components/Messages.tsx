@@ -6,11 +6,11 @@ import {
     MessageType,
     MessagesProps,
     ScrollableComponentProps,
-} from "../../model/interfaces";
+} from "../../model/Interfaces";
 import KeyGenerator from "../../model/KeyGenerator";
 import Resume from "../../assets/AviralRana_Resume.pdf";
 import GlobalStateContext from "./GlobalStateContext";
-import { getTodaysDate, splitIds } from "../../model/utils";
+import { getTodaysDate, splitIds } from "../../model/Utils";
 import AppContext from "./AppContext";
 import { parseMessage } from "./converters/MessageProcessor";
 import InputComponent from "./InputComponent";
