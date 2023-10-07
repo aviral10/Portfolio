@@ -72,7 +72,7 @@ const Messages = (props: MessagesProps) => {
         );
 
         let pageName = server.channelGroups[channelGroupId].channelItems[channelId].name.toLowerCase()
-        Analytics.sendMessage(e.value, pageName)
+        Analytics.sendMessage(sample.content, pageName)
 
         setMessageGroup(newMessageGroup);
     };
