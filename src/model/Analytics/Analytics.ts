@@ -1,21 +1,59 @@
 import AnalyticsEngine from "./AnalyticsEngine";
 import GoogleAnalytics from "./GoogleAnalytics";
+import AdobeAnalytics from "./AdobeAnalytics";
 
 class Analytics{
-    private static analyticsEngines:AnalyticsEngine[] = [new GoogleAnalytics()];
+    public analyticsEngines:AnalyticsEngine[];
+    private static instance:Analytics;
+
+    private constructor(){
+        this.analyticsEngines = [new AdobeAnalytics(), new GoogleAnalytics()]
+    }
+
+    public static getInstance(){
+        this.instance?null:this.instance=new Analytics()
+        return this.instance
+    }
 
     public static sendPageView(pageName: string){
-        this.analyticsEngines.map((engine)=>{
-            engine.sendPageView(pageName)
+        Analytics.getInstance().analyticsEngines.map((engine)=>{
+            try{
+                engine.sendPageView(pageName)
+            }catch(err){
+                //
+            }
         })
     }
 
     public static sendEvent(obj:any){
-        this.analyticsEngines.map((engine)=>{
-            engine.sendPageView(obj)
+        Analytics.getInstance().analyticsEngines.map((engine)=>{
+            try{
+                engine.sendPageView(obj)
+            }catch(err){
+                //
+            }
         })
     }
-    
+
+    public static sendMessage(message: string, page: string){
+        Analytics.getInstance().analyticsEngines.map((engine)=>{
+            try{
+                engine.sendMessage(message, page)
+            }catch(err){
+                //
+            }
+        })
+    }
+
+    public static sendLinkClick(link: string, page: string){
+        Analytics.getInstance().analyticsEngines.map((engine)=>{
+            try{
+                engine.sendLinkClick(link, page)
+            }catch(err){
+                //
+            }
+        })
+    }
 }
 
 export default Analytics;

@@ -7,6 +7,7 @@ import DataModelJson from "../../model/DataModelJson";
 import Cat_8 from "../../assets/cat_8.gif"
 import { StatusBox } from "../../model/interfaces";
 import Config from "../../model/Config";
+import Link from "../atomicComponents/Link";
 
 
 const MyProfile = () => {
@@ -105,18 +106,10 @@ const StatusBox = (props: StatusBox) => {
                 <div className="flex items-center h-8">{props.status}</div>
                 <div className="flex items-center h-8 min-w-[200px]">{<DynamicClock/>}</div>
                 <div className="flex items-center h-8">
-                    <a
-                        className="text-blue-400"
-                        href={props.locationLink}
-                        target="_blank"
-                    >
-                        {props.locationTitle}
-                    </a>
+                    <Link link={props.locationLink} title={props.locationTitle} noUnderline={true}/>
                 </div>
                 <div className="flex items-center h-8">
-                    <a className="text-blue-400" href={"mailto:" + props.email}>
-                        {props.email}
-                    </a>
+                    <Link link={"mailto:" + props.email} title={props.email} noUnderline={true}/>
                 </div>
             </div>
         </div>

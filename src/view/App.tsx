@@ -17,12 +17,10 @@ import Sidebar from "./components/Sidebar";
 import Shimmer from "./components/Shimmer";
 import AnonymousAnimal from "../model/AnonymousAnimal";
 import ImageCache from "../model/ImageCache";
-import ReactGA from 'react-ga4';
-
-const TRACKING_ID = process.env.NEXT_PUBLIC_TRACKING_ID;
-ReactGA.initialize(TRACKING_ID);
+import Analytics from "../model/Analytics/Analytics";
 
 function HomeScreen(props: HomeScreenProps) {
+    
     // Refs
     const serverList = props.serverList;
     // State
@@ -35,6 +33,8 @@ function HomeScreen(props: HomeScreenProps) {
     const [serverId, channelGroupId, channelId] = splitIds(selectedChannel);
     // Initialise Anonymous animals, so animal image is prefetched
     AnonymousAnimal.getInstance()
+    // Initialize Analytics
+    Analytics.getInstance()
 
     const toShowOrNotToShow = () => {
         return width >= mediumScreen
@@ -43,6 +43,11 @@ function HomeScreen(props: HomeScreenProps) {
             ? "-translate-x-32"
             : "-translate-x-[calc(100%+80px)]";
     };
+
+    useEffect(()=>{
+        let pageName = serverList[serverId].channelGroups[channelGroupId].channelItems[channelId].name.toLowerCase()
+        Analytics.sendPageView(pageName)
+    }, [selectedChannel])
 
     width < mediumScreen ? registerSwipes(setHamburgerClicked) : null;
 

@@ -10,11 +10,11 @@ import AppContext from "./AppContext";
 import { TfiAngleDoubleRight } from "react-icons/tfi";
 import GlobalStateContext from "./GlobalStateContext";
 import DiscordLogo from "../../assets/discord-logo-b.png"
-import Cat_B from "../../assets/cat_2.gif"
 import Cat_9 from "../../assets/cat_9.gif"
 import Cat_10 from "../../assets/cat_10.gif"
 import DataModelJson from "../../model/DataModelJson";
 import Config from "../../model/Config";
+import Analytics from "../../model/Analytics/Analytics";
 
 const Channels = (props: ChannelsProps) => {
     const { server } = useContext(AppContext);
@@ -57,7 +57,7 @@ const ChannelFooter = ()=>{
                 <div className="text-xs">_bigppanda_</div>
             </div>
             <div className="flex items-center">
-                <a href={myProfile.discord} target="_blank"><img className="w-12 h-7 hover:animate-[spin_0.5s_ease-in-out]" src={DiscordLogo} alt="" /></a>
+                <a href={myProfile.discord} onClick={()=>{Analytics.sendLinkClick(myProfile.discord, "Discord Icon")}} target="_blank"><img className="w-12 h-7 hover:animate-[spin_0.5s_ease-in-out]" src={DiscordLogo} alt="" /></a>
                 <img className="w-10 md:w-14 hover:scale-110" src={Cat_9} alt="" />
             </div>
         </div>

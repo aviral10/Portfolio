@@ -15,6 +15,7 @@ import { parseMessage } from "./MessageProcessor";
 import InputComponent from "./InputComponent";
 import AnonymousAnimal from "../../model/AnonymousAnimal";
 import ImageCache from "../../model/ImageCache";
+import Analytics from "../../model/Analytics/Analytics";
 
 const scrollToBottom = (ref: any) => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
@@ -30,10 +31,8 @@ const Messages = (props: MessagesProps) => {
     const messageGroupState = useState(props.messageGroups);
     const messageGroup = messageGroupState[0];
     const setMessageGroup = messageGroupState[1];
-
-    const [serverId, channelGroupId, channelId] = splitIds(
-        globalStateContext.selectedChannel
-    );
+    let selectedChannel = globalStateContext.selectedChannel
+    const [serverId, channelGroupId, channelId] = splitIds(selectedChannel);
 
     useEffect(() => {
         setMessageGroup(props.messageGroups);
@@ -48,6 +47,8 @@ const Messages = (props: MessagesProps) => {
 
     const handleMessageSent = (e: any) => {
         let sample = createUserMessage(e.value);
+        
+
         let messageGroups =
             server.channelGroups[channelGroupId].channelItems[channelId]
                 .messageGroups;
@@ -69,6 +70,10 @@ const Messages = (props: MessagesProps) => {
             server.channelGroups[channelGroupId].channelItems[channelId]
                 .messageGroups
         );
+
+        let pageName = server.channelGroups[channelGroupId].channelItems[channelId].name.toLowerCase()
+        Analytics.sendMessage(e.value, pageName)
+
         setMessageGroup(newMessageGroup);
     };
 

@@ -19,3 +19,4 @@ to include
 - Future medium articles
 - Mail-me
 - refactor and move mention to its rightful place
+- FIX IMAGE_URL bug while prefetching
