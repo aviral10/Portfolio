@@ -565,6 +565,15 @@
                       "content": "You can officially reach out to me at: \n;Email: ;<link>aviral19rana@gmail.com,mailto:aviral19rana@gmail.com</link>;\n\n",
                       "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/socials/email.png",
                       "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "I would love to hear from you! \nDrop a feedback on the following ;<link>Google form link,https://forms.gle/HjGZQvf4sTqtrWeL6</link>;.\n",
+                      "image": "",
+                      "messageType": "fancy"
                     }
                   ]
                 }

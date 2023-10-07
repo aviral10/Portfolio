@@ -44,8 +44,8 @@ function App() {
                 );
                 updateServerList();
             }
-
-        }, 1000);
+            
+        }, 2000);
     }, []);
 
     return (
