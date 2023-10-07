@@ -26,4 +26,6 @@ chrome-user-data
 .parcel-cache
 *.swp
 *.swo
+.env
+
 

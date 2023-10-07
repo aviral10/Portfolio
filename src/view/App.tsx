@@ -17,6 +17,10 @@ import Sidebar from "./components/Sidebar";
 import Shimmer from "./components/Shimmer";
 import AnonymousAnimal from "../model/AnonymousAnimal";
 import ImageCache from "../model/ImageCache";
+import ReactGA from 'react-ga4';
+
+const TRACKING_ID = process.env.NEXT_PUBLIC_TRACKING_ID;
+ReactGA.initialize(TRACKING_ID);
 
 function HomeScreen(props: HomeScreenProps) {
     // Refs
