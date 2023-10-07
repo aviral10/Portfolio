@@ -1,11 +1,10 @@
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
 import { SideIconProps, SideBarProps } from "../../model/interfaces";
 import AppContext from "./AppContext";
 import KeyGenerator from "../../model/KeyGenerator";
 import GlobalStateContext from "./GlobalStateContext";
 
 const Sidebar = (props: SideBarProps) => {
-
     const elements = props.serverList.map((server, index) => {
         return (
             <SideIcon
@@ -31,14 +30,14 @@ const Sidebar = (props: SideBarProps) => {
 };
 
 const SideIcon = (props: SideIconProps) => {
-    const { server, setServer} = useContext(AppContext);
+    const { server, setServer } = useContext(AppContext);
     const globalStateContext = useContext(GlobalStateContext);
     return (
         <div className="relative flex items-center justify-center group">
             <a
                 onClick={() => {
                     setServer(props.server);
-                    globalStateContext.setSelectedChannel(props.index+"-0-0")
+                    globalStateContext.setSelectedChannel(props.index + "-0-0");
                     props.setSelectedState(props.index);
                 }}
             >

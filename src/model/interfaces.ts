@@ -1,7 +1,7 @@
 export interface AppContextType {
-    server: Server
+    server: Server;
     setServer: (server: Server) => void;
-    serverList: Server[]
+    serverList: Server[];
 }
 
 export interface ChannelGroup {
@@ -10,7 +10,7 @@ export interface ChannelGroup {
 }
 
 export interface ChannelGroupProps {
-    index: number
+    index: number;
     channelGroup: ChannelGroup;
     selectedChannel: any;
     setSelectedChannel: (selectedChannel: string) => void;
@@ -40,28 +40,33 @@ export interface Hamburger {
 }
 
 export interface HomeScreenProps {
-    server: Server,
-    setServer: (server: Server) => void
-    serverList: Server[]
+    server: Server;
+    setServer: (server: Server) => void;
+    serverList: Server[];
 }
 
 export interface Message {
     sender: { name: string; icon: string };
     content: string;
     image: string;
-    messageType: MessageType
+    messageType: MessageType;
 }
 
 export enum MessageType {
     DEFAULT,
     FANCY,
     RESUME,
-    ONLYTAGS
+    ONLYTAGS,
 }
 
 export interface MessageGroup {
     date: string;
     messages: Message[];
+}
+
+export interface MessageItemProps {
+    message: Message;
+    messageType: MessageType;
 }
 
 export interface MessagesProps {
@@ -70,21 +75,21 @@ export interface MessagesProps {
 }
 
 export interface MyProfileTab {
-    image: string
-    name: string
-    title: string
-    status: string
-    locationTitle: string
-    locationLink: string
-    email: string
-    discord: string
-    discordImage: string
+    image: string;
+    name: string;
+    title: string;
+    status: string;
+    locationTitle: string;
+    locationLink: string;
+    email: string;
+    discord: string;
+    discordImage: string;
 }
 
 export interface ScrollableComponentProps {
     messageHeader: string[];
     messageGroups: MessageGroup[];
-    endRef: React.MutableRefObject<any>
+    endRef: React.MutableRefObject<any>;
 }
 
 export interface SearchBarProps {
@@ -100,7 +105,7 @@ export interface Server {
 export interface SideBarProps {
     serverList: Server[];
     selectedServer: number;
-    setSelectedServer: (selectedServer: number) => void
+    setSelectedServer: (selectedServer: number) => void;
 }
 
 export interface SideIconProps {

@@ -20,12 +20,12 @@
         stroke-dashoffset: 500;
         stroke-width: 2;
         fill-opacity: 0;
-   }
+    }
     100% {
         stroke-width: 0;
         stroke-dashoffset: 0;
         fill-opacity: 0;
-   }
+    }
 }
 
 @layer base {
@@ -38,19 +38,19 @@
 ::-webkit-scrollbar {
     width: 10px;
 }
-  
+
 /* Track */
 ::-webkit-scrollbar-track {
     background: #2f3136;
     border-radius: 24px;
 }
-  
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #202225;
     border-radius: 5px;
 }
-  
+
 /* Handle on hover */
 /* ::-webkit-scrollbar-thumb:hover {
     background: #555;

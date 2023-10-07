@@ -1,14 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { HiOutlineMail, HiOutlineOfficeBuilding } from "react-icons/hi";
 import { GoCloudOffline } from "react-icons/go";
-import AppContext from "./AppContext";
 import DataModelJson from "../../model/DataModelJson";
-import Cat_8 from "../../assets/cat_8.gif"
+import Cat_8 from "../../assets/cat_8.gif";
 import { StatusBox } from "../../model/interfaces";
 import Config from "../../model/Config";
 import Link from "../atomicComponents/Link";
-
+import { getISTTime } from "../../model/utils";
 
 const MyProfile = () => {
     const model = new DataModelJson(Config.getConfig());
@@ -16,7 +15,11 @@ const MyProfile = () => {
     return (
         <div className="hidden p-4 h-full md:flex flex-col md:w-[25%] flex-shrink-0 bg-gray-800 text-white shadow-lg">
             <div className="w-full">
-                <img className="z-40 absolute w-24 -translate-y-10 -translate-x-4 hover:scale-110" src={Cat_8} alt="" />
+                <img
+                    className="z-40 absolute w-24 -translate-y-10 -translate-x-4 hover:scale-110"
+                    src={Cat_8}
+                    alt=""
+                />
                 <img
                     className="rounded-2xl"
                     src={myProfile.image}
@@ -39,48 +42,32 @@ const MyProfile = () => {
     );
 };
 
-
-
-const getISTTime = () => {
-    let currentTime = new Date();
-    let currentOffset = currentTime.getTimezoneOffset();
-    let ISTOffset = 330; // IST offset UTC +5:30
-    let ISTTime = new Date(
-        currentTime.getTime() + (ISTOffset + currentOffset) * 60000
-    );
-    let hoursIST: string | number = ISTTime.getHours();
-    let meridian = hoursIST >= 12 ? "PM" : "AM";
-    hoursIST = hoursIST % 12;
-    hoursIST = (hoursIST ? hoursIST : 12).toString().padStart(2, "0");
-    let minutesIST = ISTTime.getMinutes().toString().padStart(2, "0");
-    return [hoursIST, minutesIST, meridian]
-}
-
-const DynamicClock = ()=>{
-    let [hoursIST, minutesIST, meridian] = getISTTime()
+const DynamicClock = () => {
+    let [hoursIST, minutesIST, meridian] = getISTTime();
     const [currTime, setCurrTime] = useState({
         hours: hoursIST,
         minutes: minutesIST,
-        meridian: meridian
-    })
+        meridian: meridian,
+    });
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-        let [hoursIST, minutesIST, meridian] = getISTTime()
-        setCurrTime({
-            hours: hoursIST,
-            minutes: minutesIST,
-            meridian: meridian
-          })
-        }, 10000)
-    
+            let [hoursIST, minutesIST, meridian] = getISTTime();
+            setCurrTime({
+                hours: hoursIST,
+                minutes: minutesIST,
+                meridian: meridian,
+            });
+        }, 10000);
+
         return () => clearInterval(intervalId);
-      }, [])
+    }, []);
 
     return (
         <span>{`${currTime.hours}:${currTime.minutes} ${meridian} IST local time`}</span>
-    )
-}
+    );
+};
+
 const StatusBox = (props: StatusBox) => {
     return (
         <div className="flex flex-shrink-0">
@@ -104,12 +91,22 @@ const StatusBox = (props: StatusBox) => {
             </div>
             <div className="flex flex-col w-full text-xs md:text-base ">
                 <div className="flex items-center h-8">{props.status}</div>
-                <div className="flex items-center h-8 min-w-[200px]">{<DynamicClock/>}</div>
-                <div className="flex items-center h-8">
-                    <Link link={props.locationLink} title={props.locationTitle} noUnderline={true}/>
+                <div className="flex items-center h-8 min-w-[200px]">
+                    {<DynamicClock />}
                 </div>
                 <div className="flex items-center h-8">
-                    <Link link={"mailto:" + props.email} title={props.email} noUnderline={true}/>
+                    <Link
+                        link={props.locationLink}
+                        title={props.locationTitle}
+                        noUnderline={true}
+                    />
+                </div>
+                <div className="flex items-center h-8">
+                    <Link
+                        link={"mailto:" + props.email}
+                        title={props.email}
+                        noUnderline={true}
+                    />
                 </div>
             </div>
         </div>

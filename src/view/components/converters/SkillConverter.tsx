@@ -1,6 +1,6 @@
 import KeyGenerator from "../../../model/KeyGenerator";
 import { TagConverter } from "../../../model/interfaces";
-import { extractTaggedContent } from "../MessageProcessor";
+import { extractTaggedContent } from "./MessageProcessor";
 import TagFactory from "./TagFactory";
 
 class SkillConverter implements TagConverter {
@@ -17,8 +17,12 @@ class SkillConverter implements TagConverter {
             >
                 <div className="flex items-center mb-2">
                     {badge}
-                    <span className="text-[10px] md:text-sm w-2/3">{" - " + item}</span>
-                    <span className="text-[10px] md:text-sm w-1/3 text-right">{profeciency}</span>
+                    <span className="text-[10px] md:text-sm w-2/3">
+                        {" - " + item}
+                    </span>
+                    <span className="text-[10px] md:text-sm w-1/3 text-right">
+                        {profeciency}
+                    </span>
                 </div>
                 <div className="rounded-3xl bg-gray-700 w-64 md:w-96">
                     <div

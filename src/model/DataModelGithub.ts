@@ -23,12 +23,12 @@ export default class DataModelGithub implements DataModel {
     }
 
     public getServerList(): Server[] {
-        this.fetchServerList().then((data)=>{
+        this.fetchServerList().then((data) => {
             return data.servers.map((server: any) => {
                 const dataConverter = new DataConverter();
                 return dataConverter.convertServer(server);
             });
-        })
-        return []
+        });
+        return [];
     }
 }

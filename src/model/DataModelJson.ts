@@ -16,7 +16,6 @@ export default class DataModelJson implements DataModel {
     }
     public getMyProfile(): MyProfileTab {
         const dataConverter = new DataConverter();
-        return dataConverter.convertMyProfileTab(this.data.myprofile);   
+        return dataConverter.convertMyProfileTab(this.data.myprofile);
     }
-
 }

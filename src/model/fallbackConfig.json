@@ -16,7 +16,7 @@
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "01 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -30,7 +30,7 @@
                   ]
                 },
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "03 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -54,7 +54,7 @@
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "01 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -77,7 +77,7 @@
                   ]
                 },
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "02 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -120,7 +120,7 @@
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "01 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -248,7 +248,7 @@
                         "name": "Aviral",
                         "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
                       },
-                      "content": "<headingxl>Personal Portfolio Website</headingxl>;\n\n;<i>Innovated a Discord styled personal portfolio website using ReactJS and TailwindCSS.\nDecoupled data dependency for UI elements by creating a Config driven UI enabling easy updates to the website.\nDeveloped an engaging user experience using modern design principles within a responsive single-page application(SPA).</i>;\n;<b>Tech:</b>; • ;<outline>ReactJS</outline>; • ;<outline>TypeScript</outline>; • ;<outline>JavaScript</outline>; • ;<outline>TailwindCSS</outline>;\n\n;Project highlight:\n • Config driven UI, meaning I can add/update content on the website by making changes to the config file only and no code needs to be touched.\n • Learned ReactJS with this project.\n • Website is responsive with slightly different UI for mobile devices, do check it out;\n\n;GitHub: ;<Link>https://github.com/aviral10/Portfolio,https://github.com/aviral10/Portfolio</Link>;\n;Live: ;<Link>https://aviralrana.me/,https://aviralrana.me/</Link>;\n\n;",
+                      "content": "<headingxl>Personal Portfolio Website</headingxl>;\n\n;<i>Innovated a Discord styled personal portfolio website using ReactJS and TailwindCSS.\nDecoupled data dependency for UI elements by creating a Config driven UI enabling easy updates to the website.\nDeveloped an engaging user experience using modern design principles within a responsive single-page application(SPA).</i>;\n;<b>Tech:</b>; • ;<outline>ReactJS</outline>; • ;<outline>TypeScript</outline>; • ;<outline>JavaScript</outline>; • ;<outline>TailwindCSS</outline>;\n\n;Project highlight:\n • Config driven UI, meaning I can add/update content on the website by making changes to the config file only and no code needs to be touched.\n • Learned ReactJS with this project.\n • Website is responsive with slightly different UI for mobile devices, do check it out.\n • There are no if-else statements in the entire project.;\n\n;GitHub: ;<Link>https://github.com/aviral10/Portfolio,https://github.com/aviral10/Portfolio</Link>;\n;Live: ;<Link>https://aviralrana.me/,https://aviralrana.me/</Link>;\n\n;",
                       "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/projects/portfolio_a.png",
                       "messageType": "fancy"
                     }
@@ -357,7 +357,7 @@
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "01 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -395,7 +395,7 @@
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "01 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -430,7 +430,7 @@
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "01 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -454,7 +454,7 @@
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "02 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -478,7 +478,7 @@
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "02 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -502,7 +502,7 @@
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "01 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -526,7 +526,7 @@
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "02 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -555,7 +555,7 @@
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "01 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -590,7 +590,7 @@
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "01 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -623,7 +623,7 @@
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "02 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -661,7 +661,7 @@
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "01 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -694,7 +694,7 @@
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "01 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -717,7 +717,7 @@
                   ]
                 },
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "02 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -822,7 +822,7 @@
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "01 Oct, 2023",
                   "messages": [
                     {
                       "sender": {
@@ -851,7 +851,7 @@
               ],
               "messageGroups": [
                 {
-                  "date": "16 Aug, 2023",
+                  "date": "01 Oct, 2023",
                   "messages": [
                     {
                       "sender": {

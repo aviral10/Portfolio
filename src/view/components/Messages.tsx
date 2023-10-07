@@ -2,6 +2,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import {
     Message,
     MessageGroup,
+    MessageItemProps,
     MessageType,
     MessagesProps,
     ScrollableComponentProps,
@@ -9,9 +10,9 @@ import {
 import KeyGenerator from "../../model/KeyGenerator";
 import Resume from "../../assets/AviralRana_Resume.pdf";
 import GlobalStateContext from "./GlobalStateContext";
-import { splitIds } from "../../model/utils";
+import { getTodaysDate, splitIds } from "../../model/utils";
 import AppContext from "./AppContext";
-import { parseMessage } from "./MessageProcessor";
+import { parseMessage } from "./converters/MessageProcessor";
 import InputComponent from "./InputComponent";
 import AnonymousAnimal from "../../model/AnonymousAnimal";
 import ImageCache from "../../model/ImageCache";
@@ -31,7 +32,7 @@ const Messages = (props: MessagesProps) => {
     const messageGroupState = useState(props.messageGroups);
     const messageGroup = messageGroupState[0];
     const setMessageGroup = messageGroupState[1];
-    let selectedChannel = globalStateContext.selectedChannel
+    let selectedChannel = globalStateContext.selectedChannel;
     const [serverId, channelGroupId, channelId] = splitIds(selectedChannel);
 
     useEffect(() => {
@@ -40,14 +41,11 @@ const Messages = (props: MessagesProps) => {
     }, [globalStateContext.selectedChannel]);
 
     useEffect(() => {
-        firstRender.current
-            ? (firstRender.current = false)
-            : scrollToBottom(ref);
+        firstRender.current ? (firstRender.current = false) : scrollToBottom(ref);
     }, [messageGroup]);
 
     const handleMessageSent = (e: any) => {
         let sample = createUserMessage(e.value);
-        
 
         let messageGroups =
             server.channelGroups[channelGroupId].channelItems[channelId]
@@ -55,14 +53,13 @@ const Messages = (props: MessagesProps) => {
         e.value = "";
 
         const displayDate = getTodaysDate();
-        messageGroups[messageGroups.length - 1].date === displayDate
-            ? null
-            : server.channelGroups[channelGroupId].channelItems[
-                  channelId
-              ].messageGroups.push({
-                  date: displayDate,
-                  messages: [],
-              });
+        messageGroups[messageGroups.length - 1].date === displayDate ? 
+        null : server.channelGroups[channelGroupId]
+                     .channelItems[channelId]
+                     .messageGroups.push({
+                        date: displayDate,
+                        messages: [],
+                    });
 
         messageGroups[messageGroups.length - 1].messages.push(sample);
 
@@ -71,8 +68,12 @@ const Messages = (props: MessagesProps) => {
                 .messageGroups
         );
 
-        let pageName = server.channelGroups[channelGroupId].channelItems[channelId].name.toLowerCase()
-        Analytics.sendMessage(sample.content, pageName)
+        let pageName = server.channelGroups[channelGroupId]
+                             .channelItems[channelId]
+                             .name
+                             .toLowerCase();
+        
+            Analytics.sendMessage(sample.content, pageName);
 
         setMessageGroup(newMessageGroup);
     };
@@ -89,20 +90,9 @@ const Messages = (props: MessagesProps) => {
     );
 };
 
-const getTodaysDate = () => {
-    const today = new Date();
-    const date = today.getDate();
-    const month = today.toLocaleString("default", {
-        month: "short",
-    });
-    const year = today.getFullYear();
-    return `${date} ${month}, ${year}`;
-};
-
-// Pulling a prank on a friend
 const createUserMessage = (content: string): Message => {
-    let {name, randomAnimal} = AnonymousAnimal.getInstance().getAnimal()
-    
+    let { name, randomAnimal } = AnonymousAnimal.getInstance().getAnimal();
+
     return {
         sender: {
             name: name,
@@ -168,13 +158,8 @@ const MessageGroup = (props: { messageGroup: MessageGroup }) => {
     );
 };
 
-export interface MessageItemProps {
-    message: Message;
-    messageType: MessageType;
-}
-
 const MessageItemDefault = ({ message }: { message: Message }) => {
-    const { sender, content, image } = message;
+    const { sender, content } = message;
     return (
         <div className="flex flex-col">
             <div className="text-cyan-400">{message.sender.name}</div>
@@ -189,11 +174,15 @@ const MessageItemDefault = ({ message }: { message: Message }) => {
 
 const MessageItemFancy = ({ message }: { message: Message }) => {
     const { sender, content, image } = message;
+    
     let imageUrl = image ? (image === "IMAGE_URL" ? null : ImageCache.get(image)) : null;
+    
     return (
         <div className={`w-fit md:max-w-[80%] flex flex-col`}>
             <div className="text-cyan-400">{message.sender.name}</div>
-            <div className={`bg-gray-800 border-lime-400 border-l-4 rounded-md p-2  ${imageUrl?"min-h-[120px]":null}`}>
+            <div
+                className={`bg-gray-800 border-lime-400 border-l-4 rounded-md p-2  ${imageUrl ? "min-h-[120px]" : null}`}
+            >
                 <div className="font-larry font-light text-xs md:text-base break-words whitespace-pre-wrap">
                     {parseMessage(content)}
                 </div>
@@ -209,9 +198,8 @@ const MessageItemFancy = ({ message }: { message: Message }) => {
     );
 };
 
-
 const MessageItemOnlyTags = ({ message }: { message: Message }) => {
-    const { sender, content, image } = message;
+    const { sender, content } = message;
     const links = content.split(";");
     const heading = links.splice(0, 1);
     const imageElements = links.map((link) => (
@@ -222,11 +210,13 @@ const MessageItemOnlyTags = ({ message }: { message: Message }) => {
             alt=""
         />
     ));
+
     const imageContainers: JSX.Element[][] = [];
     imageElements.map((element, index) => {
         index % 4 ? null : imageContainers.push([]);
         imageContainers[imageContainers.length - 1].push(element);
     });
+
     return (
         <div className="flex flex-col">
             <div className="text-cyan-400">{message.sender.name}</div>
@@ -282,32 +272,6 @@ const MessageItemNormal = (props: MessageItemProps) => {
 
             <CurrentMessageItem message={props.message} />
         </div>
-    );
-};
-
-export const Mention = ({
-    content,
-    selectedChannel,
-}: {
-    content: string;
-    selectedChannel: string;
-}) => {
-    const { server, setServer, serverList } = useContext(AppContext);
-    const globalStateContext = useContext(GlobalStateContext);
-    const [serverId, channelGroupId, channelId] = splitIds(selectedChannel);
-    return (
-        <span
-            className="bg-starblue-100 opacity-75 rounded-md font-medium pr-1 cursor-pointe ml-1 mr-1 cursor-pointer"
-            onClick={() => {
-                setServer(serverList[serverId]);
-                globalStateContext.setSelectedChannel(
-                    serverId + "-" + channelGroupId + "-" + channelId
-                );
-                globalStateContext.setSelectedServer(serverId);
-            }}
-        >
-            {" @ " + content}
-        </span>
     );
 };
 

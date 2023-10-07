@@ -12,21 +12,23 @@ import TextConverter from "./TextConverter";
 
 class TagFactory {
     static converterList: { [key: string]: TagConverter } = {
-        "mention": new MentionConverter(),
-        "text": new TextConverter(),
-        "link": new LinkConverter(),
-        "skill": new SkillConverter(),
-        "heading": new HeadingConverter(),
-        "headingxl": new HeadingXLConverter(),
-        "badge": new BadgeConverter(),
-        "outline": new OutlineConverter(),
-        "b": new BoldConverter(),
-        "i": new ItalicsConverter()
+        mention: new MentionConverter(),
+        text: new TextConverter(),
+        link: new LinkConverter(),
+        skill: new SkillConverter(),
+        heading: new HeadingConverter(),
+        headingxl: new HeadingXLConverter(),
+        badge: new BadgeConverter(),
+        outline: new OutlineConverter(),
+        b: new BoldConverter(),
+        i: new ItalicsConverter(),
     };
-    static defaultConverter = new TextConverter()
+
+    static defaultConverter = new TextConverter();
+    
     static getConverter(tag: string): TagConverter {
-        tag = tag.toLowerCase()
-        return this.converterList[tag]?this.converterList[tag]:this.defaultConverter;
+        tag = tag.toLowerCase();
+        return this.converterList[tag] ? this.converterList[tag] : this.defaultConverter;
     }
 }
 

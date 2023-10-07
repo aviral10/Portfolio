@@ -1,9 +1,9 @@
-import TagFactory from "./converters/TagFactory";
+import TagFactory from "./TagFactory";
 
 export const parseMessage = (content: string) => {
     let contents = content.split(";");
     return contents.map((content) => {
-        let tag = extractTag(content)
+        let tag = extractTag(content);
         return TagFactory.getConverter(tag).convert(
             extractTaggedContent(tag, content)
         );
@@ -11,8 +11,7 @@ export const parseMessage = (content: string) => {
 };
 
 export const extractTaggedContent = (tag: string, text: string) => {
-    // const pattern = new RegExp(`<${tag}>(.*?)<\/${tag}>`, "g");
-    const pattern = new RegExp(`<${tag}>((.|\n)*)<\/${tag}>`,"g");
+    const pattern = new RegExp(`<${tag}>((.|\n)*)<\/${tag}>`, "g");
     const matches = text?.match(pattern);
     const extractedContent = matches?.map((match) => {
         return match.replace(new RegExp(`<\/?${tag}>`, "g"), "");

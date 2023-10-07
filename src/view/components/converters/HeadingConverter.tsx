@@ -1,13 +1,16 @@
 import KeyGenerator from "../../../model/KeyGenerator";
 import { TagConverter } from "../../../model/interfaces";
+import Heading from "../../atomicComponents/Heading";
 
-class HeadingConverter implements TagConverter{
+class HeadingConverter implements TagConverter {
     convert(content: string): JSX.Element {
         return (
-            <span key={KeyGenerator.getInstance().getNewKey()} className="font-medium">{content}</span>
+            <Heading
+                key={KeyGenerator.getInstance().getNewKey()}
+                content={content}
+            />
         );
     }
-
 }
 
-export default HeadingConverter
+export default HeadingConverter;

@@ -1,7 +1,14 @@
-import { ChannelGroup, ChannelItem, Message, MessageGroup, MessageType, MyProfileTab, Server} from "./interfaces";
+import {
+    ChannelGroup,
+    ChannelItem,
+    Message,
+    MessageGroup,
+    MessageType,
+    MyProfileTab,
+    Server,
+} from "./interfaces";
 
 export default class DataConverter {
-    
     public convertMyProfileTab(obj: any): MyProfileTab {
         let myProfile: MyProfileTab = {
             image: obj.image,
@@ -12,7 +19,7 @@ export default class DataConverter {
             locationLink: obj.locationLink,
             email: obj.email,
             discord: obj.discord,
-            discordImage: obj.discordImage
+            discordImage: obj.discordImage,
         };
         return myProfile;
     }
@@ -33,7 +40,7 @@ export default class DataConverter {
             name: obj.name,
             channelItems: obj.channelItems.map((channelItem: any) =>
                 this.convertChannelItem(channelItem)
-            )
+            ),
         };
         return channelGroup;
     }
@@ -42,42 +49,42 @@ export default class DataConverter {
         let channelItem: ChannelItem = {
             name: obj.name,
             messageHeader: obj.messageHeader,
-            messageGroups: obj.messageGroups.map((messageGroup: any)=>
+            messageGroups: obj.messageGroups.map((messageGroup: any) =>
                 this.convertMessageGroup(messageGroup)
-            )
-        }
+            ),
+        };
 
         return channelItem;
     }
-    public convertMessageGroup(obj: any) : MessageGroup {
+    public convertMessageGroup(obj: any): MessageGroup {
         let messageGroup: MessageGroup = {
             date: obj.date,
-            messages: obj.messages.map((message:any)=>
+            messages: obj.messages.map((message: any) =>
                 this.convertMessage(message)
             ),
-        }
-        return messageGroup
+        };
+        return messageGroup;
     }
 
-    public convertMessage(obj: any) : Message {
+    public convertMessage(obj: any): Message {
         let message: Message = {
             content: obj.content,
             image: obj.image,
             sender: {
                 name: obj.sender.name,
-                icon: obj.sender.icon
+                icon: obj.sender.icon,
             },
-            messageType: this.convertMessageType(obj.messageType)
-        }
-        return message
+            messageType: this.convertMessageType(obj.messageType),
+        };
+        return message;
     }
 
     public convertMessageType(messageType: any): MessageType {
-        let types:{[key: string]:MessageType} = {
-            "default": MessageType.DEFAULT,
-            "fancy": MessageType.FANCY,
-            "resume": MessageType.RESUME,
-            "onlytags": MessageType.ONLYTAGS
+        let types: { [key: string]: MessageType } = {
+            default: MessageType.DEFAULT,
+            fancy: MessageType.FANCY,
+            resume: MessageType.RESUME,
+            onlytags: MessageType.ONLYTAGS,
         };
         return types[messageType] || MessageType.DEFAULT;
     }

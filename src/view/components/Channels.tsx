@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import { useContext } from "react";
 import {
     ChannelGroupProps,
     ChannelItem,
@@ -9,12 +9,18 @@ import KeyGenerator from "../../model/KeyGenerator";
 import AppContext from "./AppContext";
 import { TfiAngleDoubleRight } from "react-icons/tfi";
 import GlobalStateContext from "./GlobalStateContext";
-import DiscordLogo from "../../assets/discord-logo-b.png"
-import Cat_9 from "../../assets/cat_9.gif"
-import Cat_10 from "../../assets/cat_10.gif"
+import DiscordLogo from "../../assets/discord-logo-b.png";
+import Cat_9 from "../../assets/cat_9.gif";
+import Cat_10 from "../../assets/cat_10.gif";
 import DataModelJson from "../../model/DataModelJson";
 import Config from "../../model/Config";
 import Analytics from "../../model/Analytics/Analytics";
+
+const ChannelTitle = (props: { name: string }) => (
+    <div className="flex items-center p-4 flex-shrink-0 shadow-sm shadow-gray-900 h-14 text-lg">
+        {props.name}
+    </div>
+);
 
 const Channels = (props: ChannelsProps) => {
     const { server } = useContext(AppContext);
@@ -32,45 +38,12 @@ const Channels = (props: ChannelsProps) => {
                     setSelectedChannel={setSelectedChannel}
                 />
             ))}
-            <ChannelFooter/>
+            <ChannelFooter />
         </div>
     );
 };
 
-const ChannelTitle = (props: { name: string }) => (
-    <div className="flex items-center p-4 flex-shrink-0 shadow-sm shadow-gray-900 h-14 text-lg">
-        {props.name}
-        
-    </div>
-);
-
-const ChannelFooter = ()=>{
-    const model = new DataModelJson(Config.getConfig());
-    const myProfile = model.getMyProfile();
-    
-    return (
-        <div className="fixed flex bottom-0 w-full bg-gray-900 space-x-3 flex-shrink-0 h-14 p-2">
-            <img className="absolute w-24 rotate-12 -translate-y-[72px] hover:scale-110" src={Cat_10} alt="" />
-            <img className="rounded-3xl" src={myProfile.discordImage} alt="" />
-            <div className="flex flex-col">
-                <div className="text-sm font-medium">Koro Sensei</div>
-                <div className="text-xs">_bigppanda_</div>
-            </div>
-            <div className="flex items-center">
-                <a href={myProfile.discord} onClick={()=>{Analytics.sendLinkClick(myProfile.discord, "Discord Icon")}} target="_blank"><img className="w-12 h-7 hover:animate-[spin_0.5s_ease-in-out]" src={DiscordLogo} alt="" /></a>
-                <img className="w-10 md:w-14 hover:scale-110" src={Cat_9} alt="" />
-            </div>
-        </div>
-    )
-}
-
 const ChannelGroup = (props: ChannelGroupProps) => {
-    const [showFull, setShowFull] = useState(true);
-
-    const toggleShowFull = () => {
-        setShowFull(!showFull);
-    };
-
     return (
         <div className="space-y-1 w-full p-4 pb-0 text-gray-500">
             <div className="flex text-xs font-bold pb-1">
@@ -81,7 +54,7 @@ const ChannelGroup = (props: ChannelGroupProps) => {
                 {props.channelGroup.name.toUpperCase()}
             </div>
             <ChannelItems
-                items={showFull ? props.channelGroup.channelItems : []}
+                items={props.channelGroup.channelItems}
                 parent={props.index}
                 selectedChannel={props.selectedChannel}
                 setSelectedChannel={props.setSelectedChannel}
@@ -91,18 +64,15 @@ const ChannelGroup = (props: ChannelGroupProps) => {
 };
 
 const ChannelItems = (props: ChannelItemsProps) => {
-    const { hamburgerClicked, setHamburgerClicked, selectedChannel,
-        setSelectedChannel,
-        selectedServer,
-        setSelectedServer } = useContext(GlobalStateContext)
+    const globalStateContext = useContext(GlobalStateContext);
     return (
         <div>
             {props.items.map((item: ChannelItem, index: number) => {
-                const itemIndex = `${selectedServer}-${props.parent}-${index}`;
+                const itemIndex = `${globalStateContext.selectedServer}-${props.parent}-${index}`;
 
                 const handleClick = () => {
                     props.setSelectedChannel(itemIndex);
-                    setHamburgerClicked(false)
+                    globalStateContext.setHamburgerClicked(false);
                 };
 
                 const isItemSelected = props.selectedChannel === itemIndex;
@@ -126,6 +96,49 @@ const ChannelItems = (props: ChannelItemsProps) => {
                     </div>
                 );
             })}
+        </div>
+    );
+};
+
+const ChannelFooter = () => {
+    const model = new DataModelJson(Config.getConfig());
+    const myProfile = model.getMyProfile();
+
+    return (
+        <div className="fixed flex bottom-0 w-full bg-gray-900 space-x-3 flex-shrink-0 h-14 p-2">
+            <img
+                className="absolute w-24 rotate-12 -translate-y-[72px] hover:scale-110"
+                src={Cat_10}
+                alt=""
+            />
+            <img className="rounded-3xl" src={myProfile.discordImage} alt="" />
+            <div className="flex flex-col">
+                <div className="text-sm font-medium">Koro Sensei</div>
+                <div className="text-xs">_bigppanda_</div>
+            </div>
+            <div className="flex items-center">
+                <a
+                    href={myProfile.discord}
+                    onClick={() => {
+                        Analytics.sendLinkClick(
+                            myProfile.discord,
+                            "Discord Icon"
+                        );
+                    }}
+                    target="_blank"
+                >
+                    <img
+                        className="w-12 h-7 hover:animate-[spin_0.5s_ease-in-out]"
+                        src={DiscordLogo}
+                        alt=""
+                    />
+                </a>
+                <img
+                    className="w-10 md:w-14 hover:scale-110"
+                    src={Cat_9}
+                    alt=""
+                />
+            </div>
         </div>
     );
 };

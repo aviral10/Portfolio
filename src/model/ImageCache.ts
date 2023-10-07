@@ -41,10 +41,17 @@ class ImageCache {
                 channelGroup.channelItems.map((channelItem) => {
                     channelItem.messageGroups.map((messageGroup) => {
                         messageGroup.messages.map((message) => {
-                            this.setAsync(
-                                message.image,
-                                this.fetchImage(message.image)
-                            );
+                            let imageUrl = message.image
+                                ? message.image === "IMAGE_URL"
+                                    ? null
+                                    : message.image
+                                : null;
+                            imageUrl
+                                ? this.setAsync(
+                                      message.image,
+                                      this.fetchImage(message.image)
+                                  )
+                                : null;
                         });
                     });
                 }),

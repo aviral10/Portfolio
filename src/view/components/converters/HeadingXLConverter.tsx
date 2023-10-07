@@ -1,13 +1,16 @@
 import KeyGenerator from "../../../model/KeyGenerator";
 import { TagConverter } from "../../../model/interfaces";
+import HeadingXL from "../../atomicComponents/HeadingXL";
 
-class HeadingXLConverter implements TagConverter{
+class HeadingXLConverter implements TagConverter {
     convert(content: string): JSX.Element {
         return (
-            <span key={KeyGenerator.getInstance().getNewKey()} className="text-xl md:text-2xl">{content}</span>
+            <HeadingXL
+                key={KeyGenerator.getInstance().getNewKey()}
+                content={content}
+            />
         );
     }
-
 }
 
-export default HeadingXLConverter
+export default HeadingXLConverter;

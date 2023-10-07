@@ -1,10 +1,14 @@
 import KeyGenerator from "../../../model/KeyGenerator";
 import { TagConverter } from "../../../model/interfaces";
+import Bold from "../../atomicComponents/Bold";
 
 class BoldConverter implements TagConverter {
     convert(content: string): JSX.Element {
         return (
-            <span key={KeyGenerator.getInstance().getNewKey()} className="font-bold">{content}</span>
+            <Bold
+                key={KeyGenerator.getInstance().getNewKey()}
+                content={content}
+            />
         );
     }
 }

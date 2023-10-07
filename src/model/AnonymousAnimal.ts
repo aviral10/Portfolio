@@ -1,4 +1,4 @@
-import panda from "../assets/Panda.png"
+import panda from "../assets/Panda.png";
 class AnonymousAnimal {
     private anonymousAnimals = [
         "Alligator.png",
@@ -80,33 +80,37 @@ class AnonymousAnimal {
     private currentAnimal = panda;
 
     private constructor() {
-        this.fetchAnimal()
+        this.fetchAnimal();
     }
 
-    private async fetchAnimal(){
-        let animalNameUrl = this.anonymousAnimals[Math.floor(Math.random() * this.anonymousAnimals.length)];
-        let imageUrl = `https://raw.githubusercontent.com/aviral10/Public-assets/main/animals/${animalNameUrl}`
-        let animalName = `Anonymous ${animalNameUrl.split(".")[0]}`
+    private async fetchAnimal() {
+        let animalNameUrl =
+            this.anonymousAnimals[Math.floor(Math.random() * this.anonymousAnimals.length)];
+        let imageUrl = `https://raw.githubusercontent.com/aviral10/Public-assets/main/animals/${animalNameUrl}`;
+        let animalName = `Anonymous ${animalNameUrl.split(".")[0]}`;
 
-        async function fetchImageFromUrl(this: any, response: Response){
+        async function fetchImageFromUrl(this: any, response: Response) {
             const blob = await response.blob();
-            AnonymousAnimal.getInstance().setAnimal(animalName, URL.createObjectURL(blob))
+            AnonymousAnimal.getInstance().setAnimal(
+                animalName,
+                URL.createObjectURL(blob)
+            );
         }
-        
+
         try {
             const response = await fetch(imageUrl);
-            
-            (response.ok)? fetchImageFromUrl(response):console.error("Failed to fetch animal logo");
 
+            response.ok
+                ? fetchImageFromUrl(response)
+                : console.error("Failed to fetch animal logo");
         } catch (error) {
             console.error("Error fetching animal logo:", error);
-        } 
-
+        }
     }
 
-    setAnimal(animalName: string, animal: string){
-        this.currentAnimalName = animalName
-        this.currentAnimal = animal
+    setAnimal(animalName: string, animal: string) {
+        this.currentAnimalName = animalName;
+        this.currentAnimal = animal;
     }
 
     public static getInstance() {
@@ -115,7 +119,10 @@ class AnonymousAnimal {
     }
 
     getAnimal() {
-        return {name: this.currentAnimalName, randomAnimal: this.currentAnimal};
+        return {
+            name: this.currentAnimalName,
+            randomAnimal: this.currentAnimal,
+        };
     }
 }
 

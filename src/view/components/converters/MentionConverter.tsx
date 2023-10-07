@@ -1,7 +1,7 @@
 import IdStore from "../../../model/IdStore";
 import KeyGenerator from "../../../model/KeyGenerator";
 import { TagConverter } from "../../../model/interfaces";
-import { Mention } from "../Messages";
+import Mention from "../../atomicComponents/Mention";
 
 class MentionConverter implements TagConverter {
     convert(content: string): JSX.Element {
@@ -15,4 +15,4 @@ class MentionConverter implements TagConverter {
     }
 }
 
-export default MentionConverter
+export default MentionConverter;
