@@ -8,11 +8,7 @@ export default class FetchRemoteConfig {
     public async fetchRemoteData() {
         try {
             const response = await fetch(this.url);
-            if (!response.ok) {
-                return [];
-            }
-            const data = await response.json();
-            return data;
+            return !response.ok ? {} : await response.json();
         } catch (error) {
             console.error("Error fetching data:", error);
             return {};

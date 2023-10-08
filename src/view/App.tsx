@@ -31,20 +31,20 @@ function App() {
 
             // Attempt fetching remote Config
             try {
-                let url =
-                    "https://raw.githubusercontent.com/aviral10/Public-assets/main/portfolioConfig.json";
+                let url = "https://raw.githubusercontent.com/aviral10/Public-assets/main/portfolioConfig.json";
                 let fetchRemoteConfig = new FetchRemoteConfig(url);
                 fetchRemoteConfig.fetchRemoteData().then((data) => {
-                    Config.updateConfig(data);
-                    updateServerList();
+                    data ? null: Config.updateConfig(data); 
                 });
+                console.log("Using remote config")
             } catch (error) {
                 console.error(
                     "Could not fetch remote config, falling back to backup config"
                 );
+                console.log("Using backup config")
+            } finally {
                 updateServerList();
             }
-            
         }, 2000);
     }, []);
 
