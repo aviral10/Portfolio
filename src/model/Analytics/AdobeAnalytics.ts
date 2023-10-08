@@ -14,11 +14,15 @@ class AdobeAnalytics implements AnalyticsEngine {
     sendPageView(pageName: string): void {
         this.s.prop6 = pageName;
         this.s.pageName = pageName;
+        this.s.prop8 = window.innerWidth
+        this.s.prop9 = window.innerHeight
         this.s.t();
     }
 
-    sendEvent(event: any): void {
-        // To be implemented
+    sendEvent(width:string, height:string): void {
+        this.s.prop8 = width
+        this.s.prop9 = height
+        this.s.t()
     }
 
     sendMessage(message: string, page: string): void {

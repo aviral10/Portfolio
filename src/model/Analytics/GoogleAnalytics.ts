@@ -31,8 +31,12 @@ class GoogleAnalytics implements AnalyticsEngine {
         });
     }
 
-    sendEvent(event: any): void {
-        // "TO BE IMPLEMENTED"
+    sendEvent(width:string, height:string): void {
+        ReactGA.event({
+            category: "Screen",
+            action: width,
+            label: height,
+        });
     }
 }
 
