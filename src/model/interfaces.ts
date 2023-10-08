@@ -84,6 +84,8 @@ export interface MyProfileTab {
     email: string;
     discord: string;
     discordImage: string;
+    feedback: string;
+    feedbackLink: string;
 }
 
 export interface ScrollableComponentProps {
@@ -123,6 +125,8 @@ export interface StatusBox {
     locationTitle: string;
     locationLink: string;
     email: string;
+    feedback: string;
+    feedbackLink: string;
 }
 
 export interface TagConverter {

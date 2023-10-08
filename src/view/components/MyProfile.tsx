@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { HiOutlineMail, HiOutlineOfficeBuilding } from "react-icons/hi";
+import { GoChecklist } from "react-icons/go";
 import { GoCloudOffline } from "react-icons/go";
 import DataModelJson from "../../model/DataModelJson";
 import Cat_8 from "../../assets/cat_8.gif";
@@ -36,6 +37,8 @@ const MyProfile = () => {
                     locationTitle={myProfile.locationTitle}
                     locationLink={myProfile.locationLink}
                     email={myProfile.email}
+                    feedback={myProfile.feedback}
+                    feedbackLink={myProfile.feedbackLink}
                 />
             </div>
         </div>
@@ -88,6 +91,9 @@ const StatusBox = (props: StatusBox) => {
                 <div className="flex items-center h-8 w-8">
                     <HiOutlineMail />
                 </div>
+                <div className="flex items-center h-8 w-8">
+                    <GoChecklist />
+                </div>
             </div>
             <div className="flex flex-col w-full text-xs md:text-base ">
                 <div className="flex items-center h-8">{props.status}</div>
@@ -105,6 +111,13 @@ const StatusBox = (props: StatusBox) => {
                     <Link
                         link={"mailto:" + props.email}
                         title={props.email}
+                        noUnderline={true}
+                    />
+                </div>
+                <div className="flex items-center h-8">
+                    <Link
+                        link={props.feedbackLink}
+                        title={props.feedback}
                         noUnderline={true}
                     />
                 </div>

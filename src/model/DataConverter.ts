@@ -20,6 +20,8 @@ export default class DataConverter {
             email: obj.email,
             discord: obj.discord,
             discordImage: obj.discordImage,
+            feedback: obj.feedback,
+            feedbackLink: obj.feedbackLink
         };
         return myProfile;
     }
