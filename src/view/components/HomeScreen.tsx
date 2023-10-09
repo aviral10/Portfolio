@@ -67,7 +67,7 @@ const HomeScreen = (props: HomeScreenProps) => {
                 }}
             >
                 <div className="fixed md:block flex flex-col h-full w-full bg-gray-900">
-                    <div className="w-full bg-gray-900 flex-shrink-0 h-4 text-gray-500 font-[900] text-[12px] pl-2">
+                    <div className="w-full bg-gray-900 flex-shrink-0 h-4 text-gray-500 font-[900] text-[12px] pl-4">
                         BigPanda
                     </div>
                     <div className={`flex h-full`}>

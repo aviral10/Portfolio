@@ -18,7 +18,7 @@
 @keyframes letter-animation {
     0% {
         stroke-dashoffset: 500;
-        stroke-width: 2;
+        stroke-width: 1;
         fill-opacity: 0;
     }
     100% {
