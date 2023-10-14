@@ -1,5 +1,6 @@
 import { TagConverter } from "../../../model/Interfaces";
 import BadgeConverter from "./BadgeConverter";
+import BlockquoteConverter from "./BlockquoteConverter";
 import BoldConverter from "./BoldConverter";
 import HeadingConverter from "./HeadingConverter";
 import HeadingXLConverter from "./HeadingXLConverter";
@@ -20,6 +21,7 @@ class TagFactory {
         headingxl: new HeadingXLConverter(),
         badge: new BadgeConverter(),
         outline: new OutlineConverter(),
+        blockquote: new BlockquoteConverter(),
         b: new BoldConverter(),
         i: new ItalicsConverter(),
     };

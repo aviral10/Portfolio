@@ -10,7 +10,7 @@
             {
               "name": "Server-Map",
               "messageHeader": [
-                "Hi, I'm Aviral",
+                "Hi👋, I'm Aviral",
                 "Software Enginner",
                 "*Soon to be"
               ],
@@ -23,7 +23,7 @@
                         "name": "Aviral",
                         "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
                       },
-                      "content": "Click to navigate to a channel\n\n;•;<mention>server-map</mention>;           : You are here \n;•;<mention>about-me</mention>;              : Aviral who? \n;•;<mention>skills</mention>;                      : Know Aviral's skill set \n;•;<mention>projects</mention>;                 : Aviral's cool projects \n;•;<mention>academic</mention>;              : Aviral's acedemic history \n;•;<mention>work-experience</mention>; : Aviral's work experience \n;•;<mention>linked-in</mention>;               : Aviral's socials \n;•;<mention>sketching</mention>;              : Aviral's hobbies \n;",
+                      "content": "Click to navigate to a channel\n\n;•;<mention>server-map</mention>;           : You are here \n;•;<mention>about-me</mention>;              : Aviral who? \n;•;<mention>skills</mention>;                      : Know Aviral's skill set \n;•;<mention>projects</mention>;                 : Aviral's cool projects \n;•;<mention>academic</mention>;              : Aviral's acedemic history \n;•;<mention>work-experience</mention>; : Aviral's work experience \n;•;<mention>linked-in</mention>;               : Aviral's socials \n;•;<mention>sketching</mention>;              : Aviral's hobbies \n;•;<mention>top-messages</mention>;     : I read your messages!\n;",
                       "image": "IMAGE_URL",
                       "messageType": "fancy"
                     }
@@ -578,6 +578,93 @@
                   ]
                 }
               ]
+            },
+            {
+              "name": "top-messages",
+              "messageHeader": [
+                "",
+                "Your Messages",
+                "I do read your sweet messages!"
+              ],
+              "messageGroups": [
+                {
+                  "date": "01 Oct, 2023",
+                  "messages": [
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "<heading>Sharing some messages you folks leave for me!</heading>;\n;",
+                      "image": "",
+                      "messageType": "default"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "<blockquote>Hi</blockquote>;\n;Well, Hi there! 😂\n",
+                      "image": "",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "<blockquote>please share full story :)</blockquote>;\n;I believe this was for my ;<mention>unfinished-novel</mention>;\n;Connect with me personally maybe? 😉",
+                      "image": "",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "<blockquote>Is this message going to be saved for all?</blockquote>;\n;No these are just static messages only visible to you. (And Me 😉)\n",
+                      "image": "",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "<blockquote>Why big panda?</blockquote>;\n;My gamer tag is ;<i>@_bigppanda_</i>;\n",
+                      "image": "",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "<blockquote>No valorant?</blockquote>;\n;I think it's a very toxic game, I play games to relieve stress, not induce it. 😂\n",
+                      "image": "",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "<blockquote>tech stack and all?</blockquote>;\n;<outline>ReactJS</outline>;, ;<outline>TailwindCSS</outline>; and my cats 🐈‍\n",
+                      "image": "",
+                      "messageType": "fancy"
+                    },
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "<blockquote>Btw Great work!!</blockquote>;<blockquote>Nice website dude</blockquote>;<blockquote>Orz</blockquote>;\n;Thank you! :)",
+                      "image": "",
+                      "messageType": "fancy"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }
@@ -615,7 +702,7 @@
                         "name": "Aviral",
                         "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
                       },
-                      "content": "<headingxl>I once drew a friend</headingxl>;\n;.......\nI told her to not desire rain\nShe wasn't ready to know \nWhat the rain would do \nBut she craved and as of one day\nI left my window open.\nIt was raining.\nIt was raining love.\n\nLove that she craved for, so much.\nShe jumped out of my canvas and \nTook a leap out in the open\n\nI held my breath\nAnd looked at her,\nShe was happy, happier than she ever was \nThe rain of love was making her colors wash.\n \nHer glitters, I painted with so much Love \nWere washed away \nHer crimson dress was spoilt,\nHer colors faded\nAnd she slowly blurred away \n\nI cried in grief, cause she was the only friend I had\nI couldn't pick my colors up,\nI was all wet and soaked in love \n\nThe moon showed up and its light paved her way \nShe crossed oblivion, bidding me goodbye.\n.......\n",
+                      "content": "<headingxl>I once drew a friend</headingxl>;\n;.......\nI told her to not desire rain\nShe wasn't ready to know \nWhat the rain would do \nBut she craved and as of one day\nI left my window open.\nIt was raining.\nIt was raining love.\n\nLove that she craved for, so much.\nShe jumped out of my canvas and \nTook a leap out in the open\n\nI held my breath\nAnd looked at her,\nShe was happy, happier than she ever was \nThe rain of love was making her colors wash.\n \nHer glitters, I painted with so much Love \nWere washed away \nHer crimson dress was spoilt,\nHer colors faded\nAnd she slowly blurred away \n\nI cried in grief, cause she was the only friend I had\nI couldn't pick my colors up,\nI was all wet and soaked in love \n\nThe moon showed up and its light paved her way \nShe crossed oblivion, bidding me goodbye.\n.......\n;;<outline>~Aviral</outline>",
                       "image": "",
                       "messageType": "fancy"
                     }
@@ -648,7 +735,7 @@
                         "name": "Aviral",
                         "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
                       },
-                      "content": "<headingxl>Red, Chapter 1: Yo</headingxl>;\n\n;“Well, I'm not here for Red, I'm here for me, I'm not here for Red” I said while I looked out for her here and there. I sat down on my usual spot and opened my book, still waiting for Red to show up. I looked up leaning back on the bench, the sky wasn't as bright as it usually was, the birds were flying north, and there was a plane leaving a jet trail behind. I was busy staring at the sky and suddenly someone blocks my view from behind. “Yo”, she greets me with. I raised my hand and held her nose don't ask me why, I just felt like. “We meet again”, I replied.\n\nShe sits next to me and looks happier than yesterday, or maybe she usually is like this, how long have I known her anyway?  We chatted and not once had I taken my eyes off her, her eyes, her big eyes detailed with mascara, I wonder if she put on that for me? Maybe she had a date or something. Is she seeing someone, maybe I should ask her?  My internal thoughts were making it hard to concentrate. Is sh- She interrupts me and asks “Why are you looking at me like that?” giving me a funny look and I got alarmed and apologized for my creepy behavior. She giggled and said “You're Cute” to which I had no reply. “Hey maybe we should go out for a coffee next time?” I asked. With a few seconds of silence which felt like hours she replied “Sure”. “I'm Aviral”, I said, offering my hand. “I'm Lily” she replied and shook my hand.",
+                      "content": "<headingxl>Red, Chapter 1: Yo</headingxl>;\n\n;“Well, I'm not here for Red, I'm here for me, I'm not here for Red” I said while I looked out for her here and there. I sat down on my usual spot and opened my book, still waiting for Red to show up. I looked up leaning back on the bench, the sky wasn't as bright as it usually was, the birds were flying north, and there was a plane leaving a jet trail behind. I was busy staring at the sky and suddenly someone blocks my view from behind. “Yo”, she greets me with. I raised my hand and held her nose don't ask me why, I just felt like. “We meet again”, I replied.\n\nShe sits next to me and looks happier than yesterday, or maybe she usually is like this, how long have I known her anyway?  We chatted and not once had I taken my eyes off her, her eyes, her big eyes detailed with mascara, I wonder if she put on that for me? Maybe she had a date or something. Is she seeing someone, maybe I should ask her?  My internal thoughts were making it hard to concentrate. Is sh- She interrupts me and asks “Why are you looking at me like that?” giving me a funny look and I got alarmed and apologized for my creepy behavior. She giggled and said “You're Cute” to which I had no reply. “Hey maybe we should go out for a coffee next time?” I asked. With a few seconds of silence which felt like hours she replied “Sure”. “I'm Aviral”, I said, offering my hand. “I'm Lily” she replied and shook my hand.\n\n;<outline>~Aviral</outline>",
                       "image": "",
                       "messageType": "fancy"
                     }
