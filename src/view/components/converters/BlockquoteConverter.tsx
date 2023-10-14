@@ -6,7 +6,7 @@ import Blockquote from "../../atomicComponents/Blockquote";
 class BlockquoteConverter implements TagConverter {
     convert(content: string): JSX.Element {
         return (
-            <Blockquote content={content}/>
+            <Blockquote key={KeyGenerator.getInstance().getNewKey()} content={content}/>
         );
     }
 }

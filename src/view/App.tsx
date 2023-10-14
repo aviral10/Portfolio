@@ -27,23 +27,21 @@ function App() {
 
     useEffect(() => {
         setTimeout(() => {
-            Config.updateConfig(backupConfig);
-
             // Attempt fetching remote Config
             try {
                 let url = "https://raw.githubusercontent.com/aviral10/Public-assets/main/portfolioConfig.json";
                 let fetchRemoteConfig = new FetchRemoteConfig(url);
                 fetchRemoteConfig.fetchRemoteData().then((data) => {
-                    data ? null: Config.updateConfig(data); 
+                    data ? Config.updateConfig(data) : null; 
+                    updateServerList();
                 });
                 console.log("Using remote config")
             } catch (error) {
                 console.error(
                     "Could not fetch remote config, falling back to backup config"
                 );
-                console.log("Using backup config")
-            } finally {
                 updateServerList();
+                console.log("Using backup config")
             }
         }, 2000);
     }, []);
