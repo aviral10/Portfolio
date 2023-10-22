@@ -37,6 +37,27 @@ export const getISTTime = () => {
     return [hoursIST, minutesIST, meridian];
 };
 
+export const objectIsEmpty = (object: any) => {
+    for (let i in object) {
+        return false;
+    }
+    return true;
+};
+
+export async function fetchWithTimeout(url:string, options:any = {}) {
+    const timeout = options.timeout || 4000;
+
+    const controller = new AbortController();
+    const id = setTimeout(() => controller.abort(), timeout);
+
+    const response = await fetch(url, {
+        ...options,
+        signal: controller.signal,
+    });
+    clearTimeout(id);
+    return response;
+}
+
 export const smallScreen = 640;
 export const mediumScreen = 768;
 export const largeScreen = 1024;

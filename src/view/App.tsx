@@ -9,6 +9,7 @@ import Shimmer from "./components/Shimmer";
 import ImageCache from "../model/ImageCache";
 import HomeScreen from "./components/HomeScreen";
 import FetchRemoteConfig from "../model/FetchRemoteConfig";
+import { objectIsEmpty } from "../model/Utils";
 
 function App() {
     // Refs
@@ -16,6 +17,7 @@ function App() {
 
     // State
     const [server, setServer] = useState<Server | undefined>(undefined);
+    Config.updateConfig(backupConfig);
 
     const updateServerList = () => {
         const model = new DataModelJson(Config.getConfig());
@@ -29,19 +31,23 @@ function App() {
         setTimeout(() => {
             // Attempt fetching remote Config
             try {
-                let url = "https://raw.githubusercontent.com/aviral10/Public-assets/main/portfolioConfig.json";
+                let url =
+                    "https://raw.githubusercontent.com/aviral10/Public-assets/main/portfolioConfig.json";
                 let fetchRemoteConfig = new FetchRemoteConfig(url);
+                console.log("ori", Config.getConfig());
                 fetchRemoteConfig.fetchRemoteData().then((data) => {
-                    data ? Config.updateConfig(data) : null; 
+                    data && !objectIsEmpty(data)
+                        ? Config.updateConfig(data)
+                        : null;
                     updateServerList();
+                    console.log("Using remote config");
                 });
-                console.log("Using remote config")
             } catch (error) {
                 console.error(
                     "Could not fetch remote config, falling back to backup config"
                 );
                 updateServerList();
-                console.log("Using backup config")
+                console.log("Using backup config");
             }
         }, 2000);
     }, []);
