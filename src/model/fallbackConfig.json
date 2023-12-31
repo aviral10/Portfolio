@@ -12,7 +12,7 @@
               "messageHeader": [
                 "Hi👋, I'm Aviral",
                 "Software Enginner",
-                "*Soon to be"
+                ""
               ],
               "messageGroups": [
                 {
@@ -48,9 +48,9 @@
             {
               "name": "About-Me",
               "messageHeader": [
-                "Hi, I'm Aviral",
+                "Hi👋, I'm Aviral",
                 "Software Enginner",
-                "*Soon to be"
+                ""
               ],
               "messageGroups": [
                 {
@@ -127,7 +127,7 @@
                         "name": "Aviral",
                         "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
                       },
-                      "content": "<heading>Programming Languages</heading>;\n;<Skill>C++/C,90,Excellent,<badge>https://img.shields.io/badge/C++-00599C?style=flat-square&logo=C%2B%2B&logoColor=white</badge></Skill>;<Skill>JavaScript/TypeScript, 90,Excellent,<badge>https://img.shields.io/badge/-JavaScript-%23F7DF1C?style=flat&logo=javascript&logoColor=000000&labelColor=%23F7DF1C&color=%23FFCE5A</badge></Skill>;<Skill>Python, 85,Advanced, <badge>https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=ffffff</badge></Skill>;<Skill>Java, 75,Intermediate,<badge>https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white</badge></Skill>;<Skill>Kotlin, 60,Intermediate,<badge>https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white</badge></Skill>",
+                      "content": "<heading>Programming Languages</heading>;\n;<Skill>C++/C,90,Excellent,<badge>https://img.shields.io/badge/C++-00599C?style=flat-square&logo=C%2B%2B&logoColor=white</badge></Skill>;<Skill>JavaScript/TypeScript, 90,Excellent,<badge>https://img.shields.io/badge/-JavaScript-%23F7DF1C?style=flat&logo=javascript&logoColor=000000&labelColor=%23F7DF1C&color=%23FFCE5A</badge></Skill>;<Skill>Python, 85,Advanced, <badge>https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=ffffff</badge></Skill>;<Skill>Java, 75,Intermediate,<badge>https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white</badge></Skill>;<Skill>Go, 60,Intermediate,<badge>https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white</badge></Skill>",
                       "image": "IMAGE_URL",
                       "messageType": "fancy"
                     },
@@ -136,7 +136,7 @@
                         "name": "Aviral",
                         "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
                       },
-                      "content": "Tools and Frameworks ; https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=ffffff; https://img.shields.io/badge/-Git-%23F05032?style=flat&logo=git&logoColor=%23ffffff ; https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white ; https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white ; https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white ; https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white ; https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white ; https://img.shields.io/badge/-Nodejs-339933?style=flat&logo=Node.js&logoColor=ffffff ; https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white ",
+                      "content": "Tools and Frameworks ; https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white ; https://img.shields.io/badge/-React-61DAFB?style=flat&logo=react&logoColor=ffffff; https://img.shields.io/badge/-Git-%23F05032?style=flat&logo=git&logoColor=%23ffffff ; https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white ; https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white ; https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white ; https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white ; https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white ; https://img.shields.io/badge/-Nodejs-339933?style=flat&logo=Node.js&logoColor=ffffff ; https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white ",
                       "image": "IMAGE_URL",
                       "messageType": "onlytags"
                     },
@@ -315,7 +315,7 @@
               "messageHeader": [
                 "Aviral's",
                 "Work Experience",
-                "Currently looking for SDE/SWE, Developer roles"
+                "Looking for SDE/SWE and Developer roles"
               ],
               "messageGroups": [
                 {
@@ -326,7 +326,7 @@
                         "name": "Aviral",
                         "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
                       },
-                      "content": "<headingxl>Amazon Inc.</headingxl>;\n\n;<i>Software Developer Engineer Intern</i>;\n;January 2023 - June 2023\n;Location: Bangalore, India\n\n; • Collaborated with the;<b> Amazon Music </b>;International Expansion (IX) team.\n; • Successfully launched a novel Home Tab experience of Amazon Music for Android Automotive clients. \n; • Migrated the old home experience to a newer architecture.\n; • Developed a front-end module for handing network calls made to the backend.\n; • Contributed to the development of the back-end data processing layer as well.\n; • Orchestrated the deployment of a robust CI/CD pipeline.\n; • The pipeline was utilized for experimentation, testing and feature development.\n; • Implemented th new Home Tab support for Navigation Apps such as Google Assistant and Waze.\n; • Worked on Front-end for the development of a personalised widge (My Presets).\n; • My Presets was successfully launched to production.\n; • Skills: C++ · Java · Android · TypeScript · Kotlin · Amazon CloudWatch · Python · JavaScript\n\n",
+                      "content": "<headingxl>Amazon Inc.</headingxl>;\n\n;<i>Software Development Engineer Intern</i>;\n;January 2023 - June 2023\n;Location: Bangalore, India\n\n; • Collaborated with the;<b> Amazon Music </b>;International Expansion (IX) team.\n; • Successfully launched a novel Home Tab experience of Amazon Music for Android Automotive clients. \n; • Migrated the old home experience to a newer architecture.\n; • Developed a front-end module for handing network calls made to the backend.\n; • Contributed to the development of the back-end data processing layer as well.\n; • Orchestrated the deployment of a robust CI/CD pipeline.\n; • The pipeline was utilized for experimentation, testing and feature development.\n; • Implemented th new Home Tab support for Navigation Apps such as Google Assistant and Waze.\n; • Worked on Front-end for the development of a personalised widge (My Presets).\n; • My Presets was successfully launched to production.\n; • Skills: C++ · Java · Android · TypeScript · Kotlin · Amazon CloudWatch · Python · JavaScript\n\n",
                       "image": "https://res.cloudinary.com/zenbusiness/image/upload/v1670445040/logaster/logaster-2020-03-amazon-gif-logo.gif",
                       "messageType": "fancy"
                     }
@@ -340,8 +340,22 @@
                         "name": "Aviral",
                         "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
                       },
-                      "content": "<headingxl>Adobe Systems</headingxl>;\n\n;<i>Technical Support Engineer</i>;\n;August 2023 - Present\n;Location: Noida, India\n\n; • Working as a Technical Support Engineer with ;<b> Adobe Analytics </b>; global support team.\n; • During the internship developed a chatbot for Service Desk.\n; • The bot helped in narrowing down the search space of First Call Resolution queries. \n; • Developed an automation tool from scratch and deployed it to company servers to be used internally.\n; • Skills: Python · Adobe Analytics\n\n",
+                      "content": "<headingxl>Adobe Systems</headingxl>;\n\n;<i>Technical Support Engineer</i>;\n;August 2023 - November 2023\n;Location: Noida, India\n\n; • Worked as a Technical Support Engineer with ;<b> Adobe Analytics </b>; global support team.\n; • During the internship developed a chatbot for Service Desk.\n; • The bot helped in narrowing down the search space of First Call Resolution queries. \n; • Developed an automation tool from scratch and deployed it to company servers to be used internally.\n; • Skills: Python · Adobe Analytics\n\n",
                       "image": "https://assets.website-files.com/5ee732bebd9839b494ff27cd/5ee732bebd98398649ff2801_hXrc7y.jpg",
+                      "messageType": "fancy"
+                    }
+                  ]
+                },
+                {
+                  "date": "4 Dec, 2023",
+                  "messages": [
+                    {
+                      "sender": {
+                        "name": "Aviral",
+                        "icon": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_blue.jpg"
+                      },
+                      "content": "<headingxl>Juleo</headingxl>;\n\n;<i>Software Development Engineer</i>;\n;December 2023 - Present\n;Location: Gurugram, India\n\n; • Currently working as a ;<b>Software Development Engineer</b>; in the Backend team, driving the development of pivotal ;<i>backend</i>; services that play a key role in shaping and advancing Juleo as a product.\n; • Developing modules for efficient data retrieval from DynamoDB and transforming it into structured JSON format. \n; • The module serves as a critical middleware, seamlessly facilitating data flow to the frontend for optimal rendering.\n; • Skills: Go · Python\n\n",
+                      "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/work/Juleo.jpeg",
                       "messageType": "fancy"
                     }
                   ]
@@ -391,7 +405,7 @@
               "messageHeader": [
                 "Aviral's Resume",
                 "",
-                "Currently looking for SDE/SWE and Development roles"               
+                "Looking for SDE/SWE and Development roles"               
               ],
               "messageGroups": [
                 {
@@ -970,10 +984,10 @@
   "myprofile": {
     "image": "https://raw.githubusercontent.com/aviral10/Public-assets/main/faces/aviral_light.jpg",
     "name": "Aviral Rana 🚀",
-    "title": "Aspiring Software Engineer 💻",
+    "title": "Software Engineer 💻",
     "status": "online",
-    "locationTitle": "Noida, India",
-    "locationLink": "https://goo.gl/maps/zsSAfW4XNR8VSM4S9",
+    "locationTitle": "Gurugram, India",
+    "locationLink": "https://maps.app.goo.gl/PjGhAV9DgNAaZmKNA",
     "email": "aviral19rana@gmail.com",
     "discord": "https://discord.gg/RvTTbQBtdF",
     "discordImage": "https://i.pinimg.com/564x/f6/eb/b9/f6ebb972d1325cbbf6315219a12f0365.jpg",
